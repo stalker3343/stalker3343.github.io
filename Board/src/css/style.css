@@ -1,0 +1,56 @@
+body{
+	font-family:Tahoma,sans-serif;
+}
+h1{
+	margin-top: 120px;
+	margin-bottom: 90px;
+	line-height: 1.1;
+}
+h1 span{
+display:block;
+font-size: 24px;
+
+}
+.video{
+	margin-bottom: 30px;
+}
+.top-section{
+	margin-bottom: 150px;
+}
+h1 strong{
+	font-size: 24px;
+}
+.form{
+	border: 5px solid #2727d9;
+	padding: 30px 15px;
+}
+.form input{
+	display: block;
+	margin-bottom: 10px;
+}
+.form p{
+	font-weight: 900;
+	font-size:20px;
+	margin-bottom: 50px;
+}
+.mid-section{
+	margin-bottom: 100px;
+}
+.mid-section-hea{
+	font-size:24px;
+	font-weight:900;
+	margin-bottom: 85px;
+}
+.item-cont{
+	margin-bottom: 60px;
+}
+.item{
+	height: 130px;
+	margin-bottom: 50px;
+}
+.img-row{
+	margin-bottom: 20px;
+}
+.last-section img{
+	margin-bottom: 20px;
+}

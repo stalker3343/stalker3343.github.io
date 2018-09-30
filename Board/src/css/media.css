@@ -1,0 +1,147 @@
+@media (max-width: 767.98px) {
+  .about__link a {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 10px;
+    color: white;
+    text-decoration: none;
+  }
+  .categories {
+    padding: 36px 0px;
+  }
+  .categories__item {
+    padding-top: 15px;
+  }
+  .slick-prev,
+  .slick-next {
+    top: 45%;
+  }
+  .slick-next {
+    right: 0;
+  }
+  .slick-prev {
+    left: 0px;
+  }
+  .slick-prev::before,
+  .slick-next::before {
+    font-family: 'slick';
+    font-size: 20px;
+    line-height: 1;
+    opacity: 1;
+    color: #e81f51 ;
+  }
+  .search__find {
+    width: 14%;
+  }
+  .search__text {
+    flex-grow: none;
+  }
+  .search_categ {
+    padding: 35px 0px 0px 0px;
+  }
+  .btnObyav {
+    position: fixed;
+    bottom: 0;
+    z-index: 10001;
+    justify-content: center;
+    height: 50px;
+    width: 250px;
+    border-radius: 20px;
+    right: 0;
+  }
+}
+@media (max-width: 991.98px) {
+  .categories {
+    padding: 26px 0px;
+  }
+  .profile__href div {
+    display: none;
+  }
+  .search__filter {
+    display: inline-block;
+    width: 45px;
+    margin-left: 15px;
+  }
+  .search__text {
+    padding-left: 11px;
+    padding-right: 12px;
+    flex-grow: 0;
+    width: 90%;
+  }
+  .search__text:after {
+    display: none;
+  }
+  .search__categ {
+    display: none;
+  }
+  .search__region {
+    display: none;
+  }
+  .search__find {
+    flex-grow: 1;
+  }
+  .btnObyav {
+    padding: 8px 10px;
+  }
+  .btnObyav__icon {
+    height: 30px;
+    margin-right: 7px;
+  }
+  .btnObyav__head {
+    font-size: 14px;
+  }
+}
+@media (max-width: 1199.98px) {
+  .last {
+    padding: 17px 10px;
+  }
+  .last__text {
+    padding-top: 53px;
+    font-size: 21px;
+    line-height: 30px;
+  }
+}
+@media (max-width: 575.98px) {
+  .about__head {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+  }
+  .about__head-hide {
+    display: none;
+  }
+  .about__head-show {
+    display: block;
+  }
+  .premium .obyavItem {
+    margin-bottom: 40px;
+    height: 300px;
+  }
+  .premium .obyavItem__title {
+    padding-top: 10px;
+  }
+  .premium .obyavItem__photo {
+    width: 100%;
+    height: 192px;
+  }
+  .premium .obyavItem__photo img {
+    width: auto;
+    height: 100%;
+  }
+  .premium__view {
+    display: none;
+  }
+  .search {
+    border-radius: 0px;
+  }
+  .search__find {
+    width: 16%;
+    border-radius: 0 0 0 0;
+  }
+  .search__filter {
+    display: inline-block;
+    width: 35px;
+    margin-left: 10px;
+  }
+}
