@@ -1,0 +1,288 @@
+.menu__adaptive {
+  display: none;
+}
+.menu__icon{
+  outline: none;
+  display: none;
+}
+
+
+@media (max-width: 1198px) {
+  .h-top {
+   font-size: 1.16rem;
+ }
+ .gall-tabs-in {
+  margin: -95px -15px 0 -5px;
+}
+.adaptive__tel{
+	padding-left: 14px;
+}
+.menu{
+	font-size: 1.06rem;
+}
+.news-item {
+  padding-left: 25px;
+}
+}
+
+
+
+@media (max-width: 992px) {
+  .h-top::after {
+    left: 34%;
+  }
+  .menu__icon span {
+    margin-left: -15px;
+    padding: 0px 0px 0px 0px;
+  }
+  .adaptive__tel{
+    padding-left: 12px;
+  }
+  .h-top {
+   height: 75px;
+  }
+ .menu-noadaptive{
+   display: none;
+  }
+ .menu__adaptive {
+  margin-left: -15px;
+  padding-left: 30px;
+  padding-right: 50px;
+  padding-bottom: 20px;
+  widows: 100%;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+
+  background-color: #485665;
+  display: none;
+}
+.menu__adaptive__wrap{
+	display: flex;
+	flex-direction:column;
+}
+.menu__adaptive__wrap a{
+  color:white;
+  padding-bottom: 2px;
+}
+.menu__adaptive__head{
+	color:white;
+	margin: 10px 0px;
+	font-size:18px;
+	text-transform:uppercase;
+}
+.menu__adaptive .menu a, .menu span {
+  color:white;
+}
+.menu li::before {
+	display: none;
+}
+.menu__close {
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  width: 32px;
+  height: 32px;
+}
+.menu__close:hover {
+  opacity: 0.8;
+}
+.menu__close:before,
+.menu__close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: white;
+}
+.menu__close:before {
+  transform: rotate(45deg);
+}
+.menu__close:after {
+  transform: rotate(-45deg);
+}
+.menu__icon {
+ display: inline-block;
+ margin-top: 6px;
+ height: 45px;
+ width: 40px;
+ position: relative;
+ cursor: pointer;
+}
+.menu__icon span {
+  display: block;
+  position: absolute;
+  height: 5px;
+  width: 100%;
+  background: black;
+  border-radius: 9px;
+  left: 0;
+}
+.menu__icon span:nth-child(1) {
+  top: 0px;
+}
+.menu__icon span:nth-child(2) {
+  top: 13px;
+}
+.menu__icon span:nth-child(3) {
+  top: 26px;
+}
+
+.gall-tabs-in {
+  margin: -95px 0px 0 0px;
+  width: 512px;
+  padding: 20px;
+}
+.gall-tabs img {
+  filter: none;
+  -webkit-filter: grayscale(0%);
+  -moz-filter: grayscale(0);
+  -ms-filter: grayscale(0);
+  -o-filter: grayscale(0);
+  filter: grayscale(0);
+}
+.e-item {
+  font-size: 1.00rem;
+  padding-right: 180px;
+  padding-left: 10px;
+}
+.e-item1::after {
+  width: 202px;
+  height: 100%;
+  background: url("../img/e-item001.png") no-repeat;
+  top: -7px;
+  right: 18px;
+}
+.e-item2::after {
+  right: 0;
+  width: 172px;
+  height: 100%;
+}
+.e-item3::after {
+  right: 0;
+  width: 160px;
+  height: 100%;
+}
+.e-item1::after {
+  right: 0;
+  width: 202px;
+  height: 100%;
+  background: url("../img/e-item001.png") no-repeat;
+  top: -7px;
+
+}
+.e-item4::after {
+  right: 0px;
+  width: 202px;
+  height: 100%;
+  background: url("../img/e-item001.png") no-repeat;
+  top: -7px;
+
+}
+.services-item img {
+
+  width: 100%;
+}
+.banner-item-in {
+  padding: 68px 10px 0 7px;
+
+}
+.news-item {
+
+  padding-left: 25px;
+}
+.botom-number{
+	display: block;
+	padding-bottom: 20px;
+}
+}
+
+
+
+
+@media (max-width: 768px) {
+  body
+  {
+    overflow-x: hidden;
+  }
+  html{
+   overflow-x: hidden;
+ }
+ .h-top {
+   height: 105px;
+ }
+ .banner-item-in {
+  font-size:1.55rem;
+}
+.gall-tabs-in {
+  margin: -95px 0px 0 0px;
+  width: 340px;
+  padding: 20px;
+}
+.gall-tabs a {
+  margin-bottom: 40px;
+  
+  text-align: center;
+}
+.gall-tabs img {
+ width: 130%;
+}
+.gall-tabs span {
+
+  margin-left: 65px;
+}
+.equipment {
+  height: 910px;
+}
+.f-top{
+	display: none;
+}
+.services-item {
+  width: 88%;
+  height: 265px;
+  margin-bottom: 40px;
+  border: 1px solid #e7e7e7;
+  padding: 20px;
+  vertical-align: middle;
+}
+}
+
+
+
+
+
+@media (max-width: 576px) {
+  .top-banner .bx-wrapper .bx-prev, .top-banner .bx-wrapper .bx-next {
+
+    display: none;
+  }
+
+  .h-top {
+    height: 310px;
+  }
+  .h-top ul {
+
+    margin-top: 185px;
+  }
+  .h-logo {
+    left: -18px;
+    background: url("../img/h-logo.png") no-repeat;
+    background-size: auto auto;
+    width: 412px;
+    height: 189px;
+    background-size: 100% 100%;
+  }
+  .menu__adaptive {
+    margin-left: 0px;
+  }
+  .banner-item-in {
+    padding: 38px 0px 0 0px;
+  }
+  .banner-item-in {
+    font-size: 1.3rem;
+  }
+  .h-top::after {
+    display: none;
+  }
+}
