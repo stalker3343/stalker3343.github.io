@@ -10,8 +10,5 @@
 [Главная страница сайта Полимер Комплекс](https://stalker3343.github.io/PolimerComplex/ "Полимер Комплекс")
 
 
-nrcn fetck
-
-
 
 
