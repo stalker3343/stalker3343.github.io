@@ -137,6 +137,14 @@ h2
 .menu  
 	height: 50px 
 	background-color: #303f9f 
+	&__wrap
+		width: 100%
+		margin-left: 0
+		padding-left: 0
+		margin-bottom: 0
+		display: flex
+		justify-content: space-between
+		align-items: center	
 
 	&__item-wrap  
 
@@ -147,19 +155,24 @@ h2
 		width: 100% 
 		color: white 
 		font-size: 18px 
-		color: rgb(255, 254, 254) 
-		transition: 0.2s 
+		
+		
 		padding-left: -15px 
-
-		&:hover  
-			background-color: #e81f51 
+		a
+			transition: 0.2s 
+			display: flex
+			height: 100%
+			width: 100%
+			align-items: center
+			justify-content: center		
 			color: rgb(255, 254, 254) 
-			text-decoration: none 
-
-		 
-
-		&_active  
-			background-color: #e81f51 
+			&:hover  
+				text-decoration: none
+				background-color: #e81f51 
+				color: rgb(255, 254, 254) 
+				text-decoration: none
+	.current_page_item  
+		background-color: #e81f51 
 		 
 
 
@@ -169,6 +182,11 @@ h2
 	height: 448px
 	padding: 60px 0px
 	&__menu-wrap
+		text-decoration: none
+		list-style-type: none
+		margin-bottom: 0
+		padding-left: 0
+
 		display: flex
 		flex-direction: column
 	&__menu-item
@@ -176,9 +194,11 @@ h2
 		font-family: "Open Sans"
 		color: rgb(255, 255, 255)
 		line-height: 1.667
-		&:hover
-			text-decoration: none
-			color:#4664ea
+		a
+			color: rgb(255, 255, 255)
+			&:hover
+				text-decoration: none
+				color:#4664ea
 	&__heading
 		font-size: 18px
 		margin-bottom: 11px
