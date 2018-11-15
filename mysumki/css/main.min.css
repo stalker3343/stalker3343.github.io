@@ -1,0 +1,1280 @@
+body,.text_characteristics p,.text_characteristics p span,.quality_item p,.description,.advantages_item_text p,.delivery_item_text p,.years,.comment p{
+    font-size:16px
+}
+
+
+/* .catalog h2:before, .catalog h2:after {
+    display: inline-block;
+    vertical-align: middle;
+    content: '';
+    margin: -8px 25px 0;
+    width: 150px;
+    height: 2px;
+    border-top: 1px solid #dddbdc;
+    border-bottom: 1px solid #dddbdc;
+} */
+body{
+    min-width:320px;
+    line-height:1.2;
+    overflow-x:hidden
+}
+body,.characteristics .icon,.gallery-top .swiper-slide,.reviews_item,.menuToggle{
+    position:relative
+}
+body,.text_characteristics p,.quality h3,.quality_item p,.advantages_item_text p,.delivery_item_text p,.name_text p,.comment p,.text_timer2,.footer_bl p,#pop{
+    font-family:"Raleway",sans-serif
+}
+body,p,ul,.slider_block .gallery-top,.slider_block .gallery-thumbs{
+    margin:0
+}
+img{
+    max-width:100%;
+    height:auto
+}
+a{
+    text-decoration:none
+}
+ul li{
+    list-style:none
+}
+ul{
+    padding-left:0
+}
+
+.characteristics{
+    padding-top:69px;
+    padding-bottom:91px
+}
+.characteristics,.info,.delivery,.certificates,#footer{
+    background:#ffffff;
+}
+.characteristics_bl,.quality_bl,.slider_block,.price,.advantages_bl,.advantages_item,.delivery_bl,.sale_two_bl,.text_timer2,.reviews_bl,.info_bl{
+    display:flex
+}
+.characteristics_bl,.quality_bl,.advantages_bl,.sale_two_bl,.reviews_bl,.info_bl{
+    justify-content:space-between
+}
+.characteristics_bl,.sale_two_bl,.menuToggle{
+    align-items:center
+}
+.characteristics_bl{
+    flex-wrap:wrap
+}
+.advantages_bl{
+    flex-wrap:wrap
+}
+.text_characteristics{
+    width:560px
+}
+.advantages_item{
+    width:560px;
+    padding-right:15px
+}
+.text_characteristics h3,.info_text h2,.price_two p,.price_two span{
+    font-size:36px
+}
+.text_characteristics h3,.quality h2,.quality_item_text,.info_text h2,.btn,.reviews h2,.certificates h2,.delivery h2,.advantages h2,.delivery_item_text span,.advantages_item_text span{
+    font-family:"Raleway Extra Bold",sans-serif
+}
+.text_characteristics h3,.text_characteristics p span,.quality_item p,.description span,.delivery_item_text span,.advantages_item_text span{
+    color:#232323
+}
+.text_characteristics h3{
+    margin-bottom:32px
+}
+.text_characteristics p{
+    color:#4a4a4a;
+    line-height:1.88;
+    letter-spacing:0.5px
+}
+.text_characteristics p span{
+    line-height:1.88;
+    letter-spacing:0.5px
+}
+.text_characteristics p span,.name_text span{
+    font-family:"Raleway Bold",sans-serif
+}
+.characteristics .icon{
+    margin-top:17px
+}
+.zoom,.reviews_item::before{
+    position:absolute
+}
+.zoom{
+    right:10px;
+    bottom:7px
+}
+.quality{
+    padding-top:76px;
+    padding-bottom:81px
+}
+.quality_bl{
+    line-height:1.5
+}
+.advantages_item_text p{
+    line-height:1.5;
+    margin-top:10px
+}
+.quality h2,.quality h3,.reviews h2,.certificates h2,.delivery_item,.reviews_item,.footer_bl,#pop,.delivery h2,.advantages h2{
+    text-align:center
+}
+.quality h2,.reviews h2,.certificates h2,.delivery h2,.advantages h2{
+    font-size:54px
+}
+.quality h2{
+    margin-bottom:9px
+}
+.quality h2,.btn,.reviews h2,.certificates h2,.delivery h2,.advantages h2,.delivery_item_text span,.advantages_item_text span{
+    text-transform:uppercase
+}
+.quality h3,.name_text span{
+    font-size:30px
+}
+.quality h3{
+    margin-bottom:63px
+}
+.quality_item_left{
+    width:270px;
+    text-align:right;
+    margin-bottom:17px
+}
+.quality_item_right{
+    width:270px;
+    margin-bottom:17px;
+    text-align:left
+}
+.info_text{
+    text-align:left;
+    width:432px;
+    margin-left:46px;
+    padding-right:72px
+}
+.quality_item_text,.price_two p,.name_text{
+    color:#ad4b21
+}
+.quality_item_text,.delivery_item_text span,.advantages_item_text span{
+    font-size:24px
+}
+.quality_text_right{
+    margin-left:5px
+}
+.quality_bl .icon{
+    margin-top:25px;
+    margin-left:9px;
+    margin-right:9px
+}
+.quality_item_right:nth-child(2){
+    margin-bottom:41px
+}
+.info{
+    padding-top:90px;
+    padding-bottom:90px
+}
+.slider_block{
+    width:680px
+}
+.gallery-top .swiper-slide{
+    width:565px
+}
+.gallery-top .swiper-slide,.gallery-top .swiper-slide:nth-child(5),.gallery-top .swiper-slide:nth-child(4),.gallery-top .swiper-slide:nth-child(3),.gallery-top .swiper-slide:nth-child(2){
+}
+.gallery-top .swiper-slide-1{
+    width:565px
+}
+.gallery-top .swiper-slide-1,.gallery-top .swiper-slide-1:nth-child(5),.gallery-top .swiper-slide-1:nth-child(4),.gallery-top .swiper-slide-1:nth-child(3),.gallery-top .swiper-slide-1:nth-child(2){
+}
+.gallery-top .swiper-slide-2{
+    width:565px
+}
+.gallery-top .swiper-slide-2,.gallery-top .swiper-slide-2:nth-child(5),.gallery-top .swiper-slide-2:nth-child(4),.gallery-top .swiper-slide-2:nth-child(3),.gallery-top .swiper-slide-2:nth-child(2){
+}
+.slider_thumbs_left{
+    margin-right:8px
+}
+.swiper-slide .zoom{
+    bottom:10px;
+    right:15px
+}
+.swiper-slide-1 .zoom{
+    bottom:10px;
+    right:15px
+}
+.swiper-slide-2 .zoom{
+    bottom:10px;
+    right:15px
+}
+.slider_block .gallery-top{
+    height:465px
+}
+.slider_block .gallery-thumbs{
+    height:465px;
+    width:105px
+}
+.gallery-thumbs .swiper-slide{
+    width:105px!important;
+    height:84px!important;
+    margin-bottom:8px
+}
+.gallery-thumbs .swiper-slide-1{
+    width:105px!important;
+    height:110px!important;
+    margin-bottom:8px
+}
+.gallery-thumbs .swiper-slide-2{
+    width:105px!important;
+    height:110px!important;
+    margin-bottom:8px
+}
+.gallery-thumbs .swiper-slide {
+    background:url(../img/small_one.jpg)no-repeat
+}
+.gallery-thumbs .swiper-slide-1 {
+    background:url(../img/small_one_1.jpg)no-repeat
+}
+.gallery-thumbs .swiper-slide-2 {
+    background:url(../img/small_one_2.jpg)no-repeat
+}
+.info_text h2{
+    margin-top:-6px;
+    margin-bottom:6px
+}
+.price{
+    align-items:flex-end;
+    margin-bottom:14px
+}
+.price_one{
+    margin-right:30px
+}
+.price_one p{
+    font-size:28px;
+    color:#999;
+    text-decoration:line-through
+}
+.price_one span{
+    font-size:28px
+}
+.price_one p,.price_two p,.description p:last-child,.years p span,.footer_bl p span{
+    font-family:"Gotham Pro Regular",sans-serif
+}
+.price_one span,.price_two span{
+    font-family:'PT Sans',sans-serif
+}
+.price_two p,.years p span{
+    font-weight:900
+}
+.description,.advantages_item{
+    margin-bottom:35px
+}
+.description,.comment p{
+    line-height:1.9
+}
+.description span{
+    font-family:'Raleway Bold',sans-serif
+}
+.description p{
+    font-family:'Raleway',sans-serif;
+    color:#9d9d9d
+}
+.btn,.menuToggle span{
+    background:#ad4b21
+}
+.btn{
+    color:#fff;
+    padding:16px 33px;
+    display:inline-block;
+    border:0;
+    border-radius:5px;
+    transition:background 0.3s;
+    -webkit-box-shadow:0 5px 0 0px rgba(133,58,26,1);
+    -moz-box-shadow:0 5px 0 0px rgba(133,58,26,1);
+    box-shadow:0 5px 0 0px rgba(133,58,26,1)
+}
+.btn,.name_text p{
+    font-size:18px
+}
+.btn:hover{
+    background:#853a1a
+}
+.advantages{
+    padding-top:74px;
+    padding-bottom:40px
+}
+.reviews h2{
+    margin-bottom:122px
+}
+.certificates h2{
+    margin-bottom:46px
+}
+.advantages_item .icon img{
+    min-width:108px!important
+}
+.advantages_item .icon{
+    margin-right:22px
+}
+.menuToggle{
+    margin-top:10px;
+    width:48px;
+    height:22px;
+    -webkit-border-radius:50%;
+    -webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+    -webkit-flex-direction:column;
+    -moz-box-orient:vertical;
+    -moz-box-direction:normal;
+    -ms-flex-direction:column;
+    flex-direction:column;
+    -webkit-box-align:center;
+    -webkit-align-items:center;
+    -moz-box-align:center;
+    -ms-flex-align:center;
+    cursor:pointer;
+    z-index:99999999999;
+    transition:0.3s
+}
+.advantages_item_text p,.delivery_item_text p,.years{
+    color:#777
+}
+.delivery{
+    padding-top:77px;
+    padding-bottom:84px
+}
+.delivery_bl,.text_timer2{
+    justify-content:space-around
+}
+.delivery_bl{
+    align-items:baseline
+}
+.delivery_item{
+    width:225px;
+    padding:0 5px
+}
+.delivery_item .icon{
+    margin-bottom:15px
+}
+.delivery_item_text p{
+    margin-top:8px;
+    line-height:1.3
+}
+.delivery_item:nth-child(1).icon{
+    margin-left:20px
+}
+.reviews{
+    padding-top:75px;
+    padding-bottom:83px
+}
+.reviews_item{
+    width:340px!important;
+    padding:100px 28px 50px;
+    margin:0 25px;
+    border:1px solid #ededed;
+    -webkit-box-shadow:0 0 56px 14px rgba(237,237,237,1);
+    -moz-box-shadow:0 0 56px 14px rgba(237,237,237,1);
+    box-shadow:0 0 56px 14px rgba(237,237,237,1)
+}
+.reviews_item::before{
+    content:'';
+    top:-80px;
+    left:90px;
+    height:165px;
+    width:165px;
+    background:url(../img/reviews_item1.png)no-repeat;
+    border:1px solid #f5f5f5;
+    border-radius:50%;
+    -webkit-box-shadow:-1px -16px 94px -8px rgba(237,237,237,1);
+    -moz-box-shadow:-1px -16px 94px -8px rgba(237,237,237,1);
+    box-shadow:-1px -16px 94px -8px rgba(237,237,237,1)
+}
+.reviews_item:nth-child(2)::before{
+    background:url(../img/reviews_item2.png)no-repeat
+}
+.reviews_item:nth-child(3)::before{
+    background:url(../img/reviews_item3.png)no-repeat
+}
+.name_text,.years{
+    margin-bottom:21px
+}
+.name_text p{
+    margin-bottom
+}
+.years p{
+    font-family:"Raleway Semi Bold",sans-serif
+}
+.certificates,.sale_two_block{
+    padding-top:85px
+}
+.certificates{
+    padding-bottom:85px
+}
+.s2 .swiper-slide{
+    margin:0 23px;
+    width:255px!important
+}
+.s2 .swiper-slide:nth-child(1){
+    margin-left:0
+}
+.swiper-slide-1:nth-child(1){
+    margin-left:0
+}
+.swiper-slide-2:nth-child(1){
+    margin-left:0
+}
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+    background:#ad4b21!important
+}
+.swiper-button-prev{
+    top:42%!important;
+    left:0;
+    background:url(../img/prev_arr.png)no-repeat
+}
+.swiper-button-next{
+    top:42%!important;
+    right:0;
+    background:url(../img/next_arr.png)no-repeat
+}
+.swiper-button-prev,.swiper-button-next,.menuToggle,.info_text_mobile,.s3,.mobile_quality_icon,.quality_text_right_mobile,.hidden{
+    display:none
+}
+.sale_two_block{
+    padding-bottom:80px
+}
+.text_timer2,.footer_bl{
+    font-size:14px
+}
+.text_timer2{
+    color:#ccc;
+    margin:0 33px 16px
+}
+#footer{
+    padding-top:17px;
+    padding-bottom:13px
+}
+.footer_bl{
+    color:#696a6a
+}
+.footer_bl p span{
+    font-weight:500
+}
+.footer_bl p{
+    font-weight:300
+}
+#pop{
+    font-size:25px;
+    color:#363133;
+    line-height:32px;
+    width:500px;
+    padding:20px 30px 30px
+}
+#pop h2{
+    font-size:45px
+}
+.menuToggle span{
+    display:block;
+    width:100%;
+    height:3px;
+    margin-bottom:5px
+}
+*:-ms-input-placeholder,*:-moz-placeholder,*::-moz-placeholder,*::-webkit-input-placeholder{
+    color:#666;
+    opacity:1
+}
+*:after,*:before,*{
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box
+}
+.quality_item_left:last-child{
+    margin-bottom:0
+}
+.quality_item_right:last-child{
+    margin-bottom:0
+}
+.delivery h2,.advantages h2{
+    margin-bottom:70px
+}
+.sneakers_two{
+    margin-right:0
+}
+.s2 .swiper-slide:nth-child(4){
+    margin-right:0
+}
+.swiper-button-prev,.swiper-button-next{
+    background-size:20px 32px!important
+}
+@media only screen and (max-width:1200px){
+    .list li{
+        font-size:15px
+    }
+    .sneakers_one_text h2{
+        font-size:36px
+    }
+    .sneakers_two_text h1{
+        font-size:63px
+    }
+    .text_form_one{
+        font-size:33px
+    }
+    .sneakers_one{
+        min-width:705px
+    }
+    .text_form_two{
+        margin-top:15px
+    }
+    .countdown{
+        font-size:58px
+    }
+    .text_characteristics{
+        width:500px
+    }
+    .quality_item_right:nth-child(2){
+        margin-bottom:35px
+    }
+    .advantages_item{
+        width:540px
+    }
+    .s2 .swiper-slide{
+        width:235px!important
+    }
+    #form2,#form1{
+        margin-top:0
+    }
+    .text_characteristics p span{
+        font-size:14px
+    }
+    .text_characteristics p{
+        font-size:14px
+    }
+}
+@media only screen and (max-width:1145px){
+    .list li{
+        margin-right:25px
+    }
+    .sneakers_one{
+        min-width:650px
+    }
+    .sneakers_one_text h2{
+        font-size:31px
+    }
+    .sneakers_two_text h1{
+        font-size:54px
+    }
+    .sneakers_two_text h1 span{
+        font-size:60px
+    }
+    .text_form_one{
+        font-size:30px
+    }
+    .characteristics .icon{
+        width:530px
+    }
+    .quality_item_text{
+        font-size:20px
+    }
+    .quality_item_left{
+        text-align:right;
+        margin-bottom:10px;
+        width:260px
+    }
+    .quality_item_right{
+        margin-bottom:10px;
+        width:260px;
+        text-align:left
+    }
+    .quality_item_right:nth-child(2){
+        margin-bottom:30px
+    }
+    .quality h3{
+        font-size:28px
+    }
+    .info_text{
+        width:390px;
+        margin-left:23px;
+        padding-right:10px
+    }
+    .price_one p{
+        font-size:26px
+    }
+    .price_two p{
+        font-size:35px
+    }
+    .price_one{
+        margin-right:26px
+    }
+    .description{
+        line-height:1.7
+    }
+    .advantages_item{
+        width:490px
+    }
+    .reviews_item{
+        width:330px
+    }
+    .s2 .swiper-slide{
+        width:225px!important
+    }
+    #form2,#form1{
+        margin-top:24px;
+        width:355px;
+        padding-right:31px;
+        padding-left:31px
+    }
+    #form2 button,#form2 input,#form1 button,#form1 input{
+        width:290px
+    }
+    .quality_text_left p{
+        font-size:15px
+    }
+    .quality_item_right p{
+        font-size:15px
+    }
+    .certificates h2,.advantages h2,.delivery h2,.reviews h2,.quality h2{
+        font-size:50px
+    }
+}
+@media only screen and (max-width:1085px){
+    .list li{
+        margin-right:20px
+    }
+    .list li,#form2 input,#form1 input,.quality_text_left p,.quality_item_right p{
+        font-size:14px
+    }
+    .sneakers_one{
+        min-width:563px
+    }
+    .sneakers_one_text h2{
+        font-size:28px
+    }
+    .sneakers_two_text h1{
+        font-size:47px
+    }
+    .sale_one_block{
+        padding-top:20px;
+        padding-bottom:45px
+    }
+    .characteristics{
+        padding-top:30px;
+        padding-bottom:52px
+    }
+    .text_characteristics{
+        width:390px
+    }
+    .info_text{
+        width:390px;
+        margin-left:0;
+        padding-right:10px;
+        margin-top:25px
+    }
+    .text_characteristics br{
+        display:none
+    }
+    .characteristics .icon{
+        width:485px
+    }
+    .quality_item_text{
+        font-size:18px
+    }
+    .quality_bl .icon{
+        margin-top:29px
+    }
+    .quality h2{
+        font-size:45px
+    }
+    .quality h3{
+        font-size:25px
+    }
+    .info_bl,.reviews_bl{
+        display:flex;
+        flex-wrap:wrap
+    }
+    .info_bl{
+      
+        flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+    .advantages,.info,.quality{
+        padding-top:50px
+    }
+    .advantages{
+        padding-bottom:25px
+    }
+    .advantages_item{
+        width:435px
+    }
+    .advantages_item_text span{
+        font-size:22px
+    }
+    .reviews h2,.certificates h2,.delivery h2,.advantages h2{
+        font-size:40px
+    }
+    .reviews h2{
+        margin-bottom:25px
+    }
+    .delivery{
+        padding-top:40px;
+        padding-bottom:60px
+    }
+    .delivery_item_text span{
+        font-size:20px
+    }
+    .reviews_bl{
+        justify-content:space-around
+    }
+    .reviews_item{
+        width:330px;
+        margin:55px
+    }
+    .sneakers_two{
+        margin-right:0;
+        width:563px
+    }
+    .s2 .swiper-wrapper{
+        justify-content:space-between
+    }
+    .s2{
+        width:225px
+    }
+    .s2,.s4,.s4 .swiper-slide{
+        margin:0 auto
+    }
+    .s2,.s4{
+        position:relative;
+        overflow:hidden;
+        list-style:none;
+        padding:0;
+        z-index:1
+    }
+    .certificates .swiper-container-horizontal > .swiper-pagination-progressbar{
+        width:100%;
+        height:4px;
+        left:0;
+        margin-top:20px;
+        bottom:0
+    }
+    .s2 .swiper-slide,.s4 .swiper-slide{
+        width:100%!important
+    }
+    .s2 .swiper-slide{
+        margin:0
+    }
+    .s2 .swiper-slide,.s4 .swiper-slide,.certificates h2,.delivery h2,.advantages h2{
+        margin-bottom:45px
+    }
+    .s4{
+        width:340px
+    }
+    .s4 .swiper-slide{
+        margin-top:100px
+    }
+    #form2 input,#form1 input,#form2 button,#form1 button{
+        width:290px
+    }
+    #form2 input{
+        height:45px
+    }
+    #form1 input{
+        height:45px
+    }
+    #form2 button{
+        height:47px
+    }
+    #form1 button{
+        height:47px
+    }
+    .text_characteristics p span{
+        line-height:1.6
+    }
+    .text_characteristics p{
+        line-height:1.6
+    }
+    .quality_item_right{
+        width:230px
+    }
+    .quality_item_left{
+        width:230px
+    }
+    .info,.quality{
+        padding-bottom:50px
+    }
+    .delivery_item_text p{
+        font-size:15px
+    }
+    .advantages_item_text p{
+        font-size:15px
+    }
+    .swiper-button-next{
+        display:block
+    }
+    .swiper-button-prev{
+        display:block
+    }
+}
+@media only screen and (max-width:980px){
+    .menuToggle,.list li a,.mobile_quality_icon,.s3,.info_text_mobile,.advantages_item,.price,.quality_bl{
+        display:block
+    }
+    .menuToggle{
+        cursor:pointer
+    }
+    ul.list-header{
+        margin:0;
+        position:absolute;
+        top:81px;
+        right:0;
+        z-index:9999;
+        background:#f2f1f1;
+        line-height:30px;
+        transform:translate3d(0,0,1px);
+        color:#ad4b21
+    }
+    .s2 .swiper-slide{
+        margin:0;
+        width:100%!important
+    }
+    ul.list-header,.list-header li,.text_characteristics,.swiper-container-horizontal > .swiper-pagination-progressbar,.certificates .swiper-container-horizontal > .swiper-pagination-progressbar,.advantages_item,.delivery_item,.sneakers_two,#pop{
+        width:100%
+    }
+    ul.list-header,.sale_one_bl,.info_text,.advantages_item,.delivery_item,.sneakers_two,.quality_text_right_mobile,.quality_text_left,.characteristics_bl,.flex_container,.quality_item_right,.quality_item_left{
+        text-align:center
+    }
+    ul.list-header,.info_text h2,.quality_text_right,.slider_block,.full_size_quality_icon{
+        display:none
+    }
+    .list-header li{
+        margin:00px
+    }
+    .list li a{
+        font-size:14px;
+        padding-bottom:0;
+        padding:4px 0;
+        transition:background 0.3s
+    }
+    .list li a:hover{
+        background:#ad4b21;
+        color:#fff
+    }
+    .sale_one_bl,.delivery_bl,.sale_two_bl,.quality_text_right_mobile,.quality_text_left,.characteristics_bl,.flex_container{
+        display:flex
+    }
+    .sale_one_bl{
+        justify-content:space-between
+    }
+    .sale_one_bl,.sale_two_bl,.characteristics_bl,.flex_container{
+        align-items:center
+    }
+    .sneakers_two_text h1{
+        font-size:29px
+    }
+    .sneakers_two_text h1 span{
+        font-size:40px
+    }
+    .sneakers_one_text h2{
+        font-size:27px
+    }
+    .sneakers_one{
+        min-width:100px
+    }
+    #form1{
+        width:350px;
+        margin-top:0
+    }
+    .quality_bl .icon{
+        margin-top:0;
+        margin-left:0
+    }
+    #form2{
+        margin-top:50px;
+        order:2
+    }
+    .quality h2{
+        font-size:35px
+    }
+    .quality h3{
+        font-size:20px
+    }
+    .container{
+        padding:0 25px
+    }
+    .mobile_quality_icon{
+        width:570px
+    }
+    .mobile_quality_icon,.s3,.s2,#pop{
+        margin:0 auto
+    }
+    .quality_bl .icon,.advantages_item .icon,.sneakers_two{
+        margin-right:0
+    }
+    .s3{
+        margin-bottom:40px;
+        width:472px
+    }
+    .s3,.s2{
+        position:relative;
+        overflow:hidden;
+        list-style:none;
+        padding:0;
+        z-index:1
+    }
+    .s2{
+        width:225px
+    }
+    .s2 .swiper-slide,.s3 .swiper-slide{
+        margin-bottom:45px
+    }
+    .swiper-container-horizontal > .swiper-pagination-progressbar{
+        height:4px;
+        left:0;
+        margin-top:20px
+    }
+    .certificates .swiper-container-horizontal > .swiper-pagination-progressbar{
+        height:4px;
+        left:0;
+        margin-top:20px;
+        top:330px
+    }
+    .info_text,.advantages_item{
+        padding-right:0
+    }
+    .price_one{
+        margin-left:26px
+    }
+    .info_text_mobile{
+        font-size:36px;
+        margin-bottom:20px;
+        font-family:"Raleway Extra Bold",sans-serif;
+        text-align: center;
+    }
+    .advantages_item{
+        margin-bottom:35px
+    }
+    .advantages_item .icon{
+        margin-bottom:15px
+    }
+    .delivery_bl{
+        justify-content:space-around
+    }
+    .delivery_bl,.quality_text_right_mobile,.quality_text_left{
+        align-items:baseline
+    }
+    .delivery_bl,.sale_two_bl,.characteristics_bl,.flex_container{
+        flex-wrap:wrap
+    }
+    .delivery_item{
+        padding:0 115px;
+        margin:20px
+    }
+    .sale_two_bl,.quality_text_right_mobile,.quality_text_left,.characteristics_bl,.flex_container{
+        justify-content:center
+    }
+    #pop{
+        padding:20px;
+        font-size:19px
+    }
+    .quality_item_right{
+        width:270px;
+        padding:0 15px;
+        margin-bottom:10px
+    }
+    .quality_item_left{
+        width:270px;
+        padding:0 15px;
+        margin-bottom:10px
+    }
+    .list li a,.list li a:hover{
+        border-bottom:0
+    }
+}
+@media only screen and (max-width:665px){
+    .sale_one_bl{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+        flex-wrap:wrap
+    }
+    #form1{
+        width:350px;
+        margin-top:50px
+    }
+}
+@media only screen and (max-width:650px){
+    .sneakers_one_text h2{
+        font-size:25px;
+        margin-bottom:15px
+    }
+    .sneakers_one{
+        min-width:100%;
+        margin:0
+    }
+    .sneakers_two_text h1{
+        font-size:29px
+    }
+    .sneakers_two_text h1 span{
+        font-size:40px
+    }
+}
+@media only screen and (max-width:530px){
+    .sneakers_two_text h1{
+        font-size:25px
+    }
+    .sneakers_two_text h1 span{
+        font-size:35px
+    }
+    .text_form_one::before{
+        display:none
+    }
+    .countdown{
+        font-size:52px
+    }
+    .text_timer{
+        margin:0 22px 16px 37px
+    }
+    .text_form_two{
+        margin-top:0
+    }
+    .text_timer2{
+        margin:0 18px 16px 33px
+    }
+    .s3 .swiper-slide{
+        margin-bottom:22px
+    }
+    .reviews_item,#form2,#form1{
+        width:330px
+    }
+    .reviews_item{
+        margin:55px 0
+    }
+    .reviews_item::before{
+        left:80px
+    }
+    .text_characteristics h3{
+        font-size:33px
+    }
+    .quality h2{
+        font-size:38px
+    }
+    .quality h3{
+        font-size:30px
+    }
+    .delivery_item{
+        width:100%;
+        text-align:center;
+        padding:0;
+        margin:20px 0
+    }
+    #form2,#form1{
+        padding-right:31px;
+        padding-left:31px
+    }
+    #form2 input,#form1 input,#form2 button,#form1 button{
+        width:262px
+    }
+    #form2 input{
+        height:45px
+    }
+    #form1 input{
+        height:45px
+    }
+    #form2 input,#form1 input{
+        font-size:14px
+    }
+    #form2 button{
+        height:47px
+    }
+    #form1 button{
+        height:47px
+    }
+    .quality_item_right{
+        margin-bottom:0
+    }
+    .quality_item_left{
+        margin-bottom:0
+    }
+}
+@media only screen and (max-width:450px){
+    .menuToggle{
+        width:35px;
+        height:19px
+    }
+    .quality_item_text{
+        font-size:16px
+    }
+    .quality_text_left p{
+        font-size:12px
+    }
+    .quality_item_right p{
+        font-size:12px
+    }
+    .quality_item_right{
+        margin-bottom:0;
+        padding:0 5px
+    }
+    .quality_item_left{
+        margin-bottom:0;
+        padding:0 5px
+    }
+}
+@media only screen and (max-width:390px){
+    .zoom{
+        display:none
+    }
+    .container{
+        padding:0 10px
+    }
+    .sneakers_one_text h2{
+        font-size:22px;
+        margin-bottom:15px;
+        font-family:"Raleway Semi Bold",sans-serif
+    }
+    .text_characteristics h3{
+        font-size:36px
+    }
+    .characteristics .icon{
+        margin-top:25px
+    }
+    .quality h2{
+        font-size:48px
+    }
+    .advantages_item_text span{
+        font-size:24px
+    }
+    .sneakers_two_text h1 span{
+        font-size:29px
+    }
+    .sneakers_two_text h1{
+        font-size:29px
+    }
+    .text_characteristics p span{
+        font-size:16px
+    }
+    .text_characteristics p{
+        font-size:16px
+    }
+}
+@media only screen and (max-width:350px){
+    .container{
+        padding:0 5px
+    }
+    .advantages h2{
+        font-size:36px
+    }
+    .reviews_item,#form2,#form1{
+        width:320px
+    }
+    .s4{
+        width:100%
+    }
+    #form2,#form1{
+        padding-right:27px;
+        padding-left:27px
+    }
+}
+@media only screen and (max-width:320px){
+    .sneakers_two_text h1{
+        font-size:28px
+    }
+    .advantages h2{
+        font-size:34px
+    }
+    .logo{
+        margin-left:5px;
+        width:130px
+    }
+    .sneakers_one_text{
+        margin-bottom:-10px
+    }
+    .sale_one_block{
+        padding-top:46px;
+        padding-bottom:70px
+    }
+    .text_characteristics h3{
+        font-size:36px;
+        margin-bottom:27px
+    }
+    .quality h3{
+        font-size:30px;
+        padding:0 48px;
+        margin-bottom:22px
+    }
+    .quality{
+        padding-top:41px;
+        padding-bottom:40px
+    }
+    ul.list-header{
+        top:73px
+    }
+    .s4{
+        width:300px;
+        margin:0 auto;
+        position:relative;
+        overflow:hidden;
+        list-style:none;
+        padding:0;
+        z-index:1
+    }
+    #form2,#form1{
+        margin-top:30px;
+        padding-top:19px
+    }
+    .text_characteristics p span{
+        font-size:16px;
+        line-height:1.88
+    }
+    .text_characteristics p{
+        font-size:16px;
+        line-height:1.88
+    }
+}
+ 
+.gallery-thumbs .swiper-slide-1:nth-child(1){background:url(../img/small_one-2.jpg)no-repeat;}
+.gallery-thumbs .swiper-slide-1:nth-child(2){background:url(../img/small_two-1.jpg)no-repeat;}
+.gallery-thumbs .swiper-slide-1:nth-child(3){background:url(../img/small_three.jpg)no-repeat;}
+.gallery-thumbs .swiper-slide-1:nth-child(4){background:url(../img/small_four.jpg)no-repeat;}
+
+.gallery-thumbs .swiper-slide-2:nth-child(1){background:url(../img/small_one_1.jpg)no-repeat;}
+.gallery-thumbs .swiper-slide-2:nth-child(2){background:url(../img/small_two_1.jpg)no-repeat;}
+.gallery-thumbs .swiper-slide-2:nth-child(3){background:url(../img/small_three_1.jpg)no-repeat;}
+.gallery-thumbs .swiper-slide-2:nth-child(4){background:url(../img/small_four_1.jpg)no-repeat;}
+
+.gallery-thumbs .swiper-slide-3:nth-child(1){background:url(../img/small_one_2-1.jpg)no-repeat;}
+.gallery-thumbs .swiper-slide-3:nth-child(2){background:url(../img/small_two_2.jpg)no-repeat;}
+.gallery-thumbs .swiper-slide-3:nth-child(3){background:url(../img/small_three_2.jpg)no-repeat;}
+.gallery-thumbs .swiper-slide-3:nth-child(4){background:url(../img/small_four_2.jpg)no-repeat;}
+
+.gallery-thumbs .swiper-slide-4:nth-child(1){background:url(../img/small_one_2.jpg)no-repeat;}
+.gallery-thumbs .swiper-slide-4:nth-child(2){background:url(../img/small_two_2-1.jpg)no-repeat;}
+.gallery-thumbs .swiper-slide-4:nth-child(3){background:url(../img/small_three_2-1.jpg)no-repeat;}
+.gallery-thumbs .swiper-slide-4:nth-child(4){background:url(../img/small_four_2-1.jpg)no-repeat;}
+
+.gallery-thumbs .swiper-slide-5:nth-child(1){background:url(../img/small_one-1.jpg)no-repeat;}
+.gallery-thumbs .swiper-slide-5:nth-child(2){background:url(../img/small_two.jpg)no-repeat;}
+.gallery-thumbs .swiper-slide-5:nth-child(3){background:url(../img/small_three-1.jpg)no-repeat;}
+.gallery-thumbs .swiper-slide-5:nth-child(4){background:url(../img/small_four-1.jpg)no-repeat;}
+
+.gallery-thumbs .swiper-slide-6:nth-child(1){background:url(../img/small_one.jpg)no-repeat;}
+.gallery-thumbs .swiper-slide-6:nth-child(2){background:url(../img/small_two-2.jpg)no-repeat;}
+.gallery-thumbs .swiper-slide-6:nth-child(3){background:url(../img/small_three-2.jpg)no-repeat;}
+.gallery-thumbs .swiper-slide-6:nth-child(4){background:url(../img/small_four-2.jpg)no-repeat;}
+ .tov-cost{
+    position: relative;
+	text-align:center;    
+	margin:10px auto;
+    font-size: 21px;
+   
+}
+ .tov-cost span{
+    position: relative;
+    display: inline-block;
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+  .tov-cost .tov-old-cost{
+    text-align: center;
+   
+}
+ .tov-cost .tov-new-cost{
+    font-size: 24px;
+    font-weight: 700;
+    color: #ad4b21;
+}
+.clearfix:after{content: '';display: block;clear: both;}
