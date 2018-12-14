@@ -796,14 +796,28 @@ SaleBtn1.addEventListener("click" , function(){
       <script type="text/javascript">
         $(document).ready(function () {
           t724_init('70686957');
+var pop = document.getElementById('salepopUp');
+pop.style.opacity = '1';
+pop.style.display = 'block';
+
+var myclosewrap = document.getElementById('mycloseWrapper');
+
+myclosewrap.addEventListener('click', function(){
+  pop.style.opacity = '0';
+pop.style.display = 'none';
+})
+
+
         });
+
+
       </script>
 
 
     </div>
 
 
-    <div id="rec70687040" class="r t-rec" style=" " data-animationappear="off" data-record-type="316">
+    <div id="rec70687040" class="r t-rec" style="opacity: 1;" data-animationappear="off" data-record-type="316">
 
       <style>
         #rec70687040 input::-webkit-input-placeholder {color:#000000; opacity: 0.5;}
@@ -814,9 +828,9 @@ SaleBtn1.addEventListener("click" , function(){
 
 
       <div class="t281">
-        <div class="t-popup" data-tooltip-hook="#popup:rykzak4990" style="background-color: rgba(0,0,0,0.60);">
+        <div class="t-popup" id="salepopUp" data-tooltip-hook="#popup:rykzak4990" style="background-color: rgba(0,0,0,0.60); ">
           <div class="t-popup__close">
-            <div class="t-popup__close-wrapper">
+            <div class="t-popup__close-wrapper" id="mycloseWrapper">
               <svg class="t-popup__close-icon" width="23px" height="23px" viewBox="0 0 23 23" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
                 <g stroke="none" stroke-width="1" fill="#fff" fill-rule="evenodd">
@@ -828,8 +842,10 @@ SaleBtn1.addEventListener("click" , function(){
               </svg>
             </div>
           </div>
-          <div class="t-popup__container t-width t-width_6" style="background-color:#ffffff;">
-            <img class="t281__img t-img" src="https://static.tildacdn.com/tild6161-3435-4364-b138-353663616162/_4990-2-min.jpg"
+          <div class="t-popup__container t-width t-width_9" style="background:url('img/aktsia_1.jpg') no-repeat center / cover; margin-top:-150px;">
+            <img src="img/aktsia_1.jpg" alt="" style="width:100%; height:auto;">
+            
+            <!-- <img class="t281__img t-img" src="https://static.tildacdn.com/tild6161-3435-4364-b138-353663616162/_4990-2-min.jpg"
               imgfield="img">
             <div class="t281__wrapper t-align_left" style="background-color:#ffffff;">
               <div class="t281__title t-title t-title_xxs" style="">Будьте с нами и получайте подарки!</div>
@@ -885,7 +901,7 @@ SaleBtn1.addEventListener("click" , function(){
                   </div>
                 </div>
               </form>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -3555,9 +3571,7 @@ SaleBtn1.addEventListener("click" , function(){
                     </div>
                  
                   </div>
-                  <div class="t778__btn-wrapper">
-                    <a href="#order" target="" class="t778__btn t-btn t-btn_sm" style="color:#000000;border:1px solid #000000;background-color:#fff705;border-radius:6px; -moz-border-radius:6px; -webkit-border-radius:6px;"><table style="width:100%; height:100%;"><tbody><tr><td>Записаться на примерку</td></tr></tbody></table></a>
-                  </div>
+                 
 
                   
                   <div class="t778__descr t-descr t-descr_xxs">
@@ -12820,9 +12834,9 @@ $(this).siblings('.content').slideDown(200);
           </div>
 
           <div class="order__heading">Размерная сетка</div>
-          <div class="order__text" style="margin:30px 0px; margin-top:0px;">
+          <div class="order__text" style="margin:30px 0px; margin-top:0px; width: 100%;">
            
-            Размерный ряд от 38 до 54 размера (до 112 см в объёме груди и до 118 см в объеме бедер) </br> </br>
+            Размерный ряд от 38 до 54 размера (до 112 см в объёме груди и до 118 см в объеме бедер) </br> 
               Возможен индивидуальный пошив по вашим меркам. 
              
           </div>
@@ -13574,39 +13588,147 @@ $(this).siblings('.content').slideDown(200);
       </div>
 
 
-
-
-      <div id="rec35511454" class="r t-rec t-rec_pt_90 t-rec_pb_30" style="padding-top:90px;padding-bottom:30px;background-color:#f0f0f0; "
-        data-record-type="33" data-bg-color="#f0f0f0">
-        <!-- T017 -->
-        <div class="t017">
-          <div class="t-container t-align_center">
-            <div class="t-col t-col_10 t-prefix_1">
-              <div class="t017__title t-title t-title_xxs" field="title" style="">
-
-                  <div class="t-section__container t-container">
-                      <div class="t-col t-col_12">
-                        <div class="t-section__topwrapper t-align_center">
-                          <h3 class="t-section__title t-title t-title_xs" field="btitle"> Контакты<br>
-            
-                           
-                          </h3>
-                        </div>
-                      </div>
-                    </div>
-                <div style="    font-size: 23px;
-                text-align: left;" data-customstyle="yes"> 
-                    За подробной консультацией вы всегда можете обратиться по телефону 8-921-764-40-08.</br>
-                     Доступны мессенджеры Viber/WhatsApp. </br>Или написать сообщение vk.com/korepinaolga. 
-                    Присоединяйтесь к нам в социальных сетях: </br> </br>
-                    группа ВК: <a href="https://vk.com/eco_shubki_vologda">vk.com/eco_shubki_vologda</a>  </br>
-                    Instagram: @eco_frienfly_fur
-                    </div>
+  <div id="rec35511453" class="r t-rec t-rec_pt_150 t-rec_pb_150 r_anim r_showed" style="padding-top:0px;padding-bottom:150px; " data-record-type="718">
+          <!-- t718 -->
+          <div class="t718">
+                <div class="t-section__container t-container">
+              <div class="t-col t-col_12">
+                <div class="t-section__topwrapper t-align_center">
+                  <div class="t-section__title t-title t-title_xs" field="btitle">Остались вопросы или <br>не можете определится с выбором шубы?</div>				<div class="t-section__descr t-descr t-descr_xl t-margin_auto" field="bdescr">Звоните или пишите в мессенджеры, наш менеджер всегда готов ответить на ваши вопросы и дать подробную консультацию</div>			</div>
               </div>
             </div>
-          </div>
-        </div>
+                <div class="t-container">
+              <div class="t-col t-col_5 t-prefix_1">
+<div class="t718__contentbox" style="height:;">
+  <div class="t718__contentwrapper">
+    <div class="t718__contacts t-text t-descr_xxxl" style="" field="text"><span style="font-size: 20px;">Тел / Whatsapp
+        / Viber / Telegram</span><br><strong><span data-redactor-tag="span" style="font-size: 36px;"><strong>+7 (921)
+            764-40-08</strong> </span></strong></div>
+            VK: vk.com/eco_shubki_vologda 
+            Instagram: eco_friendly_fur
+            E-mail: eco-mex@mail.ru
+
+
+
+    <div class="t718__address t-text t-text_sm" style="" field="text2">
+      <div style="font-size:22px;line-height:30px;" data-customstyle="yes">
+      
+        <strong><span style="font-size: 26px;" data-redactor-tag="span">VK: </span></strong> <a href="https://vk.com/eco_shubki_vologda">vk.com/eco_shubki_vologda</a> <br>
+        <strong><span style="font-size: 26px;" data-redactor-tag="span">Instagram: </span></strong> <a href="https://www.instagram.com/eco_friendly_fur/">eco_friendly_fur</a> <br>
+        <strong><span style="font-size: 26px;" data-redactor-tag="span">E-mail: </span></strong> <a href="mailto:eco-mex@mail.ru"> eco-mex@mail.ru</a><br>
+        <!-- <strong></strong><br>БЦ Omega Plaza (м. Автозаводская)<br><br>
+        Реально 2 минуты от метро<br><br> -->
       </div>
+    </div>
+  </div>
+</div>
+              </div>
+              <div class="t-col t-col_5  ">
+                                                                                                      
+              <form id="form35511453" name="form35511453" role="form" action="" method="POST" data-formactiontype="2" data-inputbox=".t-input-group" data-success-url="http://shubyange.ru/thank-you-page" class="t-form js-form-proccess t-form_inputs-total_3  " data-success-callback="t718_onSuccess">
+            
+                                                            <input type="hidden" name="formservices[]" value="25961db19c69c0e1d1b711a5179ec83b" class="js-formaction-services">
+                                          <input type="hidden" name="formservices[]" value="7875e9ac7b6a9242ad6d70fd1d216db3" class="js-formaction-services">
+                                          <input type="hidden" name="formservices[]" value="e5998cdd9a4a6229c7a1961b6cb20fa0" class="js-formaction-services">
+                                          <input type="hidden" name="formservices[]" value="f009ff1d5715c71f98559255899cf644" class="js-formaction-services">
+                                          <input type="hidden" name="formservices[]" value="14c1cf15ad2b63916430cb8a3a11b01b" class="js-formaction-services">
+                                  
+                                      <input type="hidden" name="tildaspec-formname" tabindex="-1" value="Форма в подвале &quot;Остались вопросы&quot;">
+                      
+                      <div class="js-successbox t-form__successbox t-text t-text_md" style="display:none;"></div>
+          
+                      <div class="t-form__inputsbox">
+          
+                                                                                                                  
+                                                    <div class="t-input-group t-input-group_ph" data-input-lid="1496238230199">
+                                                                                        <div class="t-input-block">
+                                                                    <input type="tel" name="Phone" class="t-input js-tilda-rule js-tilda-mask " value="" placeholder="Введите телефон" data-tilda-req="1" data-tilda-rule="phone" pattern="[0-9]*+" data-tilda-mask="+7 (999) 999-9999" style=" border:1px solid #c7c7c7;  ">                                                
+                                                  <div class="t-input-error"></div>
+                                    </div>
+                            </div>
+          
+                                                                          
+                                                    <div class="t-input-group t-input-group_nm" data-input-lid="1496238250184">
+                                                                                        <div class="t-input-block">
+                                                                    <input type="text" name="Name" class="t-input js-tilda-rule " value="" placeholder="Введите имя" data-tilda-rule="name" style=" border:1px solid #c7c7c7;  ">
+                                                  <div class="t-input-error"></div>
+                                    </div>
+                            </div>
+          
+                                                                          
+                                                    <div class="t-input-group t-input-group_ta" data-input-lid="1496238259342">
+                                                                                        <div class="t-input-block">
+                                                                    <textarea name="Textarea" class="t-input js-tilda-rule " placeholder="Ваш вопрос или пожелания..." style=" border:1px solid #c7c7c7;  height:102px" rows="3"></textarea>
+                                                  <div class="t-input-error"></div>
+                                    </div>
+                            </div>
+          
+                                          
+                          
+                  
+                  
+                  <div class="t-form__errorbox-middle">
+                                    <div class="js-errorbox-all t-form__errorbox-wrapper" style="display:none;">
+                              <div class="t-form__errorbox-text t-text t-text_md">
+                                  <p class="t-form__errorbox-item js-rule-error js-rule-error-all"></p>
+                                  <p class="t-form__errorbox-item js-rule-error js-rule-error-req"></p>
+                                  <p class="t-form__errorbox-item js-rule-error js-rule-error-email"></p>
+                                  <p class="t-form__errorbox-item js-rule-error js-rule-error-name"></p>
+                                  <p class="t-form__errorbox-item js-rule-error js-rule-error-phone"></p>
+                                  <p class="t-form__errorbox-item js-rule-error js-rule-error-string"></p>
+                              </div>
+                          </div>				</div>
+          
+                          <div class="t-form__submit">
+                              <button type="submit" class="t-submit" style="color:#000000;border:2px solid #000000;background-color:#fff705;border-radius:30px; -moz-border-radius:30px; -webkit-border-radius:30px;">Отправить</button>
+                          </div>
+          
+                      </div>
+          
+                      <div class="t-form__errorbox-bottom">
+                                        <div class="js-errorbox-all t-form__errorbox-wrapper" style="display:none;">
+                              <div class="t-form__errorbox-text t-text t-text_md">
+                                  <p class="t-form__errorbox-item js-rule-error js-rule-error-all"></p>
+                                  <p class="t-form__errorbox-item js-rule-error js-rule-error-req"></p>
+                                  <p class="t-form__errorbox-item js-rule-error js-rule-error-email"></p>
+                                  <p class="t-form__errorbox-item js-rule-error js-rule-error-name"></p>
+                                  <p class="t-form__errorbox-item js-rule-error js-rule-error-phone"></p>
+                                  <p class="t-form__errorbox-item js-rule-error js-rule-error-string"></p>
+                              </div>
+                          </div>            </div>
+          
+          
+              <div style="position: absolute; left: -5000px; bottom:0;"><input type="text" name="form-spec-comments" value="Its good" class="js-form-spec-comments" tabindex="-1"></div></form>
+          
+          
+                  <div class="t718__form-bottom-text t-text t-text_xs" field="text3">Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь c политикой конфиденциальности.</div>    </div>
+            </div>
+          </div>
+          
+              
+              
+          
+              
+              
+              
+            
+            <style>
+            #rec35511453 .t-submit:hover{
+              background-color: #e8e403 !important;
+              
+              
+              
+            }	
+            #rec35511453 .t-submit{
+              -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out; transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            }
+            </style>
+            
+            
+          
+          </div>
+
+     
 
       <div id="rec70607642" class="r t-rec" style=" " data-animationappear="off" data-record-type="396">
         <!-- T396 -->
@@ -13934,145 +14056,7 @@ $(this).siblings('.content').slideDown(200);
         </div>
      
 
-        <div id="rec35511453" class="r t-rec t-rec_pt_150 t-rec_pb_150 r_anim r_showed" style="padding-top:150px;padding-bottom:150px; " data-record-type="718">
-          <!-- t718 -->
-          <div class="t718">
-                <div class="t-section__container t-container">
-              <div class="t-col t-col_12">
-                <div class="t-section__topwrapper t-align_center">
-                  <div class="t-section__title t-title t-title_xs" field="btitle">Остались вопросы или <br>не можете определится с выбором шубы?</div>				<div class="t-section__descr t-descr t-descr_xl t-margin_auto" field="bdescr">Звоните или пишите в мессенджеры, наш менеджер всегда готов ответить на ваши вопросы и дать подробную консультацию</div>			</div>
-              </div>
-            </div>
-                <div class="t-container">
-              <div class="t-col t-col_5 t-prefix_1">
-<div class="t718__contentbox" style="height:;">
-  <div class="t718__contentwrapper">
-    <div class="t718__contacts t-text t-descr_xxxl" style="" field="text"><span style="font-size: 20px;">Тел / Whatsapp
-        / Viber / Telegram</span><br><strong><span data-redactor-tag="span" style="font-size: 36px;"><strong>+7 (921)
-            764-40-08</strong> </span></strong></div>
-            VK: vk.com/eco_shubki_vologda 
-            Instagram: eco_friendly_fur
-            E-mail: eco-mex@mail.ru
-
-
-
-    <div class="t718__address t-text t-text_sm" style="" field="text2">
-      <div style="font-size:22px;line-height:30px;" data-customstyle="yes">
       
-        <strong><span style="font-size: 26px;" data-redactor-tag="span">VK: </span></strong> <a href="https://vk.com/eco_shubki_vologda">vk.com/eco_shubki_vologda</a> <br>
-        <strong><span style="font-size: 26px;" data-redactor-tag="span">Instagram: </span></strong> <a href="https://www.instagram.com/eco_friendly_fur/">eco_friendly_fur</a> <br>
-        <strong><span style="font-size: 26px;" data-redactor-tag="span">E-mail: </span></strong> <a href="mailto:eco-mex@mail.ru"> eco-mex@mail.ru</a><br>
-        <!-- <strong></strong><br>БЦ Omega Plaza (м. Автозаводская)<br><br>
-        Реально 2 минуты от метро<br><br> -->
-      </div>
-    </div>
-  </div>
-</div>
-              </div>
-              <div class="t-col t-col_5  ">
-                                                                                                      
-              <form id="form35511453" name="form35511453" role="form" action="" method="POST" data-formactiontype="2" data-inputbox=".t-input-group" data-success-url="http://shubyange.ru/thank-you-page" class="t-form js-form-proccess t-form_inputs-total_3  " data-success-callback="t718_onSuccess">
-            
-                                                            <input type="hidden" name="formservices[]" value="25961db19c69c0e1d1b711a5179ec83b" class="js-formaction-services">
-                                          <input type="hidden" name="formservices[]" value="7875e9ac7b6a9242ad6d70fd1d216db3" class="js-formaction-services">
-                                          <input type="hidden" name="formservices[]" value="e5998cdd9a4a6229c7a1961b6cb20fa0" class="js-formaction-services">
-                                          <input type="hidden" name="formservices[]" value="f009ff1d5715c71f98559255899cf644" class="js-formaction-services">
-                                          <input type="hidden" name="formservices[]" value="14c1cf15ad2b63916430cb8a3a11b01b" class="js-formaction-services">
-                                  
-                                      <input type="hidden" name="tildaspec-formname" tabindex="-1" value="Форма в подвале &quot;Остались вопросы&quot;">
-                      
-                      <div class="js-successbox t-form__successbox t-text t-text_md" style="display:none;"></div>
-          
-                      <div class="t-form__inputsbox">
-          
-                                                                                                                  
-                                                    <div class="t-input-group t-input-group_ph" data-input-lid="1496238230199">
-                                                                                        <div class="t-input-block">
-                                                                    <input type="tel" name="Phone" class="t-input js-tilda-rule js-tilda-mask " value="" placeholder="Введите телефон" data-tilda-req="1" data-tilda-rule="phone" pattern="[0-9]*+" data-tilda-mask="+7 (999) 999-9999" style=" border:1px solid #c7c7c7;  ">                                                
-                                                  <div class="t-input-error"></div>
-                                    </div>
-                            </div>
-          
-                                                                          
-                                                    <div class="t-input-group t-input-group_nm" data-input-lid="1496238250184">
-                                                                                        <div class="t-input-block">
-                                                                    <input type="text" name="Name" class="t-input js-tilda-rule " value="" placeholder="Введите имя" data-tilda-rule="name" style=" border:1px solid #c7c7c7;  ">
-                                                  <div class="t-input-error"></div>
-                                    </div>
-                            </div>
-          
-                                                                          
-                                                    <div class="t-input-group t-input-group_ta" data-input-lid="1496238259342">
-                                                                                        <div class="t-input-block">
-                                                                    <textarea name="Textarea" class="t-input js-tilda-rule " placeholder="Ваш вопрос или пожелания..." style=" border:1px solid #c7c7c7;  height:102px" rows="3"></textarea>
-                                                  <div class="t-input-error"></div>
-                                    </div>
-                            </div>
-          
-                                          
-                          
-                  
-                  
-                  <div class="t-form__errorbox-middle">
-                                    <div class="js-errorbox-all t-form__errorbox-wrapper" style="display:none;">
-                              <div class="t-form__errorbox-text t-text t-text_md">
-                                  <p class="t-form__errorbox-item js-rule-error js-rule-error-all"></p>
-                                  <p class="t-form__errorbox-item js-rule-error js-rule-error-req"></p>
-                                  <p class="t-form__errorbox-item js-rule-error js-rule-error-email"></p>
-                                  <p class="t-form__errorbox-item js-rule-error js-rule-error-name"></p>
-                                  <p class="t-form__errorbox-item js-rule-error js-rule-error-phone"></p>
-                                  <p class="t-form__errorbox-item js-rule-error js-rule-error-string"></p>
-                              </div>
-                          </div>				</div>
-          
-                          <div class="t-form__submit">
-                              <button type="submit" class="t-submit" style="color:#000000;border:2px solid #000000;background-color:#fff705;border-radius:30px; -moz-border-radius:30px; -webkit-border-radius:30px;">Отправить</button>
-                          </div>
-          
-                      </div>
-          
-                      <div class="t-form__errorbox-bottom">
-                                        <div class="js-errorbox-all t-form__errorbox-wrapper" style="display:none;">
-                              <div class="t-form__errorbox-text t-text t-text_md">
-                                  <p class="t-form__errorbox-item js-rule-error js-rule-error-all"></p>
-                                  <p class="t-form__errorbox-item js-rule-error js-rule-error-req"></p>
-                                  <p class="t-form__errorbox-item js-rule-error js-rule-error-email"></p>
-                                  <p class="t-form__errorbox-item js-rule-error js-rule-error-name"></p>
-                                  <p class="t-form__errorbox-item js-rule-error js-rule-error-phone"></p>
-                                  <p class="t-form__errorbox-item js-rule-error js-rule-error-string"></p>
-                              </div>
-                          </div>            </div>
-          
-          
-              <div style="position: absolute; left: -5000px; bottom:0;"><input type="text" name="form-spec-comments" value="Its good" class="js-form-spec-comments" tabindex="-1"></div></form>
-          
-          
-                  <div class="t718__form-bottom-text t-text t-text_xs" field="text3">Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь c политикой конфиденциальности.</div>    </div>
-            </div>
-          </div>
-          
-              
-              
-          
-              
-              
-              
-            
-            <style>
-            #rec35511453 .t-submit:hover{
-              background-color: #e8e403 !important;
-              
-              
-              
-            }	
-            #rec35511453 .t-submit{
-              -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out; transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-            }
-            </style>
-            
-            
-          
-          </div>
       
     </div>
     <!--/footer-->
