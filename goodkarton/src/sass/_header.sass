@@ -1,0 +1,63 @@
+.header
+  &__top-wrap
+    padding-top: 59px
+    padding-bottom: 15px
+    display: flex
+    align-items: center
+    // @media (max-width: 768px)
+
+      
+  &__contacts
+    display: flex
+    font-size: 22px
+    color: $text-color-dark
+    text-transform: uppercase
+    @media (max-width: 990px)
+      font-size: 20px
+    @media (max-width: 768px)
+      font-size: 15px
+      display: block
+      border-right: 1px solid #cfcfd0
+      
+      
+  &__phone
+    &:nth-child(1)
+      border-right: 1px solid #cfcfd0
+      padding-right: 14px
+      margin-right: 14px
+      @media (max-width: 990px)
+        padding-right: 5px
+        margin-right: 1px
+      @media (max-width: 768px)
+  
+        border-right: none
+  &__call
+    margin-left: 30px
+    @media (max-width: 768px)
+      display: none
+    &-mobile
+      display: none
+      padding: 10px 14px
+      @media (max-width: 768px)
+        display: block
+        
+    
+    @media (max-width: 990px)
+      margin-left: 10px
+    img
+      height: 20px
+      width: auto
+
+
+@keyframes move
+  0%
+    opacity: 0
+    transform: rotateY(90deg)
+ 
+  100%
+    transform: rotateY(0deg)
+    opacity: 1
+.boxAnimate
+  animation-delay: 0.4s
+  animation-name: move
+  animation-duration: 1s

@@ -1,0 +1,41 @@
+.testimonials
+    img
+        display: block
+        padding: 10px 50px
+        @media (max-width: 774px)
+            padding: 0
+
+    &__slider
+        position: relative
+  
+
+        .slick-prev 
+            left: 0
+            margin-right: 10px
+            transform: rotate(180deg) translateY(50%)
+            background: url('../img/testimonials/next.png') no-repeat center center
+         
+        .slick-next
+            transform: translateY(-50%)
+            right: 0
+            margin-left: 10px
+            background: url('../img/testimonials/next.png') no-repeat center center
+
+        .slick-arrow
+            top: 50%
+            height: 63px
+            
+            width: 40px
+            position: absolute
+            z-index: 10000
+            outline: none
+            // background: transparent
+       
+            cursor: pointer
+            border: none 
+         
+
+            &:hover
+                // background-color: $akcent 
+            &:hover:before
+                color: #ffffff

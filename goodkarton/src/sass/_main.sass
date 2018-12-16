@@ -1,0 +1,98 @@
+.main
+  background: url('../img/main/bgTop.jpg') no-repeat center center
+  background-size: cover
+  position: relative
+  &:before
+      content: ""
+      position: absolute
+      top: 0
+      bottom: 0
+      left: 0
+      right: 0
+      z-index: 1
+      background: rgba(#000000, 0.5)
+  &__wrap 
+    position: relative
+    z-index: 2
+    height: 531px
+    
+    display: flex
+    align-items: center
+    @media (max-width: 776px )
+      height: auto
+  &__image
+    width: 50%
+    margin-left: -130px
+    position: relative
+    z-index: 2
+    @media (max-width: 776px )
+      display: none
+    &_mobi
+      display: none
+      width: 100%
+      margin: 0 auto
+      @media (max-width: 776px )
+        display: block
+    
+    &:before
+        content: ""
+        position: absolute
+  
+        border: 1px solid #616161
+        
+        border-radius: 50%
+        z-index: -1
+        top: -20px
+        left: 5px
+        right: 5px
+        bottom: -20px
+  &__right
+    margin-left: 33px
+    width: 50%
+    @media (max-width: 776px )
+      width: 100%
+      margin-left: 0px
+  &__form-wrap
+    padding: 30px
+    width: 535px
+    @media (max-width: 776px )
+      width: 100%
+      margin-left: 0px
+    
+    margin-top: 25px
+    background-color: rgba($text-color-light, .2)
+  &__text
+    font-weight: 300
+    line-height: 30px
+    font-size: 20px
+    font-weight: 300
+    color: $text-color-light
+    line-height: 1.5
+    span
+      text-transform: uppercase
+      display: block
+      font-weight: 700
+  &__form
+    margin-top: 20px
+    display: flex
+    align-items: top
+    @media (max-width: 434px )
+      flex-direction: column
+  &__input
+
+    font-weight: 300
+    border: none
+    border-radius: 5px
+    margin-right: 10px
+    width: 311px
+    padding: 17px
+    @media (max-width: 434px )
+      width: 100%
+      margin-bottom: 10px
+   
+  &__form-help
+    margin-top: 10px
+    margin-left: 20px
+    font-weight: 300
+    color: $text-color-light
+ 

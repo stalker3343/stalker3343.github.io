@@ -1,0 +1,50 @@
+.feature
+    background-color: #f4f4f4
+ 
+    &__wrap
+        display: flex  
+        flex-wrap: wrap
+        justify-content: space-around
+      
+        
+    &__item
+
+        flex-basis: 350px
+        
+        text-align: center 
+        line-height: 20px
+        margin-bottom: 50px
+        @media (max-width: 992px)
+            flex-basis: 300px
+            
+        &_block
+            text-align: left 
+            padding: 25px 15px
+            align-items: center
+            background: #ffffff
+            display: flex
+          
+    &__heading
+        font-size: 35px
+        margin-bottom: 20px
+        font-weight: 900
+        color: $akcent
+        &_block
+            font-size: 15px
+            font-weight: 700
+            color: #000000
+            margin-bottom: 0
+
+    &__text
+        font-size: 16px
+        &_block
+            font-size: 15px
+            font-weight: 300
+
+    &__img
+        margin-right: 10px
+        width: 60px
+        flex: none
+        img
+            width: 100%
+            height: auto
