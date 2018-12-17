@@ -3748,15 +3748,13 @@ opacity:0.87;
     max-width: 100%;
     color: #fff;
     font-size: 18px;
-    margin: 0 auto 4vh auto;
+    margin: 0 auto 0vh auto;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
+  
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+justify-content: space-around;
     -ms-flex-line-pack: stretch;
     align-content: stretch;
     -ms-flex-align: start;
@@ -3772,6 +3770,7 @@ opacity:0.87;
 
 .landing-advantage li {
     vertical-align: middle;
+    width: 300px;
     white-space: nowrap;
     min-height: 75px;
 }
@@ -3786,8 +3785,8 @@ opacity:0.87;
     vertical-align: middle;
     padding-left: 22px;
 	padding-bottom:15px;
-    font-size: 18px;
-    line-height: 1.4em;
+    font-size: 16px;
+    line-height: 1.3em;
     white-space: nowrap;
     width: 75%;
 }
@@ -3844,10 +3843,10 @@ body .i-blank:before {
 
 .landing-promo .promo-content h1 {
     text-align: center;
-    font-size: 3.5rem;
-    line-height: 4.5rem;
+    font-size: 2.5rem;
+    line-height: 3rem;
     max-width: 900px;
-    margin: 16vh auto 4.5vh auto;
+    margin: 17vh auto 4.5vh auto;
 }
 
 .promo .promo-content h1 {
@@ -3971,7 +3970,7 @@ width:100%
     text-align: right;
     width: 100%;
     padding: 0 5%;
-    width: 50%;
+    width: 60%;
 }
 
 .bottom-link a
@@ -3992,18 +3991,24 @@ width:100%
 top:20px;
 left:5%;
 z-index:10;
-height:50px;
+height:150px;
+max-width: 700px;
+line-height: 1.3;
+display: flex;
 }
 
 .logo-top-abs img
 {height:100%;
+  margin-right: 20px;
 width:auto} 
 
 .top-contacts
 {position:absolute;
+  text-align: right;
+  line-height: 1.3;
 right:5%;
 top:20px;
-font-size:20px;
+font-size:17px;
 line-height:24px;
 color:#fff;
 z-index:10
@@ -4017,32 +4022,54 @@ z-index:10
 
 .top-contacts span
 {font-size:24px;top:0px}
-
-@media screen and (max-width: 869px)
+@media screen and (max-width: 1100px)
 {
 	.landing-advantage
 	{
 		display:none;
-	}
+  }
 
-	.landing-promo .promo-content h1 {
-		font-size: 2.2rem !important;
-		line-height:2.8rem !important;
-		margin: 3rem auto 2rem auto !important;
-	}
-	
-	.logo-top-abs
+  .logo-top-abs
 	{
-	position: relative;
+	position: absolute;
     float: left;
     text-align: left;
     margin: 20px 0 0 0;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 40px;
+    width: 500px;
+    height: 100px;
     padding-left: 4%;
 	}
+
+}
+@media screen and (max-width: 754px)
+{
+  .logo-top-abs{
+  width: 370px;
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 570px)
+{
+  .calc_step input{
+    width: 300px !important;
+  }
+  .logo-top-abs span{
+display: none;
+  }
+}
+@media screen and (max-width: 869px)
+{
+
+
+	.landing-promo .promo-content h1 {
+		font-size: 2rem !important;
+		line-height:2.8rem !important;
+		margin: 11rem auto 1.5rem auto !important;
+	}
+	
+
 	
 	.top-contacts
 	{
