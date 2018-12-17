@@ -2732,8 +2732,11 @@
     */
 @font-face {
   font-family: "Flaticon";
-  src: url("../fonts/Flaticon.eot.html");
-  src: url("../fonts/Flaticon.eot@.html") format("embedded-opentype"), url("../fonts/Flaticon.woff.html") format("woff"), url("../fonts/Flaticon.ttf.html") format("truetype"), url("../fonts/Flaticon.svg.html") format("svg");
+  src: url("../fonts/Flaticon.eot");
+  src: url("../fonts/Flaticon.eot") format("embedded-opentype"), 
+  url("../fonts/Flaticon.woff") format("woff"), 
+  url("../fonts/Flaticon.ttf") format("truetype"), 
+  url("../fonts/Flaticon.svg") format("svg");
   font-weight: normal;
   font-style: normal;
 }
