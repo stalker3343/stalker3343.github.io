@@ -842,13 +842,6 @@ img {
 
 .testimonials img {
   display: block;
-  padding: 10px 50px;
-}
-
-@media (max-width: 774px) {
-  .testimonials img {
-    padding: 0;
-  }
 }
 
 .testimonials__slider {
