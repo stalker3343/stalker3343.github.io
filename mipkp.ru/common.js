@@ -10,7 +10,7 @@ $(document).ready(function() {
 			$(this).find("input").val("");
 			alert("Спасибо за заявку! Скоро мы с вами свяжемся.");
 			$("#form").trigger("reset");
-			ym(51603815, 'reachGoal', 'sendForm'); 
+			ym(51614180, 'reachGoal', 'send_form'); 
 			return true;
 		});
 		return false;

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <!-- Required meta tags -->
@@ -9,13 +9,15 @@
     <!-- Bootstrap CSS -->
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,900&amp;subset=cyrillic" rel="stylesheet">
-    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <!-- <link rel="stylesheet" href="css/bootstrap-grid.min.css">
 	<link rel="stylesheet" href="css/bootstrap-reboot.css">
 	
+	
+	<link rel="stylesheet" href="css/animate.css">-->
+	<link rel="stylesheet" href="libs/magnific-popup.css"> 
 	<link rel="stylesheet" type="text/css" href="libs/slick/slick.css"/> 
-	<link rel="stylesheet" href="css/animate.css">
-	<link rel="stylesheet" href="libs/magnific-popup.css">
 	<link rel="stylesheet" href="css/style.css">
+    <script  src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=eaacdc05-f371-4ba9-9fc1-2b3abc729fd9"></script>
 
     <title>Hello, world!</title>
 </head>
@@ -26,7 +28,8 @@
 
         <div class="header__top-wrap">
             <div class="logo">
-                <img src="img/header/logo.png" alt="Логотип">
+				<img class="logo__desctop" src="img/header/logo.png" alt="Логотип">
+				<img class="logo__mobile" src="img/header/logo_mobil.png" alt="Логотип">
             </div>
             <div class="header__contacts">
                 <div class="header__phone">
@@ -39,12 +42,9 @@
 
             <button class="header__call btn" id="call">
                 <img src="img/header/icon-phone.png" alt="">
-                Заказать звонок
+                <span class="header__hidden">Заказать звонок</span> 
 			</button>
-			<button class="header__call header__call-mobile btn" id="call">
-                <img src="img/header/icon-phone.png" alt="">
-               
-            </button>
+		
         </div>
 
     </div>
@@ -74,7 +74,7 @@
                                 на производство и поставку гофропродукции
                                 <span>Образцы упаковки бесплатно!</span> 
                         </div>
-                        <form action="" class="main__form">
+                        <form action="#" class="main__form">
                             <input class="main__input" type="tel" placeholder="Введите ваш номер">
                             <input type="button" class="btn" value="Оставить заявку">
                         </form>
@@ -237,10 +237,10 @@
 				<div class="popup__form-wrap  popup-form">
 						<form action="#" class="popup-form__wrap">
 					
-							<label for="phone" class="popup-form__tell">
+							<label for="phone1" class="popup-form__tell">
 								Введите ваш номер телефона:
 							</label>
-							<input type="text" class="popup-form__input individual__input" name="phone" required>
+							<input id="phone1" type="text" class="popup-form__input individual__input" name="phone" required>
 							<button class="btn popup-form__btn">Осnавить заявку</button>
 							<div class="popup-form__note">Минимальный заказ 50шт.</div>
 						</form>
@@ -294,11 +294,34 @@
 
 	<section class="clients">
 		<div class="container">
-			<h2>Наши коиенты</h2>
+			<h2>Наши клиенты</h2>
 			<div class="clients__wrapper">
 				<div class="clients__item">
-					<img src="" alt="">
+					<img src="img/clients/client1.png" alt="">
 				</div>
+				<div class="clients__item"><img src="img/clients/client2.png" alt=""></div>
+				<div class="clients__item">
+					<img src="img/clients/client3.png" alt=""></div>
+					<div class="clients__item">	<img src="img/clients/client4.png" alt=""></div>
+				
+					<div class="clients__item"><img src="img/clients/client5.png" alt=""></div>
+					
+					<div class="clients__item"><img src="img/clients/client6.png" alt=""></div>
+					
+					<div class="clients__item"><img src="img/clients/client7.png" alt=""></div>
+					
+					<div class="clients__item">		<img src="img/clients/client8.png" alt=""></div>
+			
+					<div class="clients__item">	<img src="img/clients/client9.png" alt=""></div>
+				
+					<div class="clients__item">	<img src="img/clients/client10.png" alt=""></div>
+				
+					<div class="clients__item">	<img src="img/clients/client11.png" alt=""></div>
+				
+					<div class="clients__item"><img src="img/clients/client12.png" alt=""></div>
+					
+				
+				
 			</div>
 
 		</div>
@@ -353,6 +376,52 @@
 		</section>
 
 
+		<section class="contacts">
+
+				<div id="map"  class="map"></div>
+			<div class="contacts__block">
+				<div class="contacts__item">
+					<img src="img/contacts/icon1.png" alt="">
+						<div class="contacts__text">
+								<span>	Адрес офиса</span>
+					
+						г. Уфа, Проспект октября, 46
+						<span>	Адрес склада</span>
+					
+						г. Уфа, Проспект октября, 46
+						</div>
+					
+				</div>
+				<div class="contacts__item">
+						<img src="img/contacts/icon2.png" alt="">
+						<div class="contacts__text">
+
+					<span>Тел. отдела продаж:</span>	
+						8 (347) 271-54-28<br>
+						8 (937) 363-30-00
+						</div>
+				</div>
+				<div class="contacts__item">
+						<img src="dfsdf.jpg" alt="">
+						<div class="contacts__text">
+		<button class="btn contacts__btn">Заказть звонок</button>
+					
+				</div>
+				</div>
+		
+				<div class="contacts__item">
+						<img src="img/contacts/icon3.png" alt="">
+						<div class="contacts__text">
+						<span>Е-mail</span> 
+						urals.karton@gmail.com
+						</div>
+				</div>
+				
+			</div>
+
+		</section>
+
+
     <div class="overlay" id="popup">
         <div class="popup ">
             <div class="popup__title">Форма обратной связи</div>
@@ -361,10 +430,10 @@
                 <form action="#" class="popup-form__wrap">
                     Получите индивидуальное предложение
                     <span>на производство и поставку изделий</span>
-                    <label for="phone" class="popup-form__tell">
+                    <label for="phone"  class="popup-form__tell">
                         Введите ваш номер телефона:
                     </label>
-                    <input type="text" class="popup-form__input " name="phone" required>
+                    <input id="phone" type="text" class="popup-form__input " name="phone" required>
                     <button class="btn popup-form__btn">Осnавить заявку</button>
                     <div class="popup-form__note">Минимальный заказ 50шт.</div>
                 </form>
@@ -373,15 +442,53 @@
     </div>
 </main>
 
+<script>
+  ymaps.ready(function () {
+    var myMap = new ymaps.Map('map', {
+            center: [48.220851, 38.183762],
+            zoom: 18	
+        }, {
+            searchControlProvider: 'yandex#search'
+        }),
+
+        // Создаём макет содержимого.
+        MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+            '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+        ),
+
+        myPlacemark = new ymaps.Placemark([48.221004, 38.184598], {
+            hintContent: 'МЫ тут',
+            balloonContent: 'Это красивая метка'
+        }, {
+            // Опции.
+            // Необходимо указать данный тип макета.
+            iconLayout: 'default#image',
+            // Своё изображение иконки метки.
+            iconImageHref: 'img/header/logo_mobil.png',
+            // Размеры метки.
+            iconImageSize: [30, 30],
+            // Смещение левого верхнего угла иконки относительно
+            // её "ножки" (точки привязки).
+            iconImageOffset: [-15, -15]
+        });
+
+     
+
+    myMap.geoObjects
+        .add(myPlacemark)
+        
+});
+</script>
+
 <script src="js/wow.js" ></script>
 <script>
 	new WOW().init();
 	</script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/jquery.min.js"></script>
 
   
-  <script type="text/javascript" src="libs/slick/slick.min.js"></script>
+  <script  src="libs/slick/slick.min.js"></script>
   <script src="libs/jquery.magnific-popup.min.js"></script>
 <script src="js/scripts.js"></script>
 </body>

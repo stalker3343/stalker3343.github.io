@@ -58,7 +58,7 @@ $(document).ready(function(){
         focusOnSelect: true,
         responsive: [
           {
-            breakpoint: 774,
+            breakpoint: 992,
             settings: {
               slidesToShow: 1
             }

@@ -12,11 +12,11 @@ var imageminJpegRecompress = require('imagemin-jpeg-recompress');
 var pngquant = require('imagemin-pngquant');
 var cache = require('gulp-cache');
 
-gulp.task('conkat', function () {
-    return gulp.src('css/**/*.css')
-      .pipe(concatCss("bundle.css"))
-      .pipe(gulp.dest('out/'));
-  });
+// gulp.task('conkat', function () {
+//     return gulp.src('css/**/*.css')
+//       .pipe(concatCss("bundle.css"))
+//       .pipe(gulp.dest('out/'));
+//   });
 
 
 // Images optimization and copy in /dist

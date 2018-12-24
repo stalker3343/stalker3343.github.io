@@ -24,26 +24,24 @@ $( ".search__filter" ).click(function(  ) {
 // $(window).on('load resize',windowSize);
   
   $('.slider').slick({
-  slidesToShow: 4,
+  slidesToShow: 7,
    infinite: false,
    slidesToScroll: 4,
   arrows:true,
-  dots:false,
+  dots:true,
     responsive: [
-    {
-      breakpoint: 2000,
-      settings: 'unslick',
-      
-    },
+
     {
       breakpoint: 768,
-      settings: 'slick'
+      settings: {
+      slidesToShow: 5,
+      }
     },
     {
       breakpoint: 575,
       settings: {
            slidesToScroll: 3,
-             slidesToShow: 3,
+          slidesToShow: 3,
       }
     }
   ]
