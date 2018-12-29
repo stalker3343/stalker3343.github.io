@@ -586,7 +586,13 @@
             $(blockMenuID).removeClass('fixed');
         }
     });
+
+
+
 });
+
+
+
 </script>
 
               <!-- nominify end -->
@@ -627,7 +633,7 @@
                   После получения заказа наш менеджер свяжется с вами.  </div>
               </div>
 
-              <form id="myform" action="index.html"  method='POST' class="t-form js-form-proccess t-form_inputs-total_2  " >
+              <form id="myform1"  class="t-form js-form-proccess t-form_inputs-total_2  " >
 
 
                 <div id="wellDone" class="js-successbox t-form__successbox t-text t-text_md">Спасибо,
@@ -636,26 +642,26 @@
 
                 <div class="t-form__inputsbox">
 
-  <div class="t-input-group t-input-group_em" data-input-lid="1495810410810">
+  <div class="t-input-group t-input-group_em" >
                     <div class="t-input-block">
-                      <input type="text" name="Name" class="t-input js-tilda-rule " value="" placeholder="Имя"
+                      <input type="text" name="NameShubi" class="t-input js-tilda-rule " value="" placeholder="Имя"
                         data-tilda-req="1"  style="color:#000000; border:2px solid #000000;  border-radius: 30px; -moz-border-radius: 30px; -webkit-border-radius: 30px;">
                       
                     </div>
                   </div>
 
-                  <div class="t-input-group t-input-group_ph" data-input-lid="1495810359387">
+                  <div class="t-input-group t-input-group_ph" >
                     <div class="t-input-block">
-                      <input type="tel" name="Phone" class="t-input js-tilda-rule  " value="" placeholder="Ваш телефон +7"
+                      <input type="tel" name="PhoneShubi" class="t-input js-tilda-rule  " value="" placeholder="Ваш телефон +7"
                         data-tilda-req="1" data-tilda-rule="phone" pattern="[0-9]*" style="color:#000000; border:2px solid #000000;  border-radius: 30px; -moz-border-radius: 30px; -webkit-border-radius: 30px;">
                       <div class="t-input-error"></div>
                     </div>
                   </div>
 
                   
-  <div class="t-input-group t-input-group_em" data-input-lid="1495810410810">
+  <div class="t-input-group t-input-group_em" >
     <div class="t-input-block">
-      <input type="text" name="Name" class="t-input js-tilda-rule " value="" placeholder="Укажите ваш размер/мерки и понравившуюся модель шубы"
+      <input type="text" name="modelShubi" class="t-input js-tilda-rule " value="" placeholder="Укажите ваш размер/мерки и понравившуюся модель шубы"
         data-tilda-req="1"  style="color:#000000; border:2px solid #000000;  border-radius: 30px; -moz-border-radius: 30px; -webkit-border-radius: 30px;">
       
     </div>
@@ -667,7 +673,7 @@
 
 
 
-                  <div class="t-form__errorbox-middle">
+                  <!-- <div class="t-form__errorbox-middle">
                     <div class="js-errorbox-all t-form__errorbox-wrapper" style="display:none;">
                       <div class="t-form__errorbox-text t-text t-text_md">
                         <p class="t-form__errorbox-item js-rule-error js-rule-error-all"></p>
@@ -678,7 +684,7 @@
                         <p class="t-form__errorbox-item js-rule-error js-rule-error-string"></p>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
 
                   <div class="t-form">
                     <button id="saleBtn" type="submit" class="t-submit" style="color:#000000;border:2px solid #000000;background-color:#fff705;border-radius:30px; -moz-border-radius:30px; -webkit-border-radius:30px;font-family:FuturaPT;font-weight:700;box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.5);">
@@ -739,7 +745,38 @@ SaleBtn1.addEventListener("click" , function(){
 
   wellDone.style.display = 'block';
 });
-        });
+
+
+$("#myform1").submit(function() {
+  $.ajax({
+    type: "POST",
+    url: "mailer/smart.php",
+    data: $(this).serialize()
+  }).done(function() {
+    $(this).find("input").val("");
+    // alert("Спасибо за заявку! Скоро мы с вами свяжемся.");
+    $("#form").trigger("reset");
+  });
+  return false;
+});
+$("#myform2").submit(function() {
+  $.ajax({
+    type: "POST",
+    url: "mailer/smart2.php",
+    data: $(this).serialize()
+  }).done(function() {
+    $(this).find("input").val("");
+    alert("Спасибо за вопрос! Скоро мы с вами свяжемся.");
+    $("#myform2").trigger("reset");
+  });
+  return false;
+});
+});
+
+
+
+
+
       </script>
 
 
@@ -13410,7 +13447,73 @@ $(this).siblings('.content').slideDown(200);
         });
       </script>
     </div>
+    <style>
+        .map{
+          position: relative;
+        }
+        .map__block{
+          position: absolute;
+          bottom: 170px;
+          left: 5%;
+          padding: 50px 30px;
+          font-family: 'FuturaPT', Arial, sans-serif;
+          font-size: 18px;
+          background: white;
+        }
+        .map__title{
+          text-align: center;
+          margin: 40px 0px;
+        }
+      
+        .map__heading{
+          font-weight: 700;
+          font-size: 30px;
+        }
+        @media (max-width: 954px){
+          .map__block{
 
+          left: 0%;
+  
+        }
+        }
+        @media (max-width: 764px){
+          .map{
+              display: flex;
+            flex-direction: column;
+            align-items:center;
+          }
+          .map__title{
+            order:-1
+          }
+          .js__map{
+            order: 6;
+          }
+          .map__block{
+          order: -1;
+          font-size: 23px;
+          top: 0px;
+          left: 0px;
+          padding-top: 0px;
+          
+          /* left:50%;
+          transform: translateX(-50%); */
+          /* top: 0; */
+          position: relative;
+
+  
+        }}
+      </style>
+    <section class="map">
+
+        <div class="t-section__title t-title t-title_xs map__title" field="btitle">Контакты и график работы шоу-рума ECO-FFUR</div>
+        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Addadc5d30f7af11fee01efcdb3af229c494f5ae2cf768a7e1f4131b9d8bb1366&amp;width=100%25&amp;height=500&amp;lang=ru_UA&amp;scroll=true"></script>
+                  <div class="map__block">
+           <h2 class="map__heading">Шоу-рум в Вологде</h2> <br>
+          <b>  ул. Ленинградская, д. 71, оф. 323 <br> <b>
+           3 этаж Деловой Центр "ПАРУС"<br><br>
+            График работы: по записи<br>
+        </div>
+      </section>
 
     <!--footer-->
     <div id="t-footer" class="t-records" data-hook="blocks-collection-content-node" data-tilda-project-id="404838"
@@ -13604,7 +13707,7 @@ $(this).siblings('.content').slideDown(200);
                 <div class="t-section__container t-container">
               <div class="t-col t-col_12">
                 <div class="t-section__topwrapper t-align_center">
-                  <div class="t-section__title t-title t-title_xs" field="btitle">Остались вопросы или <br>не можете определится с выбором шубы?</div>				<div class="t-section__descr t-descr t-descr_xl t-margin_auto" field="bdescr">Звоните или пишите в мессенджеры, наш менеджер всегда готов ответить на ваши вопросы и дать подробную консультацию</div>			</div>
+                  <div class="t-section__title t-title t-title_xs" style="margin-top: 40px;" field="btitle">Остались вопросы или <br>не можете определится с выбором шубы?</div>				<div class="t-section__descr t-descr t-descr_xl t-margin_auto" field="bdescr">Звоните или пишите в мессенджеры, наш менеджер всегда готов ответить на ваши вопросы и дать подробную консультацию</div>			</div>
               </div>
             </div>
                 <div class="t-container">
@@ -13635,15 +13738,9 @@ $(this).siblings('.content').slideDown(200);
               </div>
               <div class="t-col t-col_5  ">
                                                                                                       
-              <form id="form35511453" name="form35511453" role="form" action="" method="POST" data-formactiontype="2" data-inputbox=".t-input-group" data-success-url="http://shubyange.ru/thank-you-page" class="t-form js-form-proccess t-form_inputs-total_3  " data-success-callback="t718_onSuccess">
+              <form id="myform2" name="form35511453" role="form"  data-formactiontype="2" data-inputbox=".t-input-group" data-success-url="http://shubyange.ru/thank-you-page" class="t-form js-form-proccess t-form_inputs-total_3  " data-success-callback="t718_onSuccess">
             
-                                                            <input type="hidden" name="formservices[]" value="25961db19c69c0e1d1b711a5179ec83b" class="js-formaction-services">
-                                          <input type="hidden" name="formservices[]" value="7875e9ac7b6a9242ad6d70fd1d216db3" class="js-formaction-services">
-                                          <input type="hidden" name="formservices[]" value="e5998cdd9a4a6229c7a1961b6cb20fa0" class="js-formaction-services">
-                                          <input type="hidden" name="formservices[]" value="f009ff1d5715c71f98559255899cf644" class="js-formaction-services">
-                                          <input type="hidden" name="formservices[]" value="14c1cf15ad2b63916430cb8a3a11b01b" class="js-formaction-services">
-                                  
-                                      <input type="hidden" name="tildaspec-formname" tabindex="-1" value="Форма в подвале &quot;Остались вопросы&quot;">
+                                                   
                       
                       <div class="js-successbox t-form__successbox t-text t-text_md" style="display:none;"></div>
           
@@ -13652,7 +13749,7 @@ $(this).siblings('.content').slideDown(200);
                                                                                                                   
                                                     <div class="t-input-group t-input-group_ph" data-input-lid="1496238230199">
                                                                                         <div class="t-input-block">
-                                                                    <input type="tel" name="Phone" class="t-input js-tilda-rule js-tilda-mask " value="" placeholder="Введите телефон" data-tilda-req="1" data-tilda-rule="phone" pattern="[0-9]*+" data-tilda-mask="+7 (999) 999-9999" style=" border:1px solid #c7c7c7;  ">                                                
+                                                                    <input type="tel" name="PhoneQ" class="t-input js-tilda-rule js-tilda-mask " value="" placeholder="Введите телефон" data-tilda-req="1" data-tilda-rule="phone" pattern="[0-9]*+" data-tilda-mask="+7 (999) 999-9999" style=" border:1px solid #c7c7c7;  ">                                                
                                                   <div class="t-input-error"></div>
                                     </div>
                             </div>
@@ -13660,7 +13757,7 @@ $(this).siblings('.content').slideDown(200);
                                                                           
                                                     <div class="t-input-group t-input-group_nm" data-input-lid="1496238250184">
                                                                                         <div class="t-input-block">
-                                                                    <input type="text" name="Name" class="t-input js-tilda-rule " value="" placeholder="Введите имя" data-tilda-rule="name" style=" border:1px solid #c7c7c7;  ">
+                                                                    <input type="text" name="NameQ" class="t-input js-tilda-rule " value="" placeholder="Введите имя" data-tilda-rule="name" style=" border:1px solid #c7c7c7;  ">
                                                   <div class="t-input-error"></div>
                                     </div>
                             </div>
@@ -13668,7 +13765,7 @@ $(this).siblings('.content').slideDown(200);
                                                                           
                                                     <div class="t-input-group t-input-group_ta" data-input-lid="1496238259342">
                                                                                         <div class="t-input-block">
-                                                                    <textarea name="Textarea" class="t-input js-tilda-rule " placeholder="Ваш вопрос или пожелания..." style=" border:1px solid #c7c7c7;  height:102px" rows="3"></textarea>
+                                                                    <textarea name="TextareaQ" class="t-input js-tilda-rule " placeholder="Ваш вопрос или пожелания..." style=" border:1px solid #c7c7c7;  height:102px" rows="3"></textarea>
                                                   <div class="t-input-error"></div>
                                     </div>
                             </div>
@@ -14070,6 +14167,8 @@ $(this).siblings('.content').slideDown(200);
       
     </div>
     <!--/footer-->
+
+
 
   </div>
   <!--/allrecords-->

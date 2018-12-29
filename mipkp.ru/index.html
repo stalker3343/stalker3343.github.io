@@ -25,18 +25,19 @@
 <script type="text/javascript" >
 	(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
 	m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-	(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+	(window, document, "script", "https://cdn.jsdelivr.net/npm/yandex-metrica-watch/tag.js", "ym");
  
 	ym(51614180, "init", {
 		 id:51614180,
 		 clickmap:true,
 		 trackLinks:true,
 		 accurateTrackBounce:true,
-		 webvisor:true
+		 webvisor:true,
+		 trackHash:true
 	});
  </script>
  <noscript><div><img src="https://mc.yandex.ru/watch/51614180" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
- <!-- /Yandex.Metrika counter -->	
+ <!-- /Yandex.Metrika counter -->
 
 
 
@@ -156,24 +157,10 @@
 							<div id="comp_23f017993e5d77e7a714bc8dd20763ae">
 								<div class="calc-wrap">
 									<div id="calculator" class="container">
-
-
-
-										<form id="myform"   >
-
-
-
-
-
-
-
-
-
-
-
-
+										<form id="myform" action="mail.php" method="post"   >
 											<div id="cstep1" class="row calc_step actstep">
 												<div class="cstep_wrap">
+														<p style="margin-top: 10px;"> Заполни анкету и мы направим вам информацию</p>
 													<div class="cstep_title">Название компании</div>
 													<input name="nameCompany" type="text" id="1" placeholder="Название компании" required style=" width: 400px; padding: 10px; font-size: 16px">
 
@@ -193,6 +180,7 @@
 
 											<div id="cstep2" class="row calc_step ">
 												<div class="cstep_wrap">
+														<p style="margin-top: 10px;"> Заполни анкету и мы направим вам информацию</p>
 													<div class="cstep_title">Имя Отчество</div>
 													<input name="nameUser" type="text" id="2" placeholder="Имя Отчество" required style=" width: 400px; padding: 10px; font-size: 16px">
 
@@ -209,6 +197,7 @@
 
 											<div id="cstep3" class="row calc_step ">
 												<div class="cstep_wrap">
+														<p style="margin-top: 10px;"> Заполни анкету и мы направим вам информацию</p>
 													<div class="cstep_title">Номер телефона</div>
 													<input name="number" type="tel" id="3" placeholder="Ваш телефон" required style=" width: 400px; padding: 10px; font-size: 16px">
 													<!-- <input type="radio" checked id="6" name="form_radio_pp_quest_3" value="6" checked><label for="6">Повышение
@@ -237,6 +226,7 @@
 
 											<div id="cstep4" class="row calc_step last_step">
 												<div class="cstep_wrap">
+														<p style="margin-top: 10px;"> Заполни анкету и мы направим вам информацию</p>
 													<div class="cstep_title">Город, Республика, Край, Область, Округ</div>
 													<input name="city" type="text" id="4" placeholder="Город,Республика,Край,Область,Округ" required style=" width: 400px; padding: 10px; font-size: 16px">
 
@@ -318,30 +308,64 @@
 <footer>
 	<div class="copyright">Лицензия Департамента образования города Москвы № 036299 от 26.06.2015</div>
 	<div class="bottom-link">
-		<a href="local/templates/mult/ajax/pk.php.html" class="ajax-btn">Политика конфиденциальности</a> |
-		<a href="local/templates/mult/ajax/about.php.html" class="ajax-btn">Об&nbsp;ИПОПБ</a> |
 
+			 
+			<!-- <a data-fancybox data-type="iframe" data-src="local/templates/mult/ajax/pk.php.html" href="javascript:;">
+				Политика конфиденциальности
+			</a>| -->
+		<a href="#" class="ajax-btn" id="ajax1">Политика конфиденциальности</a> |
+
+		<a href="#" class="ajax-btn" id="ajax2">Об&nbsp;ИПОПБ</a> |
+
+
+		<!-- <a href="images/licens/1.png" class="fancybox-thumb" rel="gal2">Лицензия&nbsp;института</a> | -->
+
+
+
+		<a  href="images/licens/1.png" data-fancybox="lic" >
+			Лицензия&nbsp;института
+			
+		  </a>|
+
+		  <a  style="display:none" href="images/licens/2.png" data-fancybox="lic" >
+		
+	
+		  </a>
+		  <a  style="display:none" href="images/licens/3.png" data-fancybox="lic" >
+			
+		
+		  </a>
+
+<!-- 
 		<a href="images/licens/1.png" class="fancybox-thumb" rel="gal2">Лицензия&nbsp;института</a> |
 		<a href="images/licens/2.png" class="fancybox-thumb" rel="gal2" style="display:none"></a>
 		<a href="images/licens/3.png" class="fancybox-thumb" rel="gal2" style="display:none"></a>
+-->
 
-		<a href="images/1vipiska.jpg" class="fancybox-thumb" rel="gal">Образцы&nbsp;документов </a>
-		<a href="images/2diplom.jpg" class="fancybox-thumb" rel="gal" style="display:none"></a>
-		<a href="images/3OT.jpg" class="fancybox-thumb" rel="gal" style="display:none"></a>
-		<a href="images/4OT2.jpg" class="fancybox-thumb" rel="gal" style="display:none"></a>
+<a  href="images/1vipiska.jpg" data-fancybox="obr" >
+	Образцы&nbsp;документов
 
-		<a href="images/5OT3.jpg" class="fancybox-thumb" rel="gal" style="display:none"></a>
-		<a href="images/6BS.jpg" class="fancybox-thumb" rel="gal" style="display:none"></a>
-		<a href="images/7Visota.jpg" class="fancybox-thumb" rel="gal" style="display:none"></a>
-		<a href="images/8spravka.jpg" class="fancybox-thumb" rel="gal" style="display:none"></a>
-		<a href="images/9kurs.jpg" class="fancybox-thumb" rel="gal" style="display:none"></a>
-		<a href="images/10K10.jpg" class="fancybox-thumb" rel="gal" style="display:none"></a>
-		<a href="images/11Vipiska.jpg" class="fancybox-thumb" rel="gal" style="display:none"></a>
-		<a href="images/12K111.JPG" class="fancybox-thumb" rel="gal" style="display:none"></a>
-		<a href="images/13OT72.jpg" class="fancybox-thumb" rel="gal" style="display:none"></a>
-		<a href="images/14PP.jpg" class="fancybox-thumb" rel="gal" style="display:none"></a>
-		<a href="images/15Diplom.jpg" class="fancybox-thumb" rel="gal" style="display:none"></a>
-		<a href="images/16Oborot.jpg" class="fancybox-thumb" rel="gal" style="display:none"></a>
+  </a>|
+
+
+
+
+		<a href="images/2diplom.jpg"  data-fancybox="obr"style="display:none"></a>
+		<a href="images/3OT.jpg" data-fancybox="obr"  style="display:none"></a>
+		<a href="images/4OT2.jpg" data-fancybox="obr"  style="display:none"></a>
+
+		<a href="images/5OT3.jpg" data-fancybox="obr"  style="display:none"></a>
+		<a href="images/6BS.jpg" data-fancybox="obr"  style="display:none"></a>
+		<a href="images/7Visota.jpg" data-fancybox="obr"  style="display:none"></a>
+		<a href="images/8spravka.jpg" data-fancybox="obr"  style="display:none"></a>
+		<a href="images/9kurs.jpg" data-fancybox="obr"  style="display:none"></a>
+		<a href="images/10K10.jpg" data-fancybox="obr"  style="display:none"></a>
+		<a href="images/11Vipiska.jpg" data-fancybox="obr"  style="display:none"></a>
+		<a href="images/12K111.JPG" data-fancybox="obr"  style="display:none"></a>
+		<a href="images/13OT72.jpg" data-fancybox="obr"  style="display:none"></a>
+		<a href="images/14PP.jpg" data-fancybox="obr"  style="display:none"></a>
+		<a href="images/15Diplom.jpg" data-fancybox="obr"  style="display:none"></a>
+		<a href="images/16Oborot.jpg" data-fancybox="obr"  style="display:none"></a> 
 
 	</div>
 </footer>
@@ -349,21 +373,19 @@
 	
 
 
-	<!-- <link rel="stylesheet" href="local/templates/mult/fancybox/source/jquery.fancybox.css"> -->
 
-	<script src="js.js" async></script>
-	<!-- <script src="local/templates/mult/js/modernizr.js " async></script> 
+	<script src="local/templates/mult/js/modernizr.js " async></script> 
 	<script src="local/templates/mult/js/mask.js" async>
 	</script>
 
-	<script src="local/templates/mult/fancybox/source/jquery.fancybox.pack.js" async></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.css" />
+	<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js"></script>
 	<script src="local/templates/mult/js/main.js" async>
 	</script>
 
 	<script type="text/javascript" src="local/templates/mult/components/mme/form_calc/template/script.js" async></script>
 
-	<script src="common.js" async></script>
- -->
+
 
 </body>
 
