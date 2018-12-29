@@ -16,6 +16,9 @@ var imagemin = require('gulp-imagemin');
 var imageminJpegRecompress = require('imagemin-jpeg-recompress');
 var pngquant = require('imagemin-pngquant');
 var cache = require('gulp-cache');
+var critical = require('critical');
+
+
 
 
 
@@ -106,6 +109,35 @@ function buildCSS() {
       .pipe(gulp.dest(path.public.js))
       // .pipe(bs.reload({ stream: true }))
   }
+
+
+  
+  function crit(cb){
+    return critical.generate({
+     
+      base: 'dist/',
+      src: 'index.html',
+      css: ['dist/css/bundle.css'],
+      dimensions: [{
+        width: 320,
+        height: 480
+      },{
+        width: 768,
+        height: 1024
+      },{
+        width: 1280,
+        height: 960
+      }],
+      dest: 'css/critical.css',
+      minify: true,
+    
+      ignore: ['@font-face',/url\(/]
+    });
+  }
+
+    
+  gulp.task('crit', crit);
+  
   gulp.task('buildCSS', buildCSS);
   gulp.task('buildImgs', buildImgs);
   gulp.task('buildJS', buildJS);
