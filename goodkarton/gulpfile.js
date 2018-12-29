@@ -16,10 +16,13 @@ var imagemin = require('gulp-imagemin');
 var imageminJpegRecompress = require('imagemin-jpeg-recompress');
 var pngquant = require('imagemin-pngquant');
 var cache = require('gulp-cache');
+
 var critical = require('critical');
 
-
-
+const webp = require('gulp-webp');
+var webpHTML = require('gulp-webp-html');
+var webpCss = require('gulp-webp-css');
+ 
 
 
 const path = {
@@ -59,6 +62,7 @@ function buildCSS() {
         message: "<%= error.message %>",
         title: "CSS compilation error"
       })))
+      .pipe(webpCss())
       .pipe(autoprefixer({
         browsers: ['last 4 versions'],
         cascade: false
@@ -93,6 +97,9 @@ function buildCSS() {
       .pipe(gulp.dest(path.public.img))
       // .pipe(bs.reload({ stream: true }))
   }
+
+
+
 
 
   function buildJS() {
@@ -135,13 +142,34 @@ function buildCSS() {
     });
   }
 
-    
-  gulp.task('crit', crit);
+  function webpcreate(){
+    return gulp.src(path.src.img)
+    .pipe(webp())
+    .pipe(gulp.dest(path.public.img))
+  
+  }
+  function webpHtmlReplace(){
+    return gulp.src('dist/index.html')
+    .pipe(webpHTML())
+    .pipe(gulp.dest('dist'))
+   
+  
+  }
+
+
+
+
+
+  gulp.task('webpcreate', webpcreate);
+  gulp.task('webpHtmlReplace', webpHtmlReplace);
+ 
+
+
   
   gulp.task('buildCSS', buildCSS);
   gulp.task('buildImgs', buildImgs);
   gulp.task('buildJS', buildJS);
-
+  gulp.task('crit', crit);
 
 // function watch (){
 //     browserSync.init({

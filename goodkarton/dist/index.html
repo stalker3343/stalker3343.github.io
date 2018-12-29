@@ -23,8 +23,15 @@
 
         <div class="header__top-wrap">
             <div class="logo">
-				<img class="logo__desctop" src="img/header/logo.png" alt="Логотип">
-				<img class="logo__mobile" src="img/header/logo_mobil.png" alt="Логотип">
+				<picture >
+					<source  srcset="img/header/logo.webp" type="image/webp">
+					<img class="logo__desctop" src="img/header/logo.png" alt="Логотип">
+				</picture>
+				<picture >
+					<source  srcset="img/header/logo_mobil.webp" type="image/webp">
+					<img class="logo__mobile" src="img/header/logo_mobil.png" alt="Логотип">
+				</picture>
+				
             </div>
             <div class="header__contacts">
                 <div class="header__phone">
@@ -36,7 +43,11 @@
             </div>
 
             <button class="header__call btn" id="call">
-                <img src="img/header/icon-phone.png" alt="">
+				<picture >
+					<source  srcset="img/header/icon-phone.webp" type="image/webp">
+					<img src="img/header/icon-phone.png" alt="">
+				</picture>
+               
                 <span class="header__hidden">Заказать звонок</span> 
 			</button>
 		
@@ -51,8 +62,16 @@
         <div class="container">
             <div class="main__wrap">
                 <div class="main__image boxAnimate">
-					<img src="img/main/mainImg.png " alt="">
-					<img src="img/main/mainImg2.png " alt="">
+					<picture >
+						<source  srcset="img/main/mainImg.webp" type="image/webp">
+							<img src="img/main/mainImg.png " alt="">
+					</picture>
+					<picture >
+							<source  srcset="img/main/mainImg2.webp" type="image/webp">
+								<img src="img/main/mainImg2.png" alt="">
+						</picture>
+					
+					
                 </div>
                 <div class="main__right">
                     <h1>
@@ -60,8 +79,14 @@
                         <span>с доставкой по всей России</span>
 					</h1>
 					<div class="main__image main__image_mobi boxAnimate">
-						<img src="img/main/mainImg.png " alt="">
-						<img src="img/main/mainImg2.png " alt="">
+							<picture >
+									<source  srcset="img/main/mainImg.webp" type="image/webp">
+										<img src="img/main/mainImg.png " alt="">
+								</picture>
+								<picture >
+										<source  srcset="img/main/mainImg2.webp" type="image/webp">
+											<img src="img/main/mainImg2.png" alt="">
+									</picture>
 					</div>
                     <div class="main__form-wrap">
                         <div class="main__text">
