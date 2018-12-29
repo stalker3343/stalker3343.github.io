@@ -66,6 +66,8 @@ function buildCSS() {
       .pipe(gulp.dest(path.public.css))
     //   .pipe(bs.reload({ stream: true }));
   }
+
+
   function buildImgs() {
     return gulp.src(path.src.img)
 
