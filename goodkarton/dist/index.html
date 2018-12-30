@@ -508,8 +508,48 @@
 	
 			</div>
 		</section>
+		<script>
 
-		<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=eaacdc05-f371-4ba9-9fc1-2b3abc729fd9"></script>
+				function map(){
+					 ymaps.ready(function () {
+				var myMap = new ymaps.Map('map', {
+						center: [48.220851, 38.183762],
+						zoom: 18	
+					}, {
+						searchControlProvider: 'yandex#search'
+					}),
+			
+					// Создаём макет содержимого.
+					MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+						'<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+					),
+			
+					myPlacemark = new ymaps.Placemark([48.221004, 38.184598], {
+						hintContent: 'МЫ тут',
+						balloonContent: 'Это красивая метка'
+					}, {
+						// Опции.
+						// Необходимо указать данный тип макета.
+						iconLayout: 'default#image',
+						// Своё изображение иконки метки.
+						iconImageHref: 'img/header/logo_mobil.png',
+						// Размеры метки.
+						iconImageSize: [30, 30],
+						// Смещение левого верхнего угла иконки относительно
+						// её "ножки" (точки привязки).
+						iconImageOffset: [-15, -15]
+					});
+			
+				 
+			
+				myMap.geoObjects
+					.add(myPlacemark)
+					
+			});
+				}
+			 
+			</script>
+		<script async src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=eaacdc05-f371-4ba9-9fc1-2b3abc729fd9" onload="map();"></script>
 
 		<section class="contacts">
 
@@ -579,43 +619,7 @@
 
 
 
-<script>
-  ymaps.ready(function () {
-    var myMap = new ymaps.Map('map', {
-            center: [48.220851, 38.183762],
-            zoom: 18	
-        }, {
-            searchControlProvider: 'yandex#search'
-        }),
 
-        // Создаём макет содержимого.
-        MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-            '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-        ),
-
-        myPlacemark = new ymaps.Placemark([48.221004, 38.184598], {
-            hintContent: 'МЫ тут',
-            balloonContent: 'Это красивая метка'
-        }, {
-            // Опции.
-            // Необходимо указать данный тип макета.
-            iconLayout: 'default#image',
-            // Своё изображение иконки метки.
-            iconImageHref: 'img/header/logo_mobil.png',
-            // Размеры метки.
-            iconImageSize: [30, 30],
-            // Смещение левого верхнего угла иконки относительно
-            // её "ножки" (точки привязки).
-            iconImageOffset: [-15, -15]
-        });
-
-     
-
-    myMap.geoObjects
-        .add(myPlacemark)
-        
-});
-</script>
 
 
 <script src="js/bundle.js"></script>
