@@ -75,25 +75,25 @@ function buildCSS() {
   function buildImgs() {
     return gulp.src(path.src.img)
     //Продакшн
-    .pipe(imagemin([
-      imagemin.gifsicle({interlaced: true}),
-      imagemin.jpegtran({progressive: true}),
-      imageminJpegRecompress({
-        loops: 5,
-        min: 65,
-        max: 70,
-        quality:'medium'
-      }),
-      imagemin.svgo(),
-      imagemin.optipng({optimizationLevel: 3}),
-      pngquant({quality: '65-70', speed: 5})
-    ],{
-      verbose: true
-    }))
+    // .pipe(imagemin([
+    //   imagemin.gifsicle({interlaced: true}),
+    //   imagemin.jpegtran({progressive: true}),
+    //   imageminJpegRecompress({
+    //     loops: 5,
+    //     min: 65,
+    //     max: 70,
+    //     quality:'medium'
+    //   }),
+    //   imagemin.svgo(),
+    //   imagemin.optipng({optimizationLevel: 3}),
+    //   pngquant({quality: '65-70', speed: 5})
+    // ],{
+    //   verbose: true
+    // }))
 
     //Обычная разработка
-    //  .pipe(gulp.dest(path.public.img))
-    //   .pipe(webp())
+     .pipe(gulp.dest(path.public.img))
+      .pipe(webp())
     
       .pipe(gulp.dest(path.public.img))
       .pipe(bs.reload({ stream: true }))

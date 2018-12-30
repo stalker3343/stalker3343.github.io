@@ -508,93 +508,139 @@
 	
 			</div>
 		</section>
-		<!-- <script>
+	
+	
+   <style>
+   
+   /* Индикатор загрузки, который показывается до загрузки карты */
+.loader {
+  position: absolute;
+  z-index: 15;
+  top: -100%;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  color: #000000;
+  transition: opacity .7s ease;
+  opacity: 0;
+  background-color: rgba(0,0,0,.55);
+}
+ 
+.loader:after,
+.loader:before {
+  box-sizing: border-box;
+}
+ 
+.loader.is-active {
+  top: 0;
+  opacity: 1;
+}
+ 
+.loader-default:after {
+  position: absolute;
+  top: calc(50% - 24px);
+  left: calc(50% - 24px);
+  width: 48px;
+  height: 48px;
+  content: '';
+  animation: rotation 1s linear infinite;
+  border: solid 8px #ffffff;
+  border-left-color: transparent;
+  border-radius: 50%;
+}
+ 
+@keyframes rotation {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+ 
+@keyframes blink {
+  from {
+    opacity: .5;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
-				function map(){
-					 ymaps.ready(function () {
-				var myMap = new ymaps.Map('map', {
-						center: [48.220851, 38.183762],
-						zoom: 18	
-					}, {
-						searchControlProvider: 'yandex#search'
-					}),
-			
-					// Создаём макет содержимого.
-					MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-						'<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-					),
-			
-					myPlacemark = new ymaps.Placemark([48.221004, 38.184598], {
-						hintContent: 'МЫ тут',
-						balloonContent: 'Это красивая метка'
-					}, {
-						// Опции.
-						// Необходимо указать данный тип макета.
-						iconLayout: 'default#image',
-						// Своё изображение иконки метки.
-						iconImageHref: 'img/header/logo_mobil.png',
-						// Размеры метки.
-						iconImageSize: [30, 30],
-						// Смещение левого верхнего угла иконки относительно
-						// её "ножки" (точки привязки).
-						iconImageOffset: [-15, -15]
-					});
-			
-				 
-			
-				myMap.geoObjects
-					.add(myPlacemark)
-					
-			});
-				}
-			 
-			</script>
-		<script async src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=eaacdc05-f371-4ba9-9fc1-2b3abc729fd9" onload="map();"></script> -->
 
-		<section class="contacts">
+/* &#34;Блок-обертка&#34;, где мы задаем фоновое изображение скриншотом как на карте */
+.ymap-container {
+  position: relative;
+  margin: 3em 0 2em 0;
+  overflow: hidden;
+  cursor: pointer;
+  background: url('img/yandex-before-load.png') #ffffff no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding: 0px;
 
-				<div id="map" class="map"></div>
-			<div class="contacts__block">
-				<div class="contacts__item">
-					<img src="img/contacts/icon1.png" alt="">
-						<div class="contacts__text">
-								<span>	Адрес офиса</span>
-					
-						г. Уфа, Проспект октября, 46
-						<span>	Адрес склада</span>
-					
-						г. Уфа, Проспект октября, 46
-						</div>
-					
-				</div>
-				<div class="contacts__item">
-						<img src="img/contacts/icon2.png" alt="">
-						<div class="contacts__text">
+}
+ 
+/* Блок, в котором появится Яндекс.Карта */
+#map-yandex {
+  position: relative;
+  z-index: 7;
+  width: 100%;
+  height: 20em;
+  cursor: pointer;
+  background-color: transparent;
+}
+   </style>
+<section class="contacts ymap-container">
+	<div class="loader loader-default"></div>
 
-					<span>Тел. отдела продаж:</span>	
-						8 (347) 271-54-28<br>
-						8 (937) 363-30-00
-						</div>
-				</div>
-				<div class="contacts__item">
-						<img src="dfsdf.jpg" alt="">
-						<div class="contacts__text">
-		<button class="btn contacts__btn">Заказть звонок</button>
-					
-				</div>
-				</div>
-		
-				<div class="contacts__item">
-						<img src="img/contacts/icon3.png" alt="">
-						<div class="contacts__text">
-						<span>Е-mail</span> 
-						urals.karton@gmail.com
-						</div>
-				</div>
-				
+	<div id="map" class="map"></div>
+
+
+
+	<div class="contacts__block">
+		<div class="contacts__item">
+			<img src="img/contacts/icon1.png" alt="">
+			<div class="contacts__text">
+				<span> Адрес офиса</span>
+
+				г. Уфа, Проспект октября, 46
+				<span> Адрес склада</span>
+
+				г. Уфа, Проспект октября, 46
 			</div>
 
-		</section>
+		</div>
+		<div class="contacts__item">
+			<img src="img/contacts/icon2.png" alt="">
+			<div class="contacts__text">
+
+				<span>Тел. отдела продаж:</span>
+				8 (347) 271-54-28<br>
+				8 (937) 363-30-00
+			</div>
+		</div>
+		<div class="contacts__item">
+			<img src="dfsdf.jpg" alt="">
+			<div class="contacts__text">
+				<button class="btn contacts__btn">Заказть звонок</button>
+
+			</div>
+		</div>
+
+		<div class="contacts__item">
+			<img src="img/contacts/icon3.png" alt="">
+			<div class="contacts__text">
+				<span>Е-mail</span>
+				urals.karton@gmail.com
+			</div>
+		</div>
+
+	</div>
+
+</section>
 
 
     <div class="overlay" id="popup">
@@ -623,12 +669,195 @@
 
 
 <script src="js/bundle.js"></script>
+<script>
 
+//Переменная для включения/отключения индикатора загрузки
+var spinner = $('.ymap-container').children('.loader');
+//Переменная для определения была ли хоть раз загружена Яндекс.Карта (чтобы избежать повторной загрузки при наведении)
+var check_if_load = false;
+//Необходимые переменные для того, чтобы задать координаты на Яндекс.Карте
+var myMapTemp, myPlacemarkTemp;
+
+
+	//Функция создания карты сайта и затем вставки ее в блок с идентификатором &#34;map-yandex&#34;
+function init () {
+
+
+	var myMapTemp = new ymaps.Map('map', {
+			   center: [48.220851, 38.183762],
+			   zoom: 18	
+		   }, {
+			   searchControlProvider: 'yandex#search'
+		   }),
+   
+		   // Создаём макет содержимого.
+		   MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+			   '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+		   ),
+   
+		   myPlacemark = new ymaps.Placemark([48.221004, 38.184598], {
+			   hintContent: 'МЫ тут',
+			   balloonContent: 'Это красивая метка'
+		   }, {
+			   // Опции.
+			   // Необходимо указать данный тип макета.
+			   iconLayout: 'default#image',
+			   // Своё изображение иконки метки.
+			   iconImageHref: 'img/header/logo_mobil.png',
+			   // Размеры метки.
+			   iconImageSize: [30, 30],
+			   // Смещение левого верхнего угла иконки относительно
+			   // её "ножки" (точки привязки).
+			   iconImageOffset: [-15, -15]
+		   });
+   
+		
+   
+		   myMapTemp.geoObjects
+		   .add(myPlacemark)
+
+
+
+  // Получаем первый экземпляр коллекции слоев, потом первый слой коллекции
+  	var layer = myMapTemp.layers.get(0).get(0);
+ 
+  // Решение по callback-у для определения полной загрузки карты
+  waitForTilesLoad(layer).then(function() {
+    // Скрываем индикатор загрузки после полной загрузки карты
+    spinner.removeClass('is-active');
+  });
+}
+
+
+// Функция для определения полной загрузки карты (на самом деле проверяется загрузка тайлов) 
+function waitForTilesLoad(layer) {
+  return new ymaps.vow.Promise(function (resolve, reject) {
+    var tc = getTileContainer(layer), readyAll = true;
+    tc.tiles.each(function (tile, number) {
+      if (!tile.isReady()) {
+        readyAll = false;
+      }
+    });
+    if (readyAll) {
+      resolve();
+    } else {
+      tc.events.once("ready", function() {
+        resolve();
+      });
+    }
+  });
+}
+
+function getTileContainer(layer) {
+  for (var k in layer) {
+    if (layer.hasOwnProperty(k)) {
+      if (
+        layer[k] instanceof ymaps.layer.tileContainer.CanvasContainer
+        || layer[k] instanceof ymaps.layer.tileContainer.DomContainer
+      ) {
+        return layer[k];
+      }
+    }
+  }
+  return null;
+}
+
+// Функция загрузки API Яндекс.Карт по требованию (в нашем случае при наведении)
+function loadScript(url, callback){
+  var script = document.createElement("script");
+ 
+  if (script.readyState){  // IE
+    script.onreadystatechange = function(){
+      if (script.readyState == "loaded" ||
+              script.readyState == "complete"){
+        script.onreadystatechange = null;
+        callback();
+      }
+    };
+  } else {  // Другие браузеры
+    script.onload = function(){
+      callback();
+    };
+  }
+ 
+  script.src = url;
+  document.getElementsByTagName("head")[0].appendChild(script);
+}
+
+var ymap = function() {
+  $('.ymap-container').mouseenter(function(){
+      if (!check_if_load) { // проверяем первый ли раз загружается Яндекс.Карта, если да, то загружаем
+ 
+	  	// Чтобы не было повторной загрузки карты, мы изменяем значение переменной
+        check_if_load = true; 
+ 
+		// Показываем индикатор загрузки до тех пор, пока карта не загрузится
+        spinner.addClass('is-active');
+ 
+		// Загружаем API Яндекс.Карт
+        loadScript("https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=eaacdc05-f371-4ba9-9fc1-2b3abc729fd9", function(){
+           // Как только API Яндекс.Карт загрузились, сразу формируем карту и помещаем в блок с идентификатором &#34;map-yandex&#34;
+           ymaps.load(init);
+        });                
+      }
+    }
+  );  
+}
+ 
+$(function() {
+ 
+  //Запускаем основную функцию
+  ymap();
+ 
+});
+
+</script>
 <!-- <script>
 	new WOW().init();
 	</script> -->
 
+	<!-- <script  src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=eaacdc05-f371-4ba9-9fc1-2b3abc729fd9" ></script>
+		<script>
 
+				
+			ymaps.ready(function () {
+
+	   var myMap = new ymaps.Map('map', {
+			   center: [48.220851, 38.183762],
+			   zoom: 18	
+		   }, {
+			   searchControlProvider: 'yandex#search'
+		   }),
+   
+		   // Создаём макет содержимого.
+		   MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+			   '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+		   ),
+   
+		   myPlacemark = new ymaps.Placemark([48.221004, 38.184598], {
+			   hintContent: 'МЫ тут',
+			   balloonContent: 'Это красивая метка'
+		   }, {
+			   // Опции.
+			   // Необходимо указать данный тип макета.
+			   iconLayout: 'default#image',
+			   // Своё изображение иконки метки.
+			   iconImageHref: 'img/header/logo_mobil.png',
+			   // Размеры метки.
+			   iconImageSize: [30, 30],
+			   // Смещение левого верхнего угла иконки относительно
+			   // её "ножки" (точки привязки).
+			   iconImageOffset: [-15, -15]
+		   });
+   
+		
+   
+	   myMap.geoObjects
+		   .add(myPlacemark)
+		   
+   });
+		
+   </script> -->
 
 </body>
 
