@@ -1,5 +1,5 @@
 var gulp         = require('gulp');
-var browserSync  = require('browser-sync');
+var bs  = require('browser-sync');
 var sass         = require('gulp-sass');
 var notify       = require('gulp-notify');
 var autoprefixer = require('gulp-autoprefixer');
@@ -7,6 +7,7 @@ var cleanCSS = require('gulp-clean-css');
 concat = require('gulp-concat');
 debug = require('gulp-debug');
 var sourcemaps       = require('gulp-sourcemaps');
+
 
 var gulpif = require('gulp-if');
 var argv = require('yargs').argv;
@@ -17,14 +18,11 @@ var imageminJpegRecompress = require('imagemin-jpeg-recompress');
 var pngquant = require('imagemin-pngquant');
 var cache = require('gulp-cache');
 
-var critical = require('critical');
-
-const webp = require('gulp-webp');
-var webpHTML = require('gulp-webp-html');
 var webpCss = require('gulp-webp-css');
  
+var gwatch = require('gulp-watch');
 
-
+const webp = require('gulp-webp');
 const path = {
     public: {
         html: 'dist/',
@@ -33,36 +31,34 @@ const path = {
         img: 'dist/img/',
         fonts: 'dist/fonts/'
     },
-    src: { 
-        reboot: "src/sass/libs/reboot/bootstrap-reboot.css",
-        components: 'src/sass/components/*.scss',   
-        htmlComponents: 'src/components/*.html',
+    src: {
         html: 'src/*.html',
         libs: 'src/sass/libs/*.css' ,
-        // libs: [
-        //   './src/sass/libs/bootstrap-reboot.css',
-        //   './src/sass/libs/bootstrap-grid.min.css',
-        //   './src/sass/libs/animate.css',
-        //   './src/sass/libs/magnific-popup.css',
-        //   './src/sass/libs/slick.css'
-        // ],
         styles: 'src/sass/*.sass',
-        js: 'src/js/',
+        js: 'src/js/*.js',
         img: 'src/img/**/*.*',
         fonts: 'src/fonts/*.*'
     },
-    clean: './public'
+    clean: './dist'
   };
 
+  const config = {
+    server: {
+      baseDir: './dist'
+    },
+    host: 'localhost',
+    port: 3000
+  };
+  
 
 function buildCSS() {
-    return gulp.src([path.src.reboot, path.src.libs,  path.src.styles])
+    return gulp.src(['src/sass/libs/reboot/bootstrap-reboot.css', path.src.libs,  path.src.styles])
     .pipe(sourcemaps.init())
       .pipe(sass().on('error', notify.onError({
         message: "<%= error.message %>",
         title: "CSS compilation error"
       })))
-      .pipe(webpCss())
+      
       .pipe(autoprefixer({
         browsers: ['last 4 versions'],
         cascade: false
@@ -70,15 +66,16 @@ function buildCSS() {
       .pipe(concat('bundle.css'))
       .pipe(cleanCSS())
       .pipe(sourcemaps.write('.'))
+      //.pipe(webpCss()) //замещение webp в css(не работате)
       .pipe(gulp.dest(path.public.css))
-    //   .pipe(bs.reload({ stream: true }));
+      .pipe(bs.reload({ stream: true }));
   }
 
 
   function buildImgs() {
     return gulp.src(path.src.img)
-
-    .pipe(cache(imagemin([
+    //Продакшн
+    .pipe(imagemin([
       imagemin.gifsicle({interlaced: true}),
       imagemin.jpegtran({progressive: true}),
       imageminJpegRecompress({
@@ -92,36 +89,67 @@ function buildCSS() {
       pngquant({quality: '65-70', speed: 5})
     ],{
       verbose: true
-    })))
-      //.pipe(imagemin())
-      .pipe(gulp.dest(path.public.img))
-      // .pipe(bs.reload({ stream: true }))
-  }
+    }))
 
+    //Обычная разработка
+    //  .pipe(gulp.dest(path.public.img))
+    //   .pipe(webp())
+    
+      .pipe(gulp.dest(path.public.img))
+      .pipe(bs.reload({ stream: true }))
+  }
+gulp.task('minImg', buildImgs)
 
 
 
 
   function buildJS() {
-    return gulp.src([path.src.js + 'jquery.min.js',
-                     path.src.js + 'magnific-popup.min.js', 
-                     path.src.js + 'slick.min.js', 
-                     path.src.js + 'wow.js', 
-                     path.src.js + 'scripts.js'])
+    return gulp.src(['src/js/jquery/jquery.min.js', path.src.js, 'src/js/scripts/scripts.js'])
       .pipe(concat('bundle.js'))
-      // .pipe(babel({
-      //   presets: ['env']
-      // }))
-      // .pipe(uglify())
       .pipe(gulp.dest(path.public.js))
-      // .pipe(bs.reload({ stream: true }))
+      .pipe(bs.reload({ stream: true }))
+  }
+  gulp.task('buildJS',buildJS)
+  function buildFonts() {
+    return gulp.src(path.src.fonts)
+      .pipe(gulp.dest(path.public.fonts))
+  }
+  
+ 
+  function buildHtml() {
+    return gulp.src(path.public.html)
+    .pipe(bs.reload({ stream: true }))
+  }
+  function webserver() {
+    return bs(config)
   }
 
+  function watch() {
+
+    gwatch(path.public.html, buildHtml);
+    gwatch(path.src.styles, buildCSS);
+    gwatch(path.src.libs, buildCSS);
+    gwatch(path.src.js, buildJS);
+    gwatch(path.src.img, buildImgs);
+    gwatch(path.src.fonts, buildFonts);
+  }
 
   
+
+
+  const build = gulp.series( buildCSS, buildJS, buildImgs, buildFonts);
+
+  gulp.task('default', gulp.series(build, gulp.parallel(webserver, watch)));
+
+ 
+ 
+
+
+//Cоздание критического css
+var critical = require('critical');
   function crit(cb){
     return critical.generate({
-     
+      inline: true,
       base: 'dist/',
       src: 'index.html',
       css: ['dist/css/bundle.css'],
@@ -135,64 +163,26 @@ function buildCSS() {
         width: 1280,
         height: 960
       }],
-      dest: 'css/critical.css',
+      dest: 'index.html',
       minify: true,
-    
       ignore: ['@font-face',/url\(/]
     });
   }
+  gulp.task('crit', crit);
 
-  function webpcreate(){
-    return gulp.src(path.src.img)
-    .pipe(webp())
-    .pipe(gulp.dest(path.public.img))
-  
-  }
+
+
+//Создание webp копий изображений
+
+
+//Замещение webp в html (не работает)
+var webpHTML = require('gulp-webp-html');
   function webpHtmlReplace(){
     return gulp.src('dist/index.html')
     .pipe(webpHTML())
     .pipe(gulp.dest('dist'))
-   
-  
   }
-
-
-
-
-
-  gulp.task('webpcreate', webpcreate);
   gulp.task('webpHtmlReplace', webpHtmlReplace);
- 
-
-
-  
-  gulp.task('buildCSS', buildCSS);
-  gulp.task('buildImgs', buildImgs);
-  gulp.task('buildJS', buildJS);
-  gulp.task('crit', crit);
-
-// function watch (){
-//     browserSync.init({
-//         server: config.srcDir
-//     });
-//     gulp.watch( ['./src/*/**/*.+(sass|css)', '!./src/css/style.css'] , ['styles']);
- 
-//     gulp.watch(config.srcDir + "/*.html").on('change', browserSync.reload);
-// } 
-
-// gulp.task('webserver', webserver);
-// gulp.task('styles', styles);
-// gulp.task('watch', watch);
-
-// gulp.task('default', gulp.series(webserver,styles,watch ));
-// gulp.task('default', ['styles','watch' ]);
-
-
-
-
-
-
-
 
 
 

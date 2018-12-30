@@ -550,10 +550,10 @@ var popup = document.getElementById('popup'),
     call = document.getElementById('call'),
     close = document.getElementById('close');
 
-call.addEventListener('click',()=>{
+call.addEventListener('click', () => {
     popup.style.display ='block';
 } );
-close.addEventListener('click',()=>{
+close.addEventListener('click',() => {
     popup.style.display ='none';
 });
 
@@ -637,5 +637,5 @@ $(document).ready(function(){
     
     
   });
-
+	// new WOW().init();
 
