@@ -35,7 +35,7 @@ const path = {
         html: 'src/*.html',
         libs: 'src/sass/libs/*.css' ,
         styles: 'src/sass/*.sass',
-        js: 'src/js/*.js',
+        js: 'src/js/**/*.js',
         img: 'src/img/**/*.*',
         fonts: 'src/fonts/*.*'
     },
@@ -51,24 +51,27 @@ const path = {
   };
   
 
-function buildCSS() {
-    return gulp.src(['src/sass/libs/reboot/bootstrap-reboot.css', path.src.libs,  path.src.styles])
+function buildCSS(callback) {
+   setTimeout(function(){
+     gulp.src(['src/sass/libs/reboot/bootstrap-reboot.css', path.src.libs,  path.src.styles])
     .pipe(sourcemaps.init())
       .pipe(sass().on('error', notify.onError({
         message: "<%= error.message %>",
         title: "CSS compilation error"
       })))
       
-      .pipe(autoprefixer({
-        browsers: ['last 4 versions'],
-        cascade: false
-        }))
+      // .pipe(autoprefixer({
+      //   browsers: ['last 4 versions'],
+      //   cascade: false
+      //   }))
       .pipe(concat('bundle.css'))
-      .pipe(cleanCSS())
+      // .pipe(cleanCSS())
       .pipe(sourcemaps.write('.'))
       //.pipe(webpCss()) //замещение webp в css(не работате)
       .pipe(gulp.dest(path.public.css))
       .pipe(bs.reload({ stream: true }));
+    }, 500);
+    callback();
   }
 
 

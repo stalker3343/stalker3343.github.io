@@ -7,6 +7,8 @@
     z-index: 10
     background-color: rgba(0,0,0,.6)
     .popup
+        animation-name: animatetop
+        animation-duration: 0.6s
         position: fixed
         left: 50%
         top: 50%
@@ -66,7 +68,11 @@
         margin-top: 10px
         font-size: 14px
 
-
+@keyframes animatetop
+  from
+    top: 0px; opacity: 0
+  to
+    top: 50%; opacity: 1
 
 
 
