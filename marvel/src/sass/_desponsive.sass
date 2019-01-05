@@ -1,0 +1,59 @@
+.desponsive 
+  padding: 118px 0px 107px 0px
+  border: 1px solid #d6d6d6
+  background: #fafafa url('../img/desponsive/light-lamp.png') no-repeat 0px 0px 
+  @media (max-width: 768px)
+    background-size: 20%
+  &__heading 
+    text-align: left
+    margin-bottom: 56px
+
+  &__wrap
+    display: flex
+
+    justify-content: space-around
+  &__btn
+    padding: 16px 27px
+    background: $primary-color
+    font-family: Montserrat
+    font-size: 13px
+    font-weight: 400
+    text-transform: uppercase
+    &:hover
+      background: lighten($primary-color, 20%)
+  &__text
+    align-items: flex-start
+    width: 50%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    @media (max-width: 768px)
+      width: 100%
+  &__subtitle
+    color: #757575
+    font-family: Muli
+    font-size: 16px
+    font-weight: 400
+    margin-bottom: 50px
+  &__list
+    padding-left: 0
+    color: #757575
+    font-family: Muli
+    font-size: 18px
+    font-weight: 400
+    margin-bottom: 30px
+    list-style-type: none
+  &__item
+    display: flex
+    align-items: center
+    margin-bottom: 10px
+  &__item ion-icon
+    margin-right: 5px
+  &__img-wrap
+    width: 50%
+    display: flex
+    justify-content: center
+    align-items: center
+    @media (max-width: 768px)
+      display: none
+  

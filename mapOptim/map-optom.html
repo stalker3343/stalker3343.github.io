@@ -1,0 +1,88 @@
+<style>
+   
+    /* Индикатор загрузки, который показывается до загрузки карты */
+ .loader {
+   position: absolute;
+   z-index: 15;
+   top: -100%;
+   left: 0;
+   box-sizing: border-box;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+   color: #000000;
+   transition: opacity .7s ease;
+   opacity: 0;
+   background-color: rgba(0,0,0,.55);
+ }
+  
+ .loader:after,
+ .loader:before {
+   box-sizing: border-box;
+ }
+  
+ .loader.is-active {
+   top: 0;
+   opacity: 1;
+ }
+  
+ .loader-default:after {
+   position: absolute;
+   top: calc(50% - 24px);
+   left: calc(50% - 24px);
+   width: 48px;
+   height: 48px;
+   content: '';
+   animation: rotation 1s linear infinite;
+   border: solid 8px #ffffff;
+   border-left-color: transparent;
+   border-radius: 50%;
+ }
+  
+ @keyframes rotation {
+   from {
+     transform: rotate(0);
+   }
+   to {
+     transform: rotate(359deg);
+   }
+ }
+  
+ @keyframes blink {
+   from {
+     opacity: .5;
+   }
+   to {
+     opacity: 1;
+   }
+ }
+ 
+ 
+ /* &#34;Блок-обертка&#34;, где мы задаем фоновое изображение скриншотом как на карте */
+ .ymap-container {
+   position: relative;
+   margin: 3em 0 2em 0;
+   overflow: hidden;
+   cursor: pointer;
+   background: url('img/yandex-before-load.png') #ffffff no-repeat;
+   background-position: center center;
+   background-size: cover;
+   padding: 0px;
+ 
+ }
+  
+ /* Блок, в котором появится Яндекс.Карта */
+ #map-yandex {
+   position: relative;
+   z-index: 7;
+   width: 100%;
+   height: 20em;
+   cursor: pointer;
+   background-color: transparent;
+ }
+    </style>
+ <section class="contacts ymap-container">
+     <div class="loader loader-default"></div>
+ 
+     <div id="map" class="map"></div>
+</section> 

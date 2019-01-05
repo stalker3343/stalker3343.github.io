@@ -1,0 +1,40 @@
+.nav
+	background: #2a2a2a
+	&__wrap
+		height: 80px
+		align-items: center
+		display: flex
+		justify-content: space-between
+	&__logo
+		width: 195px
+	&__menu
+		display: flex
+		list-style-type: none
+		align-items: center
+		height: 100%
+		font-family: 'Montserrat'
+		font-weight: 200
+		font-size: 14px
+		color: #ffffff
+		@media (max-width: 992px)
+			display: none
+	&__item
+		margin-right: 64px
+		color: #ffffff
+		&:hover:not(.nav__item_active)
+			color: $primary-color
+			text-decoration: underline
+		&_active
+			color: $primary-color
+			&:hover
+				color: $primary-color
+				text-decoration: none
+	&__mob-button
+		display: none
+		@media (max-width: 992px)
+			display: block
+.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before
+	background-color: #fff
+.mm-menu_offcanvas
+	z-index: 1000
+		
