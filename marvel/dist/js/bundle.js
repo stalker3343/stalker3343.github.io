@@ -1407,6 +1407,7 @@ $(document).ready(function () {
 
     // скрытие и показ элементов по клику одного и тогоже элемента
     $('#map').on("click", function () {
+      
         $('.map__cont').slideToggle(1000); // используя приставку slide изменил появление элемента на снизу вверх
         /*   setInterval(ShowText, 1500); */
     });
@@ -1446,5 +1447,10 @@ $(document).ready(function () {
 
     // });
 
-
+   
 });
+
+$(window).load(function(){ 
+ $('.map__cont').append('<script async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A26ab2bf49c9e486dd480fb9d1b311a100de56ee33c6ce0bbbf4d5fa50e5f4b5d&amp;width=100%25&amp;height=400&amp;lang=ru_UA&amp;scroll=false"></script>');
+
+})
