@@ -53,4 +53,38 @@ $(document).ready(function () {
 
 
 
+    $("#menu").mmenu({
+        extensions: ["position-right", "pagedim-black"],
+        offCanvas: {
+            pageSelector: "#my-wrapper"
+        },
+        classNames: {
+            selected: "nav__item_active"
+        },
+    });
+    var api = $("#menu").data("mmenu");
+    api.bind("open:finish", function () {
+        $('.hamburger').addClass('is-active')
+    });
+    api.bind("close:finish", function () {
+        $('.hamburger').removeClass('is-active')
+    });
+    // $("#menu").mmenu({
+    //     "extensions": [
+    //       "fx-listitems-slide"
+    //     ]
+    //   }
+
+    // {
+    //   // configuration
+    //   offCanvas: {
+    //     pageSelector: "#my-wrapper"
+    //   },
+    //   classNames: {
+    //     selected: "nav__item_active"
+    //   },
+
+    // });
+
+
 });

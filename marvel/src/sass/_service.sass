@@ -16,6 +16,12 @@
     width: 500px
     border-radius: 50%
     box-shadow: 0px 0px 0px 154px rgba(255,228,0,0.7)
+    @media (max-width: 990px)
+      height: 300px
+      width: 300px
+      bottom: -10%
+      left: -10%
+      box-shadow: 0px 0px 0px 104px rgba(255,228,0,0.7)
   &:after
     content: ""
     position: absolute
@@ -25,18 +31,30 @@
     width: 100%
     height: 100%
     background:  url('../img/service/teemBg.png')  no-repeat bottom left / 47%
-
+    @media (max-width: 990px)
+      background: none
   &__wrapper
     width: 60%
     margin-left: auto
+    @media (max-width: 990px)
+      width: 100%
   &__heading
     margin-bottom: 100px
+    @media (max-width: 990px)
+      margin-bottom: 30px
     &:before
       content: "Service"
       left: 223px
+      @media (max-width: 720px)
+        left: 50%
+        text-align: center
   &__item-wrapper
     display: flex
     flex-wrap: wrap
+    @media (max-width: 420px)
+      flex-wrap: wrap
+      justify-content: center
+      align-items: center
   &__item
     justify-content: center
     align-items: center
@@ -44,18 +62,33 @@
     padding: 35px 60px
     display: flex
     flex-direction: column
+
+      
     &:nth-child(1)
       border-bottom: 1px solid #e6e6e6
       border-right: 1px solid #e6e6e6
     &:nth-child(2)
       border-bottom: 1px solid #e6e6e6
     &:nth-child(3)
- 
-      border-right: 1px solid #e6e6e6
+      border-right: 1px solid #e6e6e6    
+    @media (max-width: 768px)
+      padding: 20px 20px
+    @media (max-width: 420px)
+      width: 100%
+      margin-bottom: 10px
+      padding: 0
+      &:nth-child(1)
+        border-bottom: none
+        border-right: none
+      &:nth-child(2)
+        border-bottom: none
+      &:nth-child(3)
+        border-right: none   
 
   &__item-heading
     margin: 0
     color: #444444
+    text-align: center
     font-family: Montserrat
     font-size: 18px
     margin-bottom: 30px

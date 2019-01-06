@@ -30,6 +30,8 @@
 				color: $primary-color
 				text-decoration: none
 	&__mob-button
+		z-index: 1000000000000
+		position: relative
 		display: none
 		@media (max-width: 992px)
 			display: block
@@ -37,4 +39,5 @@
 	background-color: #fff
 .mm-menu_offcanvas
 	z-index: 1000
-		
+.hamburger.is-active .hamburger-inner, .hamburger.is-active .hamburger-inner:after, .hamburger.is-active .hamburger-inner:before
+	background-color: #fff

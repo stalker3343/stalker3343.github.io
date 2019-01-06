@@ -5,6 +5,10 @@
     align-items: center
     display: flex
     justify-content: space-between
+    @media (max-width: 570px)
+      flex-wrap: wrap
+      justify-content: center
+      height: auto
   &__item
     text-align: center
     color: #ffffff
@@ -18,6 +22,14 @@
       flex-direction: column
       justify-content: center
       align-items: center
+    @media (max-width: 570px)
+      padding-top: 40px
+      &:nth-child(2n+1)
+        width: 100%
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
   &__icon-wrap
     margin-bottom: 10px
     color: #ffffff
