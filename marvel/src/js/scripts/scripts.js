@@ -85,6 +85,13 @@ $(document).ready(function () {
     //   },
 
     // });
+    var waypoint = new Waypoint({
+        element: document.getElementById('contacts'),
+        handler: function () {
+            console.log('point');
+            $('.map__cont').append('<script async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A26ab2bf49c9e486dd480fb9d1b311a100de56ee33c6ce0bbbf4d5fa50e5f4b5d&amp;width=100%25&amp;height=400&amp;lang=ru_UA&amp;scroll=false"></script>');
+        }
+    })
 
 
 });
