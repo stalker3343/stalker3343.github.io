@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <section class="main">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="text-center">ToDo</h1>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-5">
+          <div class="todo">
+            <p>Введите задачу</p>
+            <div class="row no-gutters ">
+              <div class="col-10">
+                <input class="form-control form-control-lg inpTask" type="text" placeholder="Введите задачу">
+              </div>
+              <div class="col-2">
+                <button type="button" class="btn btn-success btn-lg todo__addtbtn"><i class="fas fa-check"></i></button>
+              </div>
+            </div>
+
+            <ul class="list-group todo__item-list">
+              <!-- <li class="list-group-item todo__item">
+                <div class="row align-items-center d-flex">
+                  <div class="col-10">
+                    <div class="custom-control custom-checkbox ">
+                      <input type="checkbox" class="custom-control-input">
+                      <label class="custom-control-label">Check this custom checkbox</label>
+                    </div>
+                  </div>
+                  <div class="col-2">
+                    <button type="button" class="btn btn-success  todo__deltbtn"></button>
+                  </div>
+                </div>
+              </li> -->
+              <!-- 
+
+              <li class="list-group-item todo__item">
+                <div class="row align-items-center d-flex">
+                  <div class="col-10">
+                    <div class="custom-control custom-checkbox mr-sm-2">
+                      <label class="custom-control-label">
+                        <input type="checkbox" class="custom-control-input">
+                        Remember my preference
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-2">
+                    <button type="button" class="btn btn-success  todo__deltbtn"></button>
+                  </div>
+                </div>
+
+
+
+              </li> -->
+
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+
+  <!-- <div class="test">
+
+    <button>fdg</button>
+    <button>fdg</button>
+    <button>fdg</button>
+    <button>fdg</button>
+    <button>fdg</button>
+  </div>
+  <script>
+    let test = document.querySelector('.test');
+    test.addEventListener('click', function (e) {
+      console.log(e.target);
+
+    })
+  </script> -->
+
+
+  <style>
+    .main {
+      margin-top: 40px;
+    }
+
+    .todo__item-list {
+      margin-top: 20px;
+    }
+
+    .todo__addtbtn {
+      margin-left: 17px;
+    }
+
+    .todo__deltbtn:after {
+      content: " ";
+      background: url('images/trash-solid.png') no-repeat center/ cover;
+
+      width: 15px;
+      display: block;
+      height: 17px;
+
+      display: block;
+    }
+  </style>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
