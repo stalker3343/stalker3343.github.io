@@ -24,13 +24,15 @@
         <div class="col-12 col-sm-12 col-lg-5">
           <div class="todo">
             <p>Введите задачу</p>
-            <div class="row no-gutters ">
-              <div class="col-10">
-                <input class="form-control form-control-lg inpTask" type="text" placeholder="Введите задачу">
-              </div>
-              <div class="col-2">
+            <div class="row  ">
+              <div class="col-12 d-flex">
+
+                <input class="form-control form-control-lg inpTask " type="text" placeholder="Введите задачу">
                 <button type="button" class="btn btn-success btn-lg todo__addtbtn"><i class="fas fa-check"></i></button>
+
+
               </div>
+
             </div>
 
             <ul class="list-group todo__item-list">
@@ -47,26 +49,9 @@
                   </div>
                 </div>
               </li> -->
-              <!-- 
-
-              <li class="list-group-item todo__item">
-                <div class="row align-items-center d-flex">
-                  <div class="col-10">
-                    <div class="custom-control custom-checkbox mr-sm-2">
-                      <label class="custom-control-label">
-                        <input type="checkbox" class="custom-control-input">
-                        Remember my preference
-                      </label>
-                    </div>
-                  </div>
-                  <div class="col-2">
-                    <button type="button" class="btn btn-success  todo__deltbtn"></button>
-                  </div>
-                </div>
 
 
 
-              </li> -->
 
             </ul>
           </div>
@@ -104,8 +89,12 @@
       margin-top: 20px;
     }
 
+    .inpTask {
+      display: inline-block;
+    }
+
     .todo__addtbtn {
-      margin-left: 17px;
+      margin-left: 10px;
     }
 
     .todo__deltbtn:after {
