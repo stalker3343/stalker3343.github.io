@@ -35,12 +35,16 @@
 
             <ul class="list-group todo__item-list">
               <li class="list-group-item todo__item">
-                <div class="custom-control custom-checkbox d-flex">
+                <div class="custom-control custom-checkbox d-flex align-items-center">
 
                   <input type="checkbox" class="custom-control-input">
-                  <label class="custom-control-label">
-                    <div class="label_text">
-                      Check this custom checkbox
+                  <label class="custom-control-label d-flex">
+                    <div class="label_text">Check this custom checkbox
+                    </div>
+
+                    <div class="label__change hidden">
+                      <input type="text" class="inputChange">
+                      <button class="btn  btn-success btn-sm todo__btn-confirm">Ок</button>
                     </div>
                   </label>
 
@@ -48,34 +52,7 @@
                   <button type="button" class="btn btn-success  todo__deltbtn"></button>
                 </div>
               </li>
-              <li class="list-group-item todo__item">
-                <div class="custom-control custom-checkbox d-flex">
 
-                  <input type="checkbox" class="custom-control-input">
-                  <label class="custom-control-label">
-                    <div class="label_text">
-                      Check this custom checkbox
-                    </div>
-                  </label>
-
-
-                  <button type="button" class="btn btn-success  todo__deltbtn"></button>
-                </div>
-              </li>
-              <li class="list-group-item todo__item">
-                <div class="custom-control custom-checkbox d-flex">
-
-                  <input type="checkbox" class="custom-control-input">
-                  <label class="custom-control-label">
-                    <div class="label_text">
-                      Check this custom checkbox
-                    </div>
-                  </label>
-
-
-                  <button type="button" class="btn btn-success  todo__deltbtn"></button>
-                </div>
-              </li>
 
             </ul>
           </div>
@@ -134,6 +111,18 @@
       height: 17px;
 
       display: block;
+    }
+
+    .todo__btn-confirm {
+      margin-left: 5px;
+    }
+
+    .label__change {
+      display: flex;
+    }
+
+    .hidden {
+      display: none;
     }
   </style>
 
