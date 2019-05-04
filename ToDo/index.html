@@ -39,8 +39,7 @@
 
                   <input type="checkbox" class="custom-control-input">
                   <label class="custom-control-label d-flex">
-                    <div class="label_text">Check this custom checkbox
-                    </div>
+                    <div class="label_text">Check this custom checkbox</div>
 
                     <div class="label__change hidden">
                       <input type="text" class="inputChange">
@@ -119,10 +118,28 @@
 
     .label__change {
       display: flex;
+
     }
 
     .hidden {
       display: none;
+    }
+
+    @media (max-width: 575.98px) {
+      .label__change {
+        padding-right: 10px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .label__change button {
+
+        display: block;
+        width: 100%;
+        margin: 0px;
+        margin-top: 3px;
+      }
     }
   </style>
   <script src="./ivenMob.js"></script>
