@@ -9,6 +9,8 @@ window.onload = function () {
   btnTaskAdd.addEventListener('click', function () {
     toDo.addItem(inpTask.value);
     inpTask.value = "";
+
+
   })
   list.addEventListener('click', function (e) {
     toDo.delItem(e);
@@ -47,7 +49,7 @@ function Todo() {
 
         ' <input type="checkbox" class="custom-control-input">' +
         ' <label class="custom-control-label d-flex">' +
-        '   <div class="label_text">Check this custom checkbox' +
+        '   <div class="label_text">' + text +
         '   </div>' +
 
         '  <div class="label__change hidden">' +
