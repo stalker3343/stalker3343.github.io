@@ -14,11 +14,18 @@ window.onload = function () {
     toDo.delItem(e);
     toDo.chekd(e);
     toDo.confirChange(e);
-  })
-  list.addEventListener('click', function (e) {
     toDo.changeItem(e);
-
   })
+  list.addEventListener('tap', function (e) {
+    toDo.delItem(e);
+    toDo.chekd(e);
+    toDo.confirChange(e);
+    toDo.changeItem(e);
+  })
+  // list.addEventListener('click', function (e) {
+
+
+  // })
   document.addEventListener('click', function (e) {
 
 
