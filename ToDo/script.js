@@ -15,7 +15,7 @@ window.onload = function () {
     toDo.chekd(e);
     toDo.confirChange(e);
   })
-  list.addEventListener('dblclick', function (e) {
+  list.addEventListener('click', function (e) {
     toDo.changeItem(e);
 
   })
