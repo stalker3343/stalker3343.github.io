@@ -88,13 +88,13 @@ function Todo() {
 
   this.confirChange = function (item) {
     if (item.target.classList.contains("todo__btn-confirm")) {
-      let text = item.target.previousElementSibling.value;
-      if (text == "") {
+      let textInp = item.target.previousElementSibling.value;
+      if (textInp == "") {
         item.target.closest('.todo__item').remove();
 
       } else {
         item.target.parentElement.classList.add('hidden');
-        item.target.parentElement.previousElementSibling.innerHTML = text;
+        item.target.parentElement.previousElementSibling.innerHTML = textInp;
         item.target.parentElement.previousElementSibling.style.display = "block";
       }
 
