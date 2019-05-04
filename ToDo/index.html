@@ -55,32 +55,86 @@
 
             </ul>
           </div>
+          <h2 class="text-center mt-5">Для лёхи</h2>
+          <div class="custom-file">
+            <input onchange="readURL(this);" type="file" class="custom-file-input" id="validatedCustomFile" required>
+            <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+            <div class="invalid-feedback">Example invalid custom file feedback</div>
+          </div>
+
         </div>
+
       </div>
 
-
+      <!-- <input style="" type='file' id="uploadBannerImage"  /> -->
+      <!-- <button class="btn btn-success" onclick="p.open('<h1>Привет</h1>')"> Открыть попап</button> -->
     </div>
   </section>
-
-
-  <!-- <div class="test">
-
-    <button>fdg</button>
-    <button>fdg</button>
-    <button>fdg</button>
-    <button>fdg</button>
-    <button>fdg</button>
-  </div>
   <script>
-    let test = document.querySelector('.test');
-    test.addEventListener('click', function (e) {
-      console.log(e.target);
+    function readURL(input) {
 
-    })
-  </script> -->
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+          document.querySelector('body').style.backgroundImage = ' url(' + e.target.result + '';
 
 
+        }
+
+
+
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+  </script>
+
+  <!-- <div class="overlay">
+    <div class="popUp">
+      <div class="contentPOpup">
+
+      </div>
+      <div class="close">&times;</div>
+    </div>
+  </div> -->
   <style>
+    body {
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+    }
+
+    .overlay {
+      position: absolute;
+      z-index: 1;
+      background: rgba(0, 0, 0, .3);
+      top: 0px;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      display: none;
+    }
+
+    .popUp {
+      background: white;
+      padding: 25px 10px;
+      position: relative;
+      width: 500px;
+    }
+
+    .close {
+      display: block;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      font-size: 30px;
+      color: rgb(0, 0, 0);
+    }
+
     .main {
       margin-top: 40px;
     }

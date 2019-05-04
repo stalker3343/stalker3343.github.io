@@ -112,3 +112,41 @@ function Todo() {
   }
 
 }
+
+function Popup() {
+  let popUpLoad = document.createElement('div');
+  popUpLoad.classList.add('overlay');
+  popUpLoad.innerHTML = '<div class="popUp">  <div class="contentPOpup"></div> <div class="close">&times;</div></div>';
+  document.body.appendChild(popUpLoad);
+  let That = this;
+
+  let overlay = document.querySelector('.overlay');
+  let popUp = document.querySelector('.popUp');
+
+  this.open = function (text) {
+
+    overlay.style.display = 'flex';
+    popUp.querySelector('.contentPOpup').innerHTML = text;
+
+  }
+  this.close = function () {
+
+    overlay.style.display = 'none';
+  }
+  window.onclick = function (event) {
+    if (event.target == overlay) {
+      That.close()
+    }
+  }
+  // overlay.addEventListener('click', function (e) {
+  //   console.log(e.target.closest('.overlay'));
+
+  //   if (e.target.closest('.overlay') == null) {
+
+  //   }
+
+
+  // });
+
+}
+let p = new Popup();
