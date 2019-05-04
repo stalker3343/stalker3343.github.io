@@ -85,19 +85,20 @@ function Todo() {
       item.target.closest('li').remove();
     }
   }
-  this.confirChange = function (item) {
 
+  this.confirChange = function (item) {
     if (item.target.classList.contains("todo__btn-confirm")) {
       let text = item.target.previousElementSibling.value;
-      item.target.parentElement.classList.add('hidden');
-      item.target.parentElement.previousElementSibling.innerHTML = text;
-      item.target.parentElement.previousElementSibling.style.display = "block";
+      if (text == "") {
+        item.target.closest('.todo__item').remove();
 
-
+      } else {
+        item.target.parentElement.classList.add('hidden');
+        item.target.parentElement.previousElementSibling.innerHTML = text;
+        item.target.parentElement.previousElementSibling.style.display = "block";
+      }
 
     }
-
-
   }
 
   this.changeItem = function (item) {
@@ -105,8 +106,6 @@ function Todo() {
       item.target.style.display = "none";
       item.target.nextElementSibling.classList.remove('hidden');
       item.target.nextElementSibling.firstElementChild.value = item.target.innerHTML;
-
-
     }
   }
 
