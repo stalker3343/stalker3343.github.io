@@ -6,14 +6,19 @@ window.onload = function () {
 
   let toDo = new Todo();
   btnTaskAdd.addEventListener('click', function () {
-
     toDo.addItem(inpTask.value);
+    inpTask.value = "";
   })
   list.addEventListener('click', function (e) {
     toDo.delItem(e);
+    toDo.chekd(e);
   })
-  // list.addEventListener('dblclick', function (e) {
-  //   toDo.changeItem(e);
+  list.addEventListener('dblclick', function (e) {
+    toDo.changeItem(e);
+
+  })
+  // document.addEventListener('click', function (e) {
+  //   console.log(e.target);
 
   // })
 
@@ -24,50 +29,61 @@ window.onload = function () {
 function Todo() {
   let taskList = document.querySelector('.todo__item-list');
 
-
   this.addItem = function (text) {
-    let item = document.createElement('li');
+    if (text != "") {
+      let item = document.createElement('li');
+      item.classList.add('list-group-item', 'todo__item');
 
-    item.classList.add('list-group-item', 'todo__item');
-    item.innerHTML = '<div class="row align-items-center d-flex"> <div class="col-10"><div class="custom-control custom-checkbox mr-sm-2">' + '<input type="checkbox" class="custom-control-input"> <label class="custom-control-label" >' + text + '</label></div></div><div class="col-2"> <button type="button" class="btn btn-success  todo__deltbtn"></button></div></div>';
-    item.addEventListener('click', function () {
-      let inp = this.querySelector('input[type="checkbox"]');
-      if (inp.checked) {
-        inp.checked = false;
-      } else {
-        inp.checked = true
-      }
-
-    })
-
-    taskList.appendChild(item)
+      item.innerHTML =
+        ' <div class="custom-control custom-checkbox d-flex">' +
+        ' <div>' +
+        ' <input type="checkbox" class="custom-control-input">' +
+        '<label class="custom-control-label">' +
+        '<div class="label_text">' + text + '</div>' +
+        '</label>' +
+        ' </div>' +
+        ' <button type="button" class="btn btn-success  todo__deltbtn"></button>' +
+        ' </div>';
+      taskList.appendChild(item)
+    }
   }
-  this.delItem = function (item) {
-    if (item.target.localName == "button") {
-      console.log(item);
 
-      item.target.parentElement.parentElement.parentElement.remove();
+  this.chekd = function (e) {
+    if (e.target.localName == "li" || e.target.closest('.todo__item') != null && !e.target.classList.contains("label_text") &&
+      !e.target.classList.contains("inputChange")) {
+      let inp = e.target.closest('li').querySelector('input');
+      inp.checked = inp.checked ? inp.checked = false : inp.checked = true
+      if (inp.checked) {
+        e.target.closest('li').style.background = "rgb(32, 137, 55)";
+        e.target.closest('li').style.color = "white";
+      } else {
+        e.target.closest('li').style.background = "none";
+        e.target.closest('li').style.color = "black";
+      }
+    }
+  }
+
+  this.delItem = function (item) {
+    if (item.target.classList.contains("todo__deltbtn")) {
+      item.target.closest('li').remove();
+    }
+  }
+
+  this.changeItem = function (item) {
+
+    if (item.target.classList.contains("label_text")) {
+      let inputChange = document.createElement('input');
+      inputChange.classList.add('inputChange');
+      inputChange.innerHTML = item.target.innerHTML;
+
+      item.target.closest('ю').appendChild(inputChange);
+      item.target.remove();
+      console.log(item.target);
+
 
     }
 
+
   }
-  // this.changeItem = function (item) {
-
-
-  //   if (item.target.localName == "label") {
-  //     console.log('лейбл');
-  //     item.target.innerHTML = "Ghbdtn";
-
-
-  //   } else {
-  //     console.log(item.target);
-  //     let label = item.target.querySelector('label');
-
-  //     label.innerHTML = "Ghbdtn";
-
-  //   }
-
-
-  // }
 
 }

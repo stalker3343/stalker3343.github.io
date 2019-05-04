@@ -29,29 +29,53 @@
 
                 <input class="form-control form-control-lg inpTask " type="text" placeholder="Введите задачу">
                 <button type="button" class="btn btn-success btn-lg todo__addtbtn"><i class="fas fa-check"></i></button>
-
-
               </div>
 
             </div>
 
             <ul class="list-group todo__item-list">
-              <!-- <li class="list-group-item todo__item">
-                <div class="row align-items-center d-flex">
-                  <div class="col-10">
-                    <div class="custom-control custom-checkbox ">
-                      <input type="checkbox" class="custom-control-input">
-                      <label class="custom-control-label">Check this custom checkbox</label>
+              <li class="list-group-item todo__item">
+                <div class="custom-control custom-checkbox d-flex">
+
+                  <input type="checkbox" class="custom-control-input">
+                  <label class="custom-control-label">
+                    <div class="label_text">
+                      Check this custom checkbox
                     </div>
-                  </div>
-                  <div class="col-2">
-                    <button type="button" class="btn btn-success  todo__deltbtn"></button>
-                  </div>
+                  </label>
+
+
+                  <button type="button" class="btn btn-success  todo__deltbtn"></button>
                 </div>
-              </li> -->
+              </li>
+              <li class="list-group-item todo__item">
+                <div class="custom-control custom-checkbox d-flex">
+
+                  <input type="checkbox" class="custom-control-input">
+                  <label class="custom-control-label">
+                    <div class="label_text">
+                      Check this custom checkbox
+                    </div>
+                  </label>
 
 
+                  <button type="button" class="btn btn-success  todo__deltbtn"></button>
+                </div>
+              </li>
+              <li class="list-group-item todo__item">
+                <div class="custom-control custom-checkbox d-flex">
 
+                  <input type="checkbox" class="custom-control-input">
+                  <label class="custom-control-label">
+                    <div class="label_text">
+                      Check this custom checkbox
+                    </div>
+                  </label>
+
+
+                  <button type="button" class="btn btn-success  todo__deltbtn"></button>
+                </div>
+              </li>
 
             </ul>
           </div>
@@ -95,6 +119,10 @@
 
     .todo__addtbtn {
       margin-left: 10px;
+    }
+
+    .todo__deltbtn {
+      margin-left: auto;
     }
 
     .todo__deltbtn:after {
