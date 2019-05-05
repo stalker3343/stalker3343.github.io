@@ -31,9 +31,6 @@ window.onload = function () {
 
     }
   }
-
-
-
 }
 
 
