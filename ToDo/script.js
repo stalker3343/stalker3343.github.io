@@ -7,10 +7,8 @@ window.onload = function () {
   let toDo = new Todo();
 
   btnTaskAdd.addEventListener('click', function () {
-    toDo.addItem(inpTask.value);
+    toDo.addItem(inpTask.value.trim(), true);
     inpTask.value = "";
-
-
   })
   list.addEventListener('click', function (e) {
     toDo.delItem(e);
@@ -24,48 +22,65 @@ window.onload = function () {
     toDo.confirChange(e);
     toDo.changeItem(e);
   })
-  // list.addEventListener('click', function (e) {
 
+  // localStorage.clear();
+  let returnObj = JSON.parse(localStorage.getItem("DoLIst"));
+  if (returnObj != null) {
+    for (let i = 0; i < returnObj.List.length; i++) {
+      toDo.addItem(returnObj.List[i], false)
 
-  // })
-  document.addEventListener('click', function (e) {
+    }
+  }
 
-
-  })
 
 
 }
 
 
 function Todo() {
+
   let taskList = document.querySelector('.todo__item-list');
 
-  this.addItem = function (text) {
+  let returnObj = JSON.parse(localStorage.getItem("DoLIst"));
+  let StorageData;
+  if (returnObj != null) {
+    StorageData = returnObj;
+  } else {
+    StorageData = {
+      "List": [],
+    }
+  }
+
+
+  this.addItem = function (text, pushParam) {
     if (text != "") {
       let item = document.createElement('li');
       item.classList.add('list-group-item', 'todo__item');
 
       item.innerHTML = ' <div class="custom-control custom-checkbox d-flex align-items-center"> ' +
-
         ' <input type="checkbox" class="custom-control-input">' +
         ' <label class="custom-control-label d-flex">' +
         '   <div class="label_text">' + text +
-        '   </div>' +
-
+        '</div>' +
         '  <div class="label__change hidden">' +
         '    <input type="text" class="inputChange">' +
         '    <button class="btn  btn-success btn-sm todo__btn-confirm">Ок</button>' +
         '  </div>' +
         ' </label>' +
-
-
         '  <button type="button" class="btn btn-success  todo__deltbtn"></button>' +
         ' </div>';
+      taskList.appendChild(item);
 
-
-      taskList.appendChild(item)
+      if (pushParam) {
+        StorageData.List.push(text);
+        localStorage.setItem("DoLIst", JSON.stringify(StorageData));
+      }
     }
   }
+
+
+
+
 
   this.chekd = function (e) {
     if (e.target.localName == "li" || e.target.closest('.todo__item') != null && !e.target.classList.contains("label_text") &&
@@ -82,22 +97,40 @@ function Todo() {
     }
   }
 
-  this.delItem = function (item) {
-    if (item.target.classList.contains("todo__deltbtn")) {
+  this.delItem = function (item, delParam) {
+    let deletedText;
+    let param = delParam || false;
+    if (item.target.classList.contains("todo__deltbtn") || param) {
+      deletedText = item.target.closest('li').querySelector('.label_text').innerHTML.trim();
       item.target.closest('li').remove();
+      let index = StorageData.List.indexOf(deletedText);
+      StorageData.List.splice(index, 1);
+      localStorage.setItem("DoLIst", JSON.stringify(StorageData));
     }
+
+
+
+
   }
 
   this.confirChange = function (item) {
     if (item.target.classList.contains("todo__btn-confirm")) {
-      let textInp = item.target.previousElementSibling.value;
-      if (textInp == "") {
-        item.target.closest('.todo__item').remove();
+      let confirmElem = item.target.closest('li');
+      let textInp = confirmElem.querySelector('.inputChange').value.trim();
 
+      if (textInp == "") {
+        this.delItem(item, true);
       } else {
-        item.target.parentElement.classList.add('hidden');
-        item.target.parentElement.previousElementSibling.innerHTML = textInp;
-        item.target.parentElement.previousElementSibling.style.display = "block";
+        // логика Локал стореджа
+        let index = StorageData.List.indexOf(confirmElem.querySelector('.label_text').innerHTML);
+        StorageData.List.splice(index, 1, textInp);
+        localStorage.setItem("DoLIst", JSON.stringify(StorageData));
+        // ---логика Локал стореджа
+        confirmElem.querySelector('.label__change').classList.add('hidden');
+        confirmElem.querySelector('.label_text').innerHTML = textInp;
+        confirmElem.querySelector('.label_text').style.display = "block";
+
+
       }
 
     }
@@ -138,15 +171,7 @@ function Popup() {
       That.close()
     }
   }
-  // overlay.addEventListener('click', function (e) {
-  //   console.log(e.target.closest('.overlay'));
 
-  //   if (e.target.closest('.overlay') == null) {
-
-  //   }
-
-
-  // });
 
 }
 let p = new Popup();
