@@ -10,7 +10,7 @@
  * and re-run your build process.
  * See https://goo.gl/2aRDsh
  */
-console.log('Hello from service-worker.js');
+
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 self.addEventListener('message', (event) => {
@@ -18,6 +18,15 @@ self.addEventListener('message', (event) => {
     self.skipWaiting();
   }
 });
+
+// self.addEventListener('activate', function (event) {
+//   event.waitUntil(
+//     caches
+//     .keys()
+//     .then(keys => keys.filter(key => !key.endsWith(version)))
+//     .then(keys => Promise.all(keys.map(key => caches.delete(key))))
+//   );
+// });
 
 /**
  * The workboxSW.precacheAndRoute() method efficiently caches and responds to
@@ -64,10 +73,7 @@ self.__precacheManifest = [{
     "url": "images/trash-solid.svg",
     "revision": "a3e4c2f7c32ce9a7ad6fa8d381b9d9cf"
   },
-  {
-    "url": "index.html",
-    "revision": "5f3d44ac2610ae115b2ed9c164e1cc71"
-  },
+
   {
     "url": "js/ivenMob.js?v=0.0.1",
     "revision": "5f3fe84f0445fc4cefca1133c0e1e68b"
