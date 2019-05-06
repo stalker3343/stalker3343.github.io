@@ -2,11 +2,15 @@
 <html lang="ru">
 
 <head>
+
+  <link rel="manifest" href="manifest.json">
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <link rel="stylesheet" href="./bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css?v=0.0.1">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
@@ -23,7 +27,7 @@
       <div class="row justify-content-center">
         <div class="col-12 col-sm-12 col-lg-5">
           <div class="todo">
-            <p>Введите задачу</p>
+            <p>Введите десять задачи</p>
             <div class="row  ">
               <div class="col-12 d-flex">
 
@@ -97,108 +101,18 @@
       <div class="close">&times;</div>
     </div>
   </div> -->
-  <style>
-    body {
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover;
-      height: 100vh;
+
+  <script src="js/ivenMob.js?v=0.0.1"></script>
+  <script src="js/script.js?v=0.0.1"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+
+
+        navigator.serviceWorker.register('sw.js');
+      });
     }
-
-    .overlay {
-      position: absolute;
-      z-index: 1;
-      background: rgba(0, 0, 0, .3);
-      top: 0px;
-      bottom: 0px;
-      left: 0px;
-      right: 0px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      display: none;
-    }
-
-    .popUp {
-      background: white;
-      padding: 25px 10px;
-      position: relative;
-      width: 500px;
-    }
-
-    .close {
-      display: block;
-      position: absolute;
-      right: 0px;
-      top: 0px;
-      font-size: 30px;
-      color: rgb(0, 0, 0);
-    }
-
-    .main {
-      margin-top: 40px;
-    }
-
-    .todo__item-list {
-      margin-top: 20px;
-    }
-
-    .inpTask {
-      display: inline-block;
-    }
-
-    .todo__addtbtn {
-      margin-left: 10px;
-    }
-
-    .todo__deltbtn {
-      margin-left: auto;
-    }
-
-    .todo__deltbtn:after {
-      content: " ";
-      background: url('images/trash-solid.png') no-repeat center/ cover;
-
-      width: 15px;
-      display: block;
-      height: 17px;
-
-      display: block;
-    }
-
-    .todo__btn-confirm {
-      margin-left: 5px;
-    }
-
-    .label__change {
-      display: flex;
-
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    @media (max-width: 575.98px) {
-      .label__change {
-        padding-right: 10px;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .label__change button {
-
-        display: block;
-        width: 100%;
-        margin: 0px;
-        margin-top: 3px;
-      }
-    }
-  </style>
-  <script src="./ivenMob.js"></script>
-  <script src="./StorageModul.js"></script>
-  <script src="./script.js"></script>
+  </script>
 </body>
 
 </html>

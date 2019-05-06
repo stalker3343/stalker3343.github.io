@@ -1,0 +1,7 @@
+1. Когда пишешь CreateElem подумай, возможно это можно показывать или скриывать или модифицировать в html
+2. Получение индекса обьекта в масиве обьектов
+  let index = StorageData.findIndex(obj => obj.text == deletedText);
+3. Когда пишешь nextElementSibling firstElementChild или item.target, возможно в самом начале сетода стоить найти 
+самый родительский а потом искаль через querySelector
+
+4.Для localStorage необходим флаг актуализации

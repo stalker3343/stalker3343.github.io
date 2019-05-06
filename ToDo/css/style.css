@@ -1,0 +1,97 @@
+body {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.overlay {
+  position: absolute;
+  z-index: 1;
+  background: rgba(0, 0, 0, .3);
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.popUp {
+  background: white;
+  padding: 25px 10px;
+  position: relative;
+  width: 500px;
+}
+
+.close {
+  display: block;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  font-size: 30px;
+  color: rgb(0, 0, 0);
+}
+
+.main {
+  margin-top: 40px;
+}
+
+.todo__item-list {
+  margin-top: 20px;
+}
+
+.inpTask {
+  display: inline-block;
+}
+
+.todo__addtbtn {
+  margin-left: 10px;
+}
+
+.todo__deltbtn {
+  margin-left: auto;
+}
+
+.todo__deltbtn:after {
+  content: " ";
+  background: url('../images/trash-solid.png') no-repeat center/ cover;
+
+  width: 15px;
+  display: block;
+  height: 17px;
+
+  display: block;
+}
+
+.todo__btn-confirm {
+  margin-left: 5px;
+}
+
+.label__change {
+  display: flex;
+
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 575.98px) {
+  .label__change {
+    padding-right: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .label__change button {
+
+    display: block;
+    width: 100%;
+    margin: 0px;
+    margin-top: 3px;
+  }
+}
