@@ -4,7 +4,7 @@
   "theme_color": "#0fc811",
   "background_color": "#ffffff",
   "display": "standalone",
-  "Scope": "/",
+  "Scope": "/ToDo/",
   "start_url": "/ToDo",
   "icons": [{
       "src": "images/icons/icon-72x72.png",
