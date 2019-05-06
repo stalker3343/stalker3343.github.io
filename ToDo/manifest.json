@@ -5,7 +5,7 @@
   "background_color": "#ffffff",
   "display": "standalone",
   "Scope": "/",
-  "start_url": "/",
+  "start_url": "/ToDo",
   "icons": [{
       "src": "images/icons/icon-72x72.png",
       "sizes": "72x72",
