@@ -219,4 +219,19 @@ function Popup() {
 
 
 }
+
+function Timer() {
+  let timer = document.querySelector('.timer');
+  let h = timer.querySelector('.hours');
+  let m = timer.querySelector('.minute');
+  let s = timer.querySelector('.secunde');
+
+  setInterval(function () {
+    var now = new Date();
+    h.innerHTML = now.getHours();
+    m.innerHTML = now.getMinutes();
+    s.innerHTML = now.getSeconds();
+  }, 100)
+}
 let p = new Popup();
+let timer = new Timer;

@@ -79,6 +79,15 @@ body {
   display: none;
 }
 
+.timer {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+
+  font-size: 50px;
+  font-weight: 600;
+}
+
 @media (max-width: 575.98px) {
   .label__change {
     padding-right: 10px;
