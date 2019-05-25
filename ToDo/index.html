@@ -47,12 +47,20 @@
             </div>
 
             <ul class="list-group todo__item-list">
-              <!-- <li class="list-group-item todo__item">
+              <li class="list-group-item todo__item">
                 <div class="custom-control custom-checkbox d-flex align-items-center">
 
                   <input type="checkbox" class="custom-control-input">
-                  <label class="custom-control-label d-flex">
-                    <div class="label_text">Check this custom checkbox</div>
+                  <label class="custom-control-label d-flex ">
+                    <div class="d-flex flex-column">
+                      <div class="label_text">Задача 1</div>
+                      <div class="todo__time-task task-time">
+                        <div class="task-time__hours"></div>:
+                        <div class="task-time__minute"></div>:
+                        <div class="task-time__secunde"></div>
+                      </div>
+                    </div>
+
 
                     <div class="label__change hidden">
                       <input type="text" class="inputChange">
@@ -63,7 +71,7 @@
 
                   <button type="button" class="btn btn-success  todo__deltbtn"></button>
                 </div>
-              </li> -->
+              </li>
 
 
             </ul>
@@ -113,7 +121,7 @@
 
   <script src="js/ivenMob.js"></script>
   <script src="js/script.js"></script>
-  <!-- <script>
+  <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function () {
 
@@ -121,7 +129,7 @@
         navigator.serviceWorker.register('sw.js');
       });
     }
-  </script> -->
+  </script>
 </body>
 
 </html>

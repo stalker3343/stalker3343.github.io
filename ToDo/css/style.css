@@ -88,6 +88,11 @@ body {
   font-weight: 600;
 }
 
+.task-time {
+  display: flex;
+
+}
+
 @media (max-width: 575.98px) {
   .label__change {
     padding-right: 10px;

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>jQuery.mmenu playground</title>
+  <meta charset="utf-8" />
+  <!-- <link href="layout.css" rel="stylesheet" /> -->
+
+  <!-- Include jQuery.mmenu .css files -->
+  <link href="jquery.mmenu.css" rel="stylesheet" />
+
+  <!-- Include jQuery and the jQuery.mmenu .js files -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="jquery.mmenu.all.js"></script>
+
+  <!-- Fire the plugin onDocumentReady -->
+  <script>
+    jQuery(document).ready(function ($) {
+      $("#menu").mmenu();
+    });
+  </script>
+
+</head>
+
+<body>
+
+  <!-- The page -->
+  <div class="page">
+    <div class="header">
+      <a href="#menu"></a>
+      Demo
+    </div>
+    <div class="content">
+      <p><strong>This is a demo.</strong><br />
+        Click the menu icon to open the menu.</p>
+      <a href="#menu">menu</a>
+    </div>
+  </div>
+
+  <!-- The menu -->
+  <div id="menu">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About us</a>
+        <ul>
+          <li><a href="/about/history">History</a></li>
+          <li><a href="/about/team">The team</a></li>
+          <li><a href="/about/address">Our address</a></li>
+        </ul>
+      </li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </div>
+
+</body>
+
+</html>

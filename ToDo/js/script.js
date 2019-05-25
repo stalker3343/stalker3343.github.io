@@ -27,6 +27,7 @@ window.onload = function () {
     toDo.changeItem(e);
   })
 
+
   //Акутализация localStorage
   if (JSON.parse(localStorage.getItem("Version")) != actualVersion) {
     localStorage.clear();
@@ -39,7 +40,6 @@ window.onload = function () {
   if (returnObj != null) {
     for (let i = 0; i < returnObj.length; i++) {
       toDo.addItem(returnObj[i], false)
-
     }
   }
 }
@@ -80,8 +80,7 @@ function Todo() {
       item.innerHTML = ' <div class="custom-control custom-checkbox d-flex align-items-center"> ' +
         input.outerHTML +
         ' <label class="custom-control-label d-flex">' +
-        '   <div class="label_text">' + createParam.text +
-        '</div>' +
+        '   <div class="label_text">' + createParam.text + '</div>' +
         '  <div class="label__change hidden">' +
         '    <input type="text" class="inputChange">' +
         '    <button class="btn  btn-success btn-sm todo__btn-confirm">Ок</button>' +
@@ -235,3 +234,5 @@ function Timer() {
 }
 let p = new Popup();
 let timer = new Timer;
+
+
