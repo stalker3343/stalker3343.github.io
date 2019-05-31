@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="corsovDataSet" targetNamespace="http://tempuri.org/corsovDataSet.xsd" xmlns:mstns="http://tempuri.org/corsovDataSet.xsd" xmlns="http://tempuri.org/corsovDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="corsovConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="corsovConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DataBase.Properties.Settings.GlobalReference.Default.corsovConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="kateg_tovarTableAdapter" GeneratorDataComponentClassName="kateg_tovarTableAdapter" Name="kateg_tovar" UserDataComponentName="kateg_tovarTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="corsovConnectionString (Settings)" DbObjectName="corsov.kateg_tovar" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Code_categ, NameCateg, Opisanie, Nazenka FROM kateg_tovar</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="corsovDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="corsovDataSet" msprop:Generator_UserDSName="corsovDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="kateg_tovar" msprop:Generator_TableClassName="kateg_tovarDataTable" msprop:Generator_TableVarName="tablekateg_tovar" msprop:Generator_TablePropName="kateg_tovar" msprop:Generator_RowDeletingName="kateg_tovarRowDeleting" msprop:Generator_RowChangingName="kateg_tovarRowChanging" msprop:Generator_RowEvHandlerName="kateg_tovarRowChangeEventHandler" msprop:Generator_RowDeletedName="kateg_tovarRowDeleted" msprop:Generator_UserTableName="kateg_tovar" msprop:Generator_RowChangedName="kateg_tovarRowChanged" msprop:Generator_RowEvArgName="kateg_tovarRowChangeEvent" msprop:Generator_RowClassName="kateg_tovarRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
