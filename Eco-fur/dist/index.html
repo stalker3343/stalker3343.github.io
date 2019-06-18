@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>Eco-Fur</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/bundle.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header__container">
+        <div class="header__logo-block">
+          <img class="header__logo" src="img/logo.svg" alt="">
+          <div class="header__logo-text">Шубы и жилетки
+            из искусственного меха
+            в Вологде</div>
+        </div>
+        <div class="header__contact-block">
+          <div class="header__contact-text">
+            Звоните или пишите
+            <span class="header__phone">
+              +7 (921) 764 40 08</span>
+          </div>
+          <div class="header__contact-socicon">
+            <a href="">
+              <picture>
+                <source srcset="img/iocn-watsApp.webp" type="image/webp">
+                <source srcset="img/iocn-watsApp.png" type="image/jpeg">
+                <img class="header__icon" src="img/iocn-watsApp.png" alt="">
+              </picture>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="header__menu-link">
+        X
+      </div>
+    </div>
+
+  </header>
+  <main>
+    <div class="banner">
+      <div class="container">
+        <div class="banner__container">
+          <div class="banner__info">
+            <h1 class="banner__title">
+              Приветствуем Вас
+              в нашем магазине шуб и жилеток
+              <span class="banner__name-magaz">
+                Eco-friendly fur
+              </span>
+
+            </h1>
+
+            <p class="banner__parag">
+
+
+
+              Мы работаем с 2015 г., за это время установили надежные партнерские отношения с лучшими российскими
+              производителями шуб из искусственного меха. Являемся официальным представителем бренда UNREAL fur coat в
+              Вологде.
+            </p>
+            <p class="banner__parag">
+              Eco-friendly fur - это не просто магазин изделий из экомеха, это отражение нашего мышления и возможность
+              делиться им с нашими клиентами. Быть еco-friendly означает бережно относиться к природе и всему живому.
+            </p>
+
+            <button class="button banner__button">
+              Оформи заказ и получи скидку
+            </button>
+          </div>
+          <div class="banner__img">
+            <picture>
+              <source srcset="img/headerWomen.webp" type="image/webp">
+              <source srcset="img/headerWomen.png" type="image/jpeg">
+              <img src="img/headerWomen.png" alt="">
+            </picture>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="titleTovar">
+      <div class="container">
+        <h2>
+          Шубы в наличии
+        </h2>
+      </div>
+    </div>
+
+    <div class="products">
+      <div class="container">
+        <div class="products__wrapper">
+          <div v-for="shuba in  tovari.shibiVNalichii" class="product">
+            <!-- <div @mouseout="showBeck = false" @mouseover="showBeck = true" class="product__img"> -->
+            <div @mouseout="showFirsImg" @mouseover="showSecondImg" class="product__img">
+              <div :class="{showed: !showBeck}"
+                :style="{backgroundImage: 'url('+shuba.road[0] +')',backgroundSize: 'cover', backgroundPosition: 'center'  }">
+              </div>
+              <div :class="{showed: showBeck}"
+                :style="{backgroundImage: 'url('+shuba.road[1] +')', backgroundSize: 'cover', backgroundPosition: 'center' }">
+              </div>
+            </div>
+            <div class="product__descr">
+              <div class="product__title">{{shuba.title}}
+              </div>
+              <div class="product__price">
+                <div class="product__price-new">{{shuba.priceNew}}р.</div>
+                <div class="product__price-old">{{shuba.priceOld}}</div>
+
+              </div>
+              <div @click="showModal(shuba.id)" class="button product__button">Подробнее</div>
+            </div>
+          </div>
+          <div v-if="modalShowed" class="modal">
+
+          </div>
+
+          <div v-if="modalShowed" class="modalBg">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h1 id="zg"></h1>
+  </main>
+  <footer>
+
+  </footer>
+
+
+
+
+  <script src="js/bundle.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+
+
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyDs8Wqxf5K5eVnkP5XB_FtzeekD0D2MmMo",
+      authDomain: "my-project-1501683622618.firebaseapp.com",
+      databaseURL: "https://my-project-1501683622618.firebaseio.com",
+      projectId: "my-project-1501683622618",
+      storageBucket: "my-project-1501683622618.appspot.com",
+      messagingSenderId: "1032386855643",
+      appId: "1:1032386855643:web:2830c5d4de06b9ff"
+    };
+    firebase.initializeApp(firebaseConfig);
+    var database = firebase.database().ref().child('tovari');
+    database.on('value', async snap => {
+      tovari = await snap.val();
+      inintializeApp(tovari);
+      console.log("bad");
+
+    });
+  </script>
+
+  <script>
+    document.querySelector('.modal').style.display = "none";
+    document.querySelector('.modalBg').style.display = "none";
+
+
+
+    let inintializeApp = function (tovariAll) {
+      document.querySelector('.modal').style.display = "block";
+      document.querySelector('.modalBg').style.display = "block";
+
+
+
+      new Vue({
+        el: ".products__wrapper",
+        data: {
+          tovari: tovariAll,
+          showBeck: false,
+          modalShowed: false,
+          modalItem: null
+        },
+        methods: {
+          "showSecondImg": function (e) {
+            e.target.closest('.product__img').firstElementChild.classList.remove('showed');
+            e.target.closest('.product__img').lastElementChild.classList.add('showed');
+          },
+          "showFirsImg": function (e) {
+            e.target.closest('.product__img').firstElementChild.classList.add('showed');
+            e.target.closest('.product__img').lastElementChild.classList.remove('showed');
+          },
+          "showModal": function (id) {
+            this.modalShowed = true
+          }
+
+
+        }
+      })
+    }
+  </script>
+</body>
+
+</html>
+<style>
+  body {
+    position: relative;
+  }
+
+  .modalBg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    z-index: 10;
+  }
+
+  .modal {
+    position: fixed;
+    z-index: 11;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 600px;
+    background: white;
+  }
+</style>
