@@ -1,0 +1,6 @@
+{
+  "rules": {
+    ".read": "auth != null && root.child('admin').child(auth.uid).val() != null",
+    ".write": "auth != null && root.child('admin').child(auth.uid).val() != null"
+  }
+}
