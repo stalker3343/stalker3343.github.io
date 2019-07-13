@@ -2,10 +2,6 @@
   <div @click.self="$emit('closepopUP')" class="modalBg">
     <div class="modal">
       <div class="modal__images">
-        <!-- <carousel :starting-image="0" :images="images"></carousel> -->
-
-        <!-- swiper1 -->
-
         <swiper v-viewer :options="swiperOptionTop" class="gallery-top" ref="swiperTop">
           <swiper-slide v-for="img in tovar.roads" :key="img">
             <img :src="img" alt />
@@ -54,15 +50,6 @@
 
 export default {
   props: ["popuptovar"],
-  // created() {
-  //   this.$imageViewer.images(this.images);
-  // },
-  methods: {
-    // imageView(index) {
-    //   this.$imageViewer.index(index);
-    //   this.$imageViewer.show();
-    // }
-  },
   data() {
     return {
       tovar: this.popuptovar,
@@ -90,27 +77,7 @@ export default {
       swiperTop.controller.control = swiperThumbs;
       swiperThumbs.controller.control = swiperTop;
     });
-  },
-  // created: function() {
-  //   for (let i = 0; i < this.popuptovar.road.length; i++) {
-  //     let obg = function(thumb) {
-  //       return {
-  //         thumb
-  //       };
-  //     };
-  //     this.images.push(obg(this.popuptovar.road[i]));
-  //   }
-  // },
-  computed: {
-    // images: function() {
-    //
-    // }
   }
-
-  // components: {
-  //   swiper,
-  //   swiperSlide
-  // }
 };
 </script>
 
@@ -142,7 +109,7 @@ export default {
 
 .close {
   color: rgb(0, 0, 0);
-  float: right;
+
   font-size: 55px;
   position: absolute;
   right: 11px;
@@ -152,39 +119,25 @@ export default {
 }
 .modalBg {
   transition: all 2s;
-  /* position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); */
   z-index: 10;
-
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   overflow-y: auto;
-
-  -webkit-transition: opacity ease-in-out 0.3s;
-  -moz-transition: opacity ease-in-out 0.3s;
-  -o-transition: opacity ease-in-out 0.3s;
   transition: opacity ease-in-out 0.3s;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
   cursor: pointer;
   padding: 0 20px;
-
   background-color: rgba(0, 0, 0, 0.9);
-  /* z-index: 9999999;
-display: none; */
 }
 
 .modal {
   cursor: default;
-  overflow: hidden;
+
   display: flex;
   background: white;
 
@@ -196,11 +149,6 @@ display: none; */
   left: auto;
   right: auto;
   width: 100%;
-  /* -moz-transform: translateY(30%) scale(0.9);
-  -ms-transform: translateY(30%) scale(0.9);
-  -webkit-transform: translateY(30%) scale(0.9);
-  -o-transform: translateY(30%) scale(0.9);
-  transform: translateY(30%) scale(0.9); */
 }
 .modal__images {
   width: 560px;
@@ -208,22 +156,55 @@ display: none; */
 }
 
 .gallery-thumbs {
-  height: 22% !important;
   box-sizing: border-box;
+
   padding: 10px 0;
 }
 .gallery-thumbs .swiper-slide {
   width: 25%;
-  height: 100%;
+
   opacity: 0.4;
 }
 .gallery-thumbs .swiper-slide-active {
   opacity: 1;
 }
 .gallery-top {
+  margin-bottom: 20px !important;
+
   cursor: zoom-in;
-  height: 78% !important;
+
   width: 100%;
+}
+
+@media (max-width: 1050px) {
+  .modal__images {
+    width: 460px;
+    flex: none;
+  }
+}
+
+@media (max-width: 910px) {
+  .modal__images {
+    width: 360px;
+    flex: none;
+  }
+}
+
+@media (max-width: 790px) {
+  .modal {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+  .modal__images {
+    width: 100%;
+    flex: none;
+  }
+  .close {
+    color: rgb(255, 255, 255);
+
+    top: -49px;
+  }
 }
 </style>
 

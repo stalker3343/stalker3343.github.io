@@ -58,6 +58,7 @@ export default {
 .product {
   cursor: pointer;
   position: relative;
+  margin-bottom: 50px;
 }
 .product__price {
   display: flex;

@@ -1858,9 +1858,11 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   padding-top: 30px;
   padding-bottom: 120px;
   background-color: #f5f5f5; }
+  .products .container {
+    max-width: 1200px; }
   .products__wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap; }
 
 .product {
@@ -2108,9 +2110,11 @@ body {
   padding-top: 30px;
   padding-bottom: 120px;
   background-color: #f5f5f5; }
+  .products .container {
+    max-width: 1200px; }
   .products__wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap; }
 
 .product {

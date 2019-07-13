@@ -1,13 +1,14 @@
 <template>
   <div id="app">
-    <div class="products">
-      <div class="container">
-        <div v-for="(group, key) of tovarGroup" :key="key">
-          <div class="titleTovar">
-            <div class="container">
-              <h2>{{group}}</h2>
-            </div>
-          </div>
+    <div v-for="(group, key) of tovarGroup" :key="key">
+      <div :id="key" class="container">
+        <div class="titleTovar">
+          <h2>{{group}}</h2>
+        </div>
+      </div>
+
+      <div class="products">
+        <div class="container">
           <div class="products__wrapper">
             <Product
               @showpopUP="showpopUP"
@@ -17,34 +18,21 @@
             ></Product>
           </div>
         </div>
+      </div>
+    </div>
 
-        <!-- <div class="titleTovar">
-          <div class="container">
-            <h2>Шубы на заказ</h2>
-          </div>
-        </div>
-        <div class="products__wrapper">
-          <Product
-            @showpopUP="showpopUP"
-            v-for="tovar in tovari['shibiNaZaka']"
-            :key="tovar.id"
-            :objectTov="tovar"
-          ></Product>
-        </div>-->
-        <transition name="modal">
-          <popUp @closepopUP="closepopUP" v-if="popupShowed" :popuptovar="popuptovar"></popUp>
-        </transition>
-        <!-- <div  class="product"> -->
+    <transition name="modal">
+      <popUp @closepopUP="closepopUP" v-if="popupShowed" :popuptovar="popuptovar"></popUp>
+    </transition>
+    <!-- <div  class="product"> -->
 
-        <!-- <div v-if="modalShowed" class="modal">
+    <!-- <div v-if="modalShowed" class="modal">
 
         </div>
 
         <div v-if="modalShowed" class="modalBg">
 
-        </div>-->
-      </div>
-    </div>
+    </div>-->
   </div>
 </template>
 
