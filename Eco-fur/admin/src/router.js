@@ -1,30 +1,26 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import Vue from "vue";
+import Router from "vue-router";
 
+import Login from "@/components/Login";
+import Home from "@/components/Home";
+import GroupItem from "@/components/GroupItem";
 
-import Login from '@/components/Login'
-import Home from '@/components/Home'
-import GroupItem from '@/components/GroupItem'
-
-
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
-  routes: [{
+  routes: [
+    {
       name: "Home",
-      path: "/",
+      path: "https://stalker3343.github.io/Eco-fur/admin/dist/",
       component: Home,
       props: true
-
-
     },
     {
       name: "Login",
       path: "/login",
       component: Login
-
     },
     {
       name: "GroupItem",
@@ -32,6 +28,5 @@ export default new Router({
       component: GroupItem,
       props: true
     }
-
   ]
-})
+});
