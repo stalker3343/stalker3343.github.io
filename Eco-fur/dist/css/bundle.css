@@ -1258,8 +1258,16 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
     width: 100%;
     display: flex;
     justify-content: space-around; }
+    @media (max-width: 600px) {
+      .bank__images {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; } }
   .bank__img {
     width: 200px; }
+    @media (max-width: 600px) {
+      .bank__img {
+        margin-bottom: 10px; } }
 
 .banner {
   padding-top: 100px;
@@ -2430,8 +2438,16 @@ body {
     width: 100%;
     display: flex;
     justify-content: space-around; }
+    @media (max-width: 600px) {
+      .bank__images {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; } }
   .bank__img {
     width: 200px; }
+    @media (max-width: 600px) {
+      .bank__img {
+        margin-bottom: 10px; } }
 
 .nav-wrap {
   position: fixed;
