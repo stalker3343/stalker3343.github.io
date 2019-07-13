@@ -5,11 +5,16 @@
 
   <title>Eco-Fur</title>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/bundle.css">
+
+
 </head>
 
 <body>
-  <header class="header">
+
+  <header data-scroll-header class="header">
     <div class="container">
       <div class="header__container">
         <div class="header__logo-block">
@@ -32,18 +37,47 @@
                 <img class="header__icon" src="img/iocn-watsApp.png" alt="">
               </picture>
             </a>
-          </div>
+          </div> <button class="header__menu-link">
+            <picture>
+              <source srcset="img/menuBtn.webp" type="image/webp">
+              <source srcset="img/menuBtn.png" type="image/png">
+              <img src="img/menuBtn.png" alt="">
+            </picture>
+          </button>
         </div>
+
+
       </div>
 
-      <div class="header__menu-link">
-        X
-      </div>
+
     </div>
 
   </header>
+
+  <div class="nav-wrap">
+
+  </div>
+
+
+
+  <nav class="nav">
+    <img class="nav__img" src="img/logo.svg" alt="">
+    <ul class="nav__list">
+      <li class="nav__item"><a class="nav__link" href="#">Шубы в наличии</a></li>
+      <li class="nav__item"><a class="nav__link" href="#">Шубы на заказ</a></li>
+      <li class="nav__item"><a class="nav__link" href="#">Свитшоты</a></li>
+      <li class="nav__item"><a class="nav__link" href="#">Жилетки</a></li>
+      <li class="nav__item"><a data-scroll class="nav__link" href="#order">Оформить заказ</a></li>
+      <li class="nav__item"><a data-scroll class="nav__link" href="#important">Важное</a></li>
+      <li class="nav__item"><a data-scroll class="nav__link" href="#contacts">Контакты</a></li>
+    </ul>
+    <div class="nav__close">
+      &times
+    </div>
+  </nav>
+
   <main>
-    <div class="banner">
+    <section class="banner">
       <div class="container">
         <div class="banner__container">
           <div class="banner__info">
@@ -73,165 +107,459 @@
               Оформи заказ и получи скидку
             </button>
           </div>
-          <div class="banner__img">
+          <div class="banner__img-wrap">
+            <h1 class="banner__title-mob">
+              Приветствуем Вас
+              в нашем магазине шуб и жилеток
+              <span class="banner__name-magaz">
+                Eco-friendly fur
+              </span>
+
+            </h1>
             <picture>
               <source srcset="img/headerWomen.webp" type="image/webp">
               <source srcset="img/headerWomen.png" type="image/jpeg">
-              <img src="img/headerWomen.png" alt="">
+              <img class="banner__img" src="img/headerWomen.png" alt="">
             </picture>
           </div>
         </div>
 
       </div>
-    </div>
+    </section>
 
-    <div class="titleTovar">
+    <link href="vue/css/app.d1cfde4b.css" rel=preload as=style>
+    <link href="vue/css/chunk-vendors.dfc43b50.css" rel=preload as=style>
+    <link href="vue/js/app.8ca9528f.js" rel=preload as=script>
+    <link href="vue/js/chunk-vendors.40d2f887.js" rel=preload as=script>
+    <link href="vue/css/chunk-vendors.dfc43b50.css" rel=stylesheet>
+    <link href="vue/css/app.d1cfde4b.css" rel=stylesheet>
+
+    <noscript><strong>We're sorry but vuecli doesn't work properly without JavaScript enabled. Please enable it to
+        continue.</strong></noscript>
+    <div id=app></div>
+
+    <script src="vue/js/chunk-vendors.40d2f887.js"> </script>
+    <script src="vue/js/app.8ca9528f.js"> </script>
+
+
+
+    <section class="order" id="order">
       <div class="container">
-        <h2>
-          Шубы в наличии
-        </h2>
+        <div class="order__heading" id="myorder">Оформить заказ</div>
+        <div class="order__wrap">
+          <div class="order__text">
+            Оформить заказ вы можете на нашем сайте, заполнив форму заявки. После чего менеджер свяжется с вами для
+            подтверждения заказа и уточнения деталей.</br> </br>
+            Если вам необходима консультация, вы не можете определиться с размером, фасоном или хотите обговорить
+            детали индивидуального пошива, звоните нам по тел. 8921-764-40-08 или пишите в <a
+              href="https://vk.com/korepinaolga">личные сообщения</a>., Viber/WhatsApp/Telegram. Ответим на все ваши
+            вопросы!</br> </br>
+
+            <a class="mybutton order__button" href="https://vk.com/albums-106363885"> Получить полный каталог</a>
+          </div>
+
+          <div class="order__acard">
+
+
+            <div class="accordion-container">
+
+              <div class="set">
+                <a>
+                  Оплата
+                  <i class="fa fa-plus"></i>
+                </a>
+                <div class="content">
+                  <p>Для шуб из наличия в Вологде оплата наличными либо переводом на банковскую карту Сбербанка,
+                    Тинькофф во время примерки в шоу-руме или у вас дома.
+                    На шубы под заказ предоплата 100%!
+                    По индивидуальному пошиву предоплата 5000 рублей, остальное оплачивается по готовности шубы.
+                    Действует беспроцентная рассрочка платежа.
+                    При покупке шубы предоплата 5000 руб., остальное делится равными частями на 3 месяца.
+                  </p>
+                </div>
+              </div>
+              <div class="set">
+                <a>
+                  Доставка
+                  <i class="fa fa-plus"></i>
+                </a>
+                <div class="content">
+                  <p> Доставку осуществляем СДЭКом или Почтой России.<br>
+                    Сроки от 3-х до 8-ми рабочих дней. Возможна доставка от 1 дня транспортной компанией (первым
+                    классом).
+                    Доставка бесплатная, не распространяется на модели из распродажи и по акции.
+
+                  </p>
+                </div>
+              </div>
+              <div class="set">
+                <a>
+                  Возврат
+                  <i class="fa fa-plus"></i>
+                </a>
+                <div class="content">
+                  <p> Покупатель имеет право отказаться или вернуть товар в течении 7 дней со дня получения. Возврат
+                    и обмен товара надлежащего качества возможен в случае, если сохранен его товарный вид:
+                    отсутствуют следы эксплуатации и носки, наличие неповрежденной упаковки, бирки и пломбы.
+                    <br> Шубки, выполненные по индивидуальному заказу, обмену и возврату не подлежат.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="order__heading">Размерная сетка</div>
+        <div class="order__text" style="margin:30px 0px; margin-top:0px; width: 100%;">
+
+          Размерный ряд от 38 до 54 размера (до 112 см в объёме груди и до 118 см в объеме бедер) </br>
+          Возможен индивидуальный пошив по вашим меркам.
+
+        </div>
+        <table class="order__table" cellspacing="0" cellpadding="15" width="100%" height="130">
+          <tbody>
+            <tr>
+              <td>Размер</td>
+              <td>40</td>
+              <td>42</td>
+              <td>44</td>
+              <td>46</td>
+              <td>48</td>
+              <td>50</td>
+
+            </tr>
+            <tr>
+              <td>Обхват груди</td>
+              <td>80</td>
+              <td>84</td>
+              <td>88</td>
+              <td>92</td>
+              <td>96</td>
+              <td>100</td>
+
+            </tr>
+            <tr>
+              <td>Обхват талии</td>
+              <td>60</td>
+              <td>64</td>
+              <td>68</td>
+              <td>72</td>
+              <td>76</td>
+              <td>81</td>
+
+            </tr>
+            <tr>
+              <td>Обхват бёдер</td>
+              <td>88</td>
+              <td>92</td>
+              <td>96</td>
+              <td>100</td>
+              <td>104</td>
+              <td>108</td>
+
+            </tr>
+
+
+          </tbody>
+        </table>
       </div>
-    </div>
+    </section>
 
-    <div class="products">
+    <section class="gallery">
       <div class="container">
-        <div class="products__wrapper">
-          <div v-for="shuba in  tovari.shibiVNalichii" class="product">
-            <!-- <div @mouseout="showBeck = false" @mouseover="showBeck = true" class="product__img"> -->
-            <div @mouseout="showFirsImg" @mouseover="showSecondImg" class="product__img">
-              <div :class="{showed: !showBeck}"
-                :style="{backgroundImage: 'url('+shuba.road[0] +')',backgroundSize: 'cover', backgroundPosition: 'center'  }">
-              </div>
-              <div :class="{showed: showBeck}"
-                :style="{backgroundImage: 'url('+shuba.road[1] +')', backgroundSize: 'cover', backgroundPosition: 'center' }">
-              </div>
-            </div>
-            <div class="product__descr">
-              <div class="product__title">{{shuba.title}}
-              </div>
-              <div class="product__price">
-                <div class="product__price-new">{{shuba.priceNew}}р.</div>
-                <div class="product__price-old">{{shuba.priceOld}}</div>
+        <h2 class="h2 gallery__h2">Фотогалерея</h2>
 
-              </div>
-              <div @click="showModal(shuba.id)" class="button product__button">Подробнее</div>
+
+        <div id="lightgallery">
+          <a href="img/gallery/1.jpg">
+            <img src="img/gallery/1.jpg" />
+          </a>
+          <a href="img/gallery/2.jpg">
+            <img src="img/gallery/2.jpg" />
+          </a>
+
+          <a href="img/gallery/3.jpg">
+            <img src="img/gallery/3.jpg" />
+          </a>
+
+          <a href="img/gallery/4.jpg">
+            <img src="img/gallery/4.jpg" />
+          </a>
+
+          <a href="img/gallery/5.jpg">
+            <img src="img/gallery/5.jpg" />
+          </a>
+
+          <a href="img/gallery/6.jpg">
+            <img src="img/gallery/6.jpg" />
+          </a>
+
+          <a href="img/gallery/7.jpg">
+            <img src="img/gallery/7.jpg" />
+          </a>
+
+          <a href="img/gallery/8.jpg">
+            <img src="img/gallery/8.jpg" />
+          </a>
+
+
+          <a href="img/gallery/9.jpg">
+            <img src="img/gallery/9.jpg" />
+          </a>
+
+          <a href="img/gallery/10.jpg">
+            <img src="img/gallery/10.jpg" />
+          </a>
+
+          <a href="img/gallery/11.jpg">
+            <img src="img/gallery/11.jpg" />
+          </a>
+
+          <a href="img/gallery/12.jpg">
+            <img src="img/gallery/12.jpg" />
+          </a>
+
+
+
+        </div>
+
+
+
+
+      </div>
+    </section>
+
+    <section class="important" id="important">
+      <div class="container">
+        <h2 class="h2 important__h2">Важное
+        </h2>
+        <h3 class="important__subtitle"> Уход за шубами из экомеха</h3>
+
+        <div class="accordion-container">
+
+          <div class="set">
+            <a>
+              Хранение:
+              <i class="fa fa-plus"></i>
+            </a>
+            <div class="content">
+              <p> • Экомех любит простор <br>
+                • Рекомендуем хранить шубу на плечиках в висячем положении, например, в шкафу. <br>
+                • Чехол для хранения не требуется (можете использовать по вашему желанию, но проследите, чтобы
+                он не был тесным или тяжелым и не приминал ворс).<br>
+                • Хранение в дали от отопительных приборов и иных источников высоких температур. <br>
+                • Какое-либо влияние прямых солнечных лучей на цвет и качество экомеха не выявлено, однако в
+                целях предосторожности не рекомендуется хранение под прямыми солнечными лучами. <br>
+                • В случае если после неправильного хранения или транспортировки на экомехе образовались заломы,
+                их можно расправить, обратитесь к производителю за консультацией о вашем материале. Могут быть
+                использованы увлажнение, расчёсывание,
+                продувка тёплым воздухом из фена и иные способы. Всё будет хорошо, но впредь берегите шубку!
+
+              </p>
             </div>
           </div>
-          <div v-if="modalShowed" class="modal">
+          <div class="set">
+            <a>
+              Носка:
+              <i class="fa fa-plus"></i>
+            </a>
+            <div class="content">
+              <p> • Шуба дольше сохранит первозданный внешний вид, если не носить на плече или руке сумку,
+                стараться избегать иного интенсивного механического воздействия на ворсовый покров. <br>
+                • Рекомендуется регулярно аккуратно расчесывать мех по направлению ворса. Особое внимание
+                уделите наиболее трущимся при ежедневной носке частям шубы, например, низу рукавов. <br>
+                • Для облегчения расчесывания можно увлажнить экомех или расческу, после дать высохнуть при
+                комнатной температуре. <br>
+                • В случае попадания воды рекомендуется сушить экомех при комнатной температуре. <br>
+                При соблюдении этих условий экомеху не страшен мокрый снег, дождь или влажная чистка.
 
+              </p>
+            </div>
+          </div>
+          <div class="set">
+            <a>
+              Чистка:
+              <i class="fa fa-plus"></i>
+            </a>
+            <div class="content">
+              <p> • Местные загрязнения можно удалить раствором мягкого моющего средства (рекомендуем гели с
+                пометкой "для деликатных тканей") - 1-3 чайные ложки на 1 литр воды при температуре до 40°. <br>
+                • Многие виды экомеха можно стирать вручную или в машинке, уточните у производителя особенности
+                ухода за вашей шубой. <br>
+                • При сильном загрязнении шубу следует сдать в химчистку. <br>
+                • Нельзя утюжить экомех, использовать отпариватель, подвергать его воздействию высоких (ред.)
+                температур во избежание усадки или повреждения волокон. Слишком горячий подогрев сидений может
+                придать нежелательную форму или привести к усадке ворса. <br>
+
+              </p>
+            </div>
+          </div>
+          <div class="set">
+            <a>
+              Уход за вставками из экокожи и поясом:
+              <i class="fa fa-plus"></i>
+            </a>
+            <div class="content">
+              <p> • Протереть мягкой тканью, слегка смоченной в воде или тёплом растворе моющего средства,
+                предназначенного для стирки изделий из деликатных тканей. <br>
+                • Не рекомендуется наносить моющее средство на изнаночную сторону экокожи или экозамшу. <br>
+                • Остатки моющего раствора удалить тряпочкой. <br>
+                • Сушить в подвешенном состоянии при комнатной температуре<br>
+
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="important__msgrow msgrow">
+          <div class="msgrow__title">
+            Отличная новость!
+          </div>
+          <div class="msgrow__text">
+            Шубы из экомеха могут быть целиком переработаны! К примеру, одежду для переработки принимает магазин H&M.
+            Носите нереальный мех с удовольствием!
           </div>
 
-          <div v-if="modalShowed" class="modalBg">
+        </div>
 
+        <div class=" msgrow">
+          <div class="msgrow__title">
+            Партнеры
+          </div>
+          <div class="msgrow__text">
+            Мы являемся официальными представителями бренда UNREAL fur coat в Вологде. Работаем напрямую с
+            производством, поэтому имеем возможность предложить Вам шубы из искусственного меха без наценки.
+          </div>
+
+        </div>
+        <div class=" msgrow">
+          <div class="msgrow__title">
+            Благотворительность
+          </div>
+          <div class="msgrow__text">
+            Приобретая наши шубы, вы спасаете жизнь не только диких животных, но и помогаете домашним. С продажи каждой
+            шубы мы переводим процент в поддержку проекта "Такс-Альянс. ВОЛОГДА". <a
+              href="vk.com/taksa_vologda">vk.com/taksa_vologda</a>
+            Для участников этой группы у нас есть постоянная скидка 7% на покупку шубы или жилетки, кодовое слово
+            "ТАКС-АЛЬЯНС".
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="map">
+
+      <h2 class="h2 map__title">Контакты и график работы шоу-рума
+        ECO-FFUR</h2>
+      <script type="text/javascript" charset="utf-8" async
+        src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Addadc5d30f7af11fee01efcdb3af229c494f5ae2cf768a7e1f4131b9d8bb1366&amp;width=100%25&amp;height=500&amp;lang=ru_UA&amp;scroll=true">
+      </script>
+      <div class="map__block">
+        <h2 class="map__heading">Шоу-рум в Вологде</h2> <br>
+        <b> ул. Ленинградская, д. 71, оф. 323 <br> <b>
+            3 этаж Деловой Центр "ПАРУС"<br><br>
+            График работы: по записи<br>
+      </div>
+    </section> -->
+
+    <section class="contacts" id="contacts">
+      <div class="container">
+        <h2 class="h2">
+          Остались вопросы, <br>
+          не можете определится с выбором шубы?
+        </h2>
+        <div class="contacts__subtitle">
+          Звоните или пишите в мессенджеры, наш менеджер всегда готов ответить на ваши вопросы и дать подробную
+          консультацию
+        </div>
+
+        <div class="contacts__content">
+          <div class="contacts__tellblock">
+            <p class="contacts__text">Тел / Whatsapp / Viber / Telegram</p>
+            <div class=" contacts__tell ">+7 (921) 764-40-08</div>
+            <div style="font-size:22px;line-height:30px;" data-customstyle="yes">
+
+              <strong><span style="font-size: 26px;" data-redactor-tag="span">VK: </span></strong> <a
+                href="https://vk.com/eco_shubki_vologda">vk.com/eco_shubki_vologda</a> <br>
+              <strong><span style="font-size: 26px;" data-redactor-tag="span">Instagram: </span></strong> <a
+                href="https://www.instagram.com/eco_friendly_fur/">eco_friendly_fur</a> <br>
+              <strong><span style="font-size: 26px;" data-redactor-tag="span">E-mail: </span></strong> <a
+                href="mailto:eco-mex@mail.ru"> eco-mex@mail.ru</a><br>
+              <!-- <strong></strong><br>БЦ Omega Plaza (м. Автозаводская)<br><br>
+                Реально 2 минуты от метро<br><br> -->
+            </div>
+          </div>
+          <div class="contacts__formblock">
+            <form class="contacts__form" action="">
+              <input data-phonemask="+7 (___) ___-____" placeholder="Введите телефон"
+                class="contacts__input masked-phone" type="tell">
+
+              <input placeholder="Введите имя" class="contacts__input" type="text">
+              <textarea placeholder="Введите вопрос или пожелание" class="contacts__area"></textarea>
+              <input class="button contacts__btn" type="submit" value="Отправить">
+            </form>
+            <p>Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь c политикой
+              конфиденциальности.</p>
           </div>
         </div>
       </div>
+
+    </section>
+
+
+
+  </main>
+  <footer class="bank">
+
+    <div class="container">
+      <div class="bank__wrap">
+        <div class="bank__numbers">
+          <div class="bank__number">
+            <div class="bank__numeric">
+              0%
+            </div>
+            <div class="bank__number-title">
+              Без переплаты
+            </div>
+          </div>
+          <div class="bank__number">
+            <div class="bank__numeric">
+              5 000
+            </div>
+            <div class="bank__number-title">
+              Первоначальный взнос
+            </div>
+          </div>
+
+        </div>
+
+        <div class="bank__row">
+          Беспроцентная рассрочка на 4 месяца
+        </div>
+        <p class="bank__text">
+          Принимаем к оплате наличные, перевод на карту Сбербанк, Тинькофф
+        </p>
+        <div class="bank__images">
+          <picture>
+            <source srcset="img/1280px-Sberbank.webp" type="image/webp">
+            <source srcset="img/1280px-Sberbank.jpg" type="image/jpeg">
+            <img class="bank__img" src="img/1280px-Sberbank.jpg" alt="">
+          </picture>
+          <picture>
+            <source srcset="img/tinkof.webp" type="image/webp">
+            <source srcset="img/tinkof.jpg" type="image/jpeg">
+            <img class="bank__img" src="img/tinkof.jpg" alt="">
+          </picture>
+        </div>
+      </div>
+
     </div>
 
-    <h1 id="zg"></h1>
-  </main>
-  <footer>
-
   </footer>
-
-
-
-
   <script src="js/bundle.js"></script>
 
 
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
-
-  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
-
-
-  <script>
-    var firebaseConfig = {
-      apiKey: "AIzaSyDs8Wqxf5K5eVnkP5XB_FtzeekD0D2MmMo",
-      authDomain: "my-project-1501683622618.firebaseapp.com",
-      databaseURL: "https://my-project-1501683622618.firebaseio.com",
-      projectId: "my-project-1501683622618",
-      storageBucket: "my-project-1501683622618.appspot.com",
-      messagingSenderId: "1032386855643",
-      appId: "1:1032386855643:web:2830c5d4de06b9ff"
-    };
-    firebase.initializeApp(firebaseConfig);
-    var database = firebase.database().ref().child('tovari');
-    database.on('value', async snap => {
-      tovari = await snap.val();
-      inintializeApp(tovari);
-      console.log("bad");
-
-    });
-  </script>
-
-  <script>
-    document.querySelector('.modal').style.display = "none";
-    document.querySelector('.modalBg').style.display = "none";
-
-
-
-    let inintializeApp = function (tovariAll) {
-      document.querySelector('.modal').style.display = "block";
-      document.querySelector('.modalBg').style.display = "block";
-
-
-
-      new Vue({
-        el: ".products__wrapper",
-        data: {
-          tovari: tovariAll,
-          showBeck: false,
-          modalShowed: false,
-          modalItem: null
-        },
-        methods: {
-          "showSecondImg": function (e) {
-            e.target.closest('.product__img').firstElementChild.classList.remove('showed');
-            e.target.closest('.product__img').lastElementChild.classList.add('showed');
-          },
-          "showFirsImg": function (e) {
-            e.target.closest('.product__img').firstElementChild.classList.add('showed');
-            e.target.closest('.product__img').lastElementChild.classList.remove('showed');
-          },
-          "showModal": function (id) {
-            this.modalShowed = true
-          }
-
-
-        }
-      })
-    }
-  </script>
 </body>
 
 </html>
-<style>
-  body {
-    position: relative;
-  }
-
-  .modalBg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, .5);
-    z-index: 10;
-  }
-
-  .modal {
-    position: fixed;
-    z-index: 11;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-    width: 700px;
-    height: 600px;
-    background: white;
-  }
-</style>

@@ -3,6 +3,14 @@ import App from './App.vue'
 import "viewerjs/dist/viewer.css";
 import Viewer from "v-viewer";
 Vue.use(Viewer);
+
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+
+// require styles
+import 'swiper/dist/css/swiper.css'
+
+Vue.use(VueAwesomeSwiper, /* { default global options } */ )
+
 // import "vue-trix";
 
 // import imageViewer from "vue-image-viewer";

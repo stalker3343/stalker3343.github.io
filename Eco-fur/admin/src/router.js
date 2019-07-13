@@ -14,7 +14,7 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [{
       name: "Home",
-      path: "",
+      path: "/",
       component: Home,
       props: true
 

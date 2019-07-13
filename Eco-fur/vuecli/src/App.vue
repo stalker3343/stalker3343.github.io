@@ -2,26 +2,23 @@
   <div id="app">
     <div class="products">
       <div class="container">
-        <div>
-          <!-- <VueTrix v-model="editorContent" placeholder="Enter content" localStorage/>
-          <div v-html="editorContent">
-            
-          </div>-->
-        </div>
-        <div class="titleTovar">
-          <div class="container">
-            <h2>Шубы в наличии</h2>
+        <div v-for="(group, key) of tovarGroup" :key="key">
+          <div class="titleTovar">
+            <div class="container">
+              <h2>{{group}}</h2>
+            </div>
+          </div>
+          <div class="products__wrapper">
+            <Product
+              @showpopUP="showpopUP"
+              v-for="tovar in tovari[key]"
+              :key="tovar.id"
+              :objectTov="tovar"
+            ></Product>
           </div>
         </div>
-        <div class="products__wrapper">
-          <Product
-            @showpopUP="showpopUP"
-            v-for="tovar in tovari.shibiVNalichii"
-            :key="tovar.id"
-            :objectTov="tovar"
-          ></Product>
-        </div>
-        <div class="titleTovar">
+
+        <!-- <div class="titleTovar">
           <div class="container">
             <h2>Шубы на заказ</h2>
           </div>
@@ -29,12 +26,14 @@
         <div class="products__wrapper">
           <Product
             @showpopUP="showpopUP"
-            v-for="tovar in tovari.shibiNaZaka"
+            v-for="tovar in tovari['shibiNaZaka']"
             :key="tovar.id"
             :objectTov="tovar"
           ></Product>
-        </div>
-        <popUp @closepopUP="closepopUP" v-if="popupShowed" :popuptovar="popuptovar"></popUp>
+        </div>-->
+        <transition name="modal">
+          <popUp @closepopUP="closepopUP" v-if="popupShowed" :popuptovar="popuptovar"></popUp>
+        </transition>
         <!-- <div  class="product"> -->
 
         <!-- <div v-if="modalShowed" class="modal">
@@ -59,6 +58,7 @@ export default {
   data() {
     return {
       tovari: {},
+      tovarGroup: {},
       popupShowed: false,
       popuptovar: null,
       editorContent: ""
@@ -70,7 +70,8 @@ export default {
     // VueTrix
   },
   firebase: {
-    tovari: db.ref().child("tovari")
+    tovari: db.ref().child("tovari"),
+    tovarGroup: db.ref().child("tovarGroup")
   },
   methods: {
     showpopUP(tovar) {
@@ -89,4 +90,50 @@ export default {
 </script>
 
 <style>
+/*
+ * The following styles are auto-applied to elements with
+ * transition="modal" when their visibility is toggled
+ * by Vue.js.
+ *
+ * You can easily play with the modal transition by editing
+ * these styles.
+ */
+
+.modal-enter-active {
+  transition: opacity ease-in-out 0.2s;
+  animation: ride-in 0.5s;
+}
+.modal-leave-active {
+  transition: opacity ease-in-out 0.2s;
+  animation: ride-in 0.5s reverse;
+}
+@keyframes ride-in {
+  0% {
+    opacity: 0;
+
+    transform: translateY(1000px) scale(0.5);
+  }
+  /* 50% {
+    transform: translateY(-500px);
+  } */
+  100% {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+}
+
+/* 
+.modal-enter {
+  opacity: 0;
+}
+
+.modal-leave-active {
+  opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+} */
 </style>

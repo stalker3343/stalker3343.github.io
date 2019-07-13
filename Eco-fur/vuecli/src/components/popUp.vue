@@ -48,9 +48,9 @@
   </div>
 </template>
 <script>
-import "swiper/dist/css/swiper.css";
+// import "swiper/dist/css/swiper.css";
 
-import { swiper, swiperSlide } from "vue-awesome-swiper";
+// import { swiper, swiperSlide } from "vue-awesome-swiper";
 
 export default {
   props: ["popuptovar"],
@@ -105,26 +105,36 @@ export default {
     // images: function() {
     //
     // }
-  },
-
-  components: {
-    swiper,
-    swiperSlide
   }
+
+  // components: {
+  //   swiper,
+  //   swiperSlide
+  // }
 };
 </script>
 
 <style >
 .modal__text {
-  font-size: 18px;
   display: block;
   margin-top: 20px;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.modal__text p {
+  margin-bottom: 0px;
+}
+.modal__text ul {
+  padding-left: 19px;
+  margin-bottom: 0px;
 }
 .modal__descr {
   padding: 0px 25px;
 }
 .modal__title {
-  font-size: 28px;
+  font-family: "FuturaPT", Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
   line-height: 1.35;
   margin-bottom: 20px;
   margin-bottom: 20px;
@@ -194,6 +204,7 @@ display: none; */
 }
 .modal__images {
   width: 560px;
+  flex: none;
 }
 
 .gallery-thumbs {

@@ -1,0 +1,91 @@
+.nav-wrap
+  position: fixed
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+  background: rgba(0,0,0, .4)
+  z-index: 100
+  display: none
+
+
+  &__open
+    animation: showBg 0.5s
+    display: block
+    opacity: 1
+
+
+@keyframes showBg 
+  0% 
+    opacity: 0
+ 
+  100% 
+    opacity: 1
+  
+@keyframes showNaw 
+  0% 
+    transform: translateX(400px)
+ 
+  100% 
+    transform: translateX(0px)
+@keyframes closeNaw 
+  0% 
+    transform: translateX(0px)
+  100% 
+    transform: translateX(400px)
+
+   
+.nav
+  position: fixed
+  height: 100%
+  width: 300px
+  padding: 40px
+  z-index: 101
+  top: 0
+  right:  0
+  background-color: #111
+  overflow-x: hidden 
+  transform: translateX(400px)
+  &__open
+    animation: showNaw 0.5s     
+    transform: translateY(0px)
+  &__closed
+    animation: closeNaw 0.5s
+    transform: translateX(400px) 
+
+    
+    
+
+    
+
+
+
+    
+  &__img
+    width: 120px
+    margin-bottom: 30px
+  &__list
+    margin: 0px
+    padding: 0px
+    
+    font-size: 20px
+  &__item
+    list-style-type: none 
+
+    margin-bottom: 20px
+  &__link
+    text-decoration: none
+    color: white
+    &:hover
+      color: white
+  &__close
+    position: absolute
+    top: 20px
+    right: 20px
+    font-size: 50px
+    cursor: pointer
+    color: white
+
+
+
+

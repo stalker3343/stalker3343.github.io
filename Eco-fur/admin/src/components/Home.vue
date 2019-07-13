@@ -24,11 +24,9 @@
 <script>
 import * as fb from "firebase";
 export default {
-  data() {
-    return {
-      tovarGRoup: {}
-    };
-  },
+  data: () => ({
+    tovarGRoup: {}
+  }),
   created() {
     fb.database()
       .ref("tovarGroup")

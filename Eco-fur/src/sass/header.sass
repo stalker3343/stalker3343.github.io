@@ -3,22 +3,30 @@
   display: flex
   background: black
 
-  position: relative
+  position: fixed
+  width: 100%
   font-weight: 400
   font-family: 'FuturaPT'
+  z-index: 10
   &__container
     display: flex
     justify-content: space-between
+    align-items: center
+    height: 100%
   &__logo-block
     display: flex
     align-items: center
   &__logo
     width: 140px
     margin-right: 10px
+    @media(max-width: 460px)
+      width: 100px
   &__logo-text
     color: white
     width: 190px
     font-size: 15px
+    @media(max-width: 770px)
+      display: none
   &__contact-block
     display: flex
     align-items: center
@@ -34,9 +42,21 @@
     font-size: 24px
     font-weight: 900
     line-height: 1.55
+    @media(max-width: 460px)
+      font-size: 18px
+  &__contact-socicon
+   @media(max-width: 460px)
+      display: none
   &__icon
     width: 40px
   &__menu-link
-    position: absolute
-    right: 20px
-    text: 20px
+    background: none
+    border: none
+    display: block
+    appearance: none
+    width: 40px
+    transform: translateX(40px)
+    @media(max-width: 583px)
+      transform: translateX(0px)
+      
+    

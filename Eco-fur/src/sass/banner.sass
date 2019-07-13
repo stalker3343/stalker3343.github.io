@@ -1,12 +1,16 @@
 .banner
-
-  height: 947px
+  padding-top: 100px
+  height: 1047px
   background: url('../img/bgheader.jpg') no-repeat center / cover
   overflow: hidden
   border-bottom: 5px solid black
+  @media(max-width: 1000px)
+    height: 100%
   &__container
     display: flex
     justify-content: space-between
+    @media(max-width: 1000px)
+      flex-direction: column-reverse 
   
   &__title
     margin-top: 100px
@@ -14,12 +18,36 @@
     font-size: 49px
     line-height: 1.2
     font-weight: 900
-  &__img
+    @media(max-width: 1000px)
+      display: none
+      
+    &-mob
+      display: none
+      @media(max-width: 1000px)
+        display: block
+        font-size: 53px
+        margin-top: 100px
+        width: 500px
+        text-align: center
+      @media(max-width: 470px)
+        width: 100%
+        font-size: 43px
+  &__img-wrap
+    display: flex
     flex: none
     width: 511px
+    @media(max-width: 1000px)
+      width: 100%
+      flex-direction: column
+      align-items: center
+  &__img
+    @media(max-width: 1000px)
+      width: 216px
   &__name-magaz
     background: yellow
     padding: 0px 20px
+    @media(max-width: 1176px)
+       display: block
   &__parag
     line-height: 1.5
     font-weight: 500
@@ -28,5 +56,11 @@
     margin-top: 30px
   &__button
     margin-top: 161px
+    @media(max-width: 1000px)
+      display: block
+      margin: 0 auto
+      margin-top: 50px
+      margin-bottom: 20px
+
 
 
