@@ -51,12 +51,12 @@ export default {
           }
         ];
       }
-      // return [
-      //   {
-      //     title: "Войти",
-      //     url: "/login"
-      //   }
-      // ];
+      return [
+        {
+          title: "Войти",
+          url: "/login"
+        }
+      ];
     }
   }
 };
