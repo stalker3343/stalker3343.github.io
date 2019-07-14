@@ -73,8 +73,11 @@
 </template>
 <script>
 import * as fb from "firebase";
-import { timeout, Promise } from "q";
+import { timeout, Promise, async } from "q";
 import { setTimeout } from "timers";
+import { throws } from "assert";
+
+import showPreviuImage from "../functions/showPreviuImage";
 
 export default {
   data() {
@@ -99,29 +102,14 @@ export default {
     },
     loadImg(e) {
       const files = e.target.files;
-      this.filesMas = [];
-      this.imageSrc = [];
-      for (let i = 0, f; (f = files[i]); i++) {
-        console.log(f);
 
-        if (!f.type.match("image/jpeg")) {
-          alert("Картинкт должна быть в формате .jpg");
-          return;
-        }
-
-        this.filesMas.push(f);
-
-        let reader = new FileReader();
-
-        reader.onload = (theFile => {
-          return e => {
-            //this.imageSrc[i] = e.target.result;
-
-            this.$set(this.imageSrc, i, e.target.result);
-          };
-        })(f);
-
-        reader.readAsDataURL(f);
+      try {
+        showPreviuImage(e.target.files).then(({ filesMas, imageSrc }) => {
+          this.imageSrc = imageSrc;
+          this.filesMas = filesMas;
+        });
+      } catch (error) {
+        console.log(error);
       }
     },
 

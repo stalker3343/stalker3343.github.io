@@ -75,6 +75,7 @@
 </template>
 <script>
 import * as fb from "firebase";
+import showPreviuImage from "../functions/showPreviuImage";
 export default {
   props: ["id"],
 
@@ -112,8 +113,6 @@ export default {
         });
     }
   },
-
-  created() {},
 
   methods: {
     clickLoadImg() {
@@ -169,6 +168,7 @@ export default {
             let counter = 0;
             let collImg = this.filesMas.length;
             let tovarGRoupInFunk = this.tovarGroup;
+
             for (let i = 0; i < this.filesMas.length; i++) {
               let imageExt = this.filesMas[i].name.slice(
                 this.filesMas[i].name.indexOf(".")
@@ -228,31 +228,17 @@ export default {
       this.filesMas = [];
       this.imageSrc = [];
     },
+
     loadImg(e) {
       const files = e.target.files;
-      this.filesMas = [];
-      this.imageSrc = [];
-      for (let i = 0, f; (f = files[i]); i++) {
-        console.log(f);
 
-        if (!f.type.match("image/jpeg")) {
-          alert("Картинкт должна быть в формате .jpg");
-          return;
-        }
-
-        this.filesMas.push(f);
-
-        let reader = new FileReader();
-
-        reader.onload = (theFile => {
-          return e => {
-            //this.imageSrc[i] = e.target.result;
-
-            this.$set(this.imageSrc, i, e.target.result);
-          };
-        })(f);
-
-        reader.readAsDataURL(f);
+      try {
+        showPreviuImage(e.target.files).then(({ filesMas, imageSrc }) => {
+          this.imageSrc = imageSrc;
+          this.filesMas = filesMas;
+        });
+      } catch (error) {
+        console.log(error);
       }
     }
   }

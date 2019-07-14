@@ -1,7 +1,7 @@
 import Vue from "vue";
 import App from "./App.vue";
-import router from "./router";
-import store from "./store";
+import router from "./router/router";
+import store from "./store/index.js";
 import * as fb from "firebase";
 
 import Vuetify from "vuetify";
@@ -77,6 +77,11 @@ new Vue({
     };
 
     fb.initializeApp(firebaseConfig);
+    fb.auth().onAuthStateChanged(user => {
+      if (user) {
+        this.$store.dispatch('autologinUser', user)
+      }
+    })
   },
   render: h => h(App)
 }).$mount("#app");

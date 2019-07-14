@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Router from "vue-router";
+import authGuard from './auth-guard'
 
 import Login from "@/components/Login";
 import Home from "@/components/Home";
@@ -10,12 +11,12 @@ Vue.use(Router);
 export default new Router({
   mode: "history",
   base: process.env.BASE_URL,
-  routes: [
-    {
+  routes: [{
       name: "Home",
-      path: "https://stalker3343.github.io/Eco-fur/admin/dist/",
+      path: "/",
       component: Home,
-      props: true
+      props: true,
+      beforeEnter: authGuard
     },
     {
       name: "Login",
@@ -26,7 +27,8 @@ export default new Router({
       name: "GroupItem",
       path: "/GroupItem/:group",
       component: GroupItem,
-      props: true
+      props: true,
+      beforeEnter: authGuard
     }
   ]
 });

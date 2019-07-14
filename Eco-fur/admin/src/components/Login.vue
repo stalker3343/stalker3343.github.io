@@ -13,25 +13,30 @@
                 required
                 prepend-icon="email"
                 name="login"
-                label="Login"
+                label="Почта"
                 type="email"
                 v-model="email"
               ></v-text-field>
               <v-text-field
-                :rules="[v => !!v || 'Item is required']"
+                :rules="[v => !!v || 'Введите пароль']"
                 v-model="password"
                 required
                 id="password"
                 prepend-icon="lock"
                 name="password"
-                label="Password"
+                label="Пароль"
                 type="password"
               ></v-text-field>
             </v-form>
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn :disabled="!valid" @click="onSubmit" color="primary">Войти</v-btn>
+            <v-btn
+              :loading="loading"
+              :disabled="!valid || loading"
+              @click="onSubmit"
+              color="primary"
+            >Войти</v-btn>
           </v-card-actions>
         </v-card>
       </v-flex>
@@ -39,7 +44,6 @@
   </v-container>
 </template>
 <script>
-import { log } from "util";
 export default {
   data() {
     return {
@@ -47,10 +51,15 @@ export default {
       email: "",
       password: "",
       emailRules: [
-        v => !!v || "E-mail is required",
-        v => /.+@.+/.test(v) || "E-mail must be valid"
+        v => !!v || "Введите Email",
+        v => /.+@.+/.test(v) || "Введите коректный Email"
       ]
     };
+  },
+  computed: {
+    loading() {
+      return this.$store.getters.loading;
+    }
   },
   methods: {
     onSubmit() {
@@ -59,8 +68,20 @@ export default {
           email: this.email,
           password: this.password
         };
-        console.log(User);
+
+        this.$store
+          .dispatch("loginUser", User)
+          .then(() => {
+            this.$router.push("/");
+          })
+          .catch(err => alert(err));
+        // console.log(User);
       }
+    }
+  },
+  created() {
+    if (this.$route.query["loginError"]) {
+      alert("Войдите в систему");
     }
   }
 };
