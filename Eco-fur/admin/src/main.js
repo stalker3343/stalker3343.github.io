@@ -61,27 +61,27 @@ Vue.use(VueQuillEditor, {
 Vue.use(Vuetify);
 
 Vue.config.productionTip = false;
+var firebaseConfig = {
+  apiKey: "AIzaSyDs8Wqxf5K5eVnkP5XB_FtzeekD0D2MmMo",
+  authDomain: "my-project-1501683622618.firebaseapp.com",
+  databaseURL: "https://my-project-1501683622618.firebaseio.com",
+  projectId: "my-project-1501683622618",
+  storageBucket: "my-project-1501683622618.appspot.com",
+  messagingSenderId: "1032386855643",
+  appId: "1:1032386855643:web:2830c5d4de06b9ff"
+};
+fb.initializeApp(firebaseConfig);
+fb.auth().onAuthStateChanged((user) => {
+  new Vue({
 
-new Vue({
-  router,
-  store,
-  created() {
-    var firebaseConfig = {
-      apiKey: "AIzaSyDs8Wqxf5K5eVnkP5XB_FtzeekD0D2MmMo",
-      authDomain: "my-project-1501683622618.firebaseapp.com",
-      databaseURL: "https://my-project-1501683622618.firebaseio.com",
-      projectId: "my-project-1501683622618",
-      storageBucket: "my-project-1501683622618.appspot.com",
-      messagingSenderId: "1032386855643",
-      appId: "1:1032386855643:web:2830c5d4de06b9ff"
-    };
 
-    fb.initializeApp(firebaseConfig);
-    fb.auth().onAuthStateChanged(user => {
+    beforeCreate() {
       if (user) {
         this.$store.dispatch('autologinUser', user)
       }
-    })
-  },
-  render: h => h(App)
-}).$mount("#app");
+    },
+    router,
+    store,
+    render: h => h(App)
+  }).$mount("#app");
+})

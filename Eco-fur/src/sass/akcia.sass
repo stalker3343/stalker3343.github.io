@@ -1,0 +1,27 @@
+.akciaModal
+  
+  position: fixed
+  width: 100vw
+  height: 100vh
+  display: flex
+  justify-content: center
+  align-items: center
+  top: 0
+  background: rgba(0,0,0, .5)
+  display: none
+  &__img
+    animation: showAkcia 1s
+    max-width: 800px
+  &__close
+    top: 73px
+    right: 255px
+
+@keyframes showAkcia 
+  0%
+    opacity: 0
+    transform: scale(0)
+  100%
+    opacity: 1
+    transform: scale(1)
+
+

@@ -21,14 +21,15 @@
                 <v-container>
                   <v-layout row wrap>
                     <v-flex xs12 md4>
-                      <v-text-field v-model="title" label="Название" required></v-text-field>
+                      <v-text-field :rules="titleRules" v-model="title" label="Название" required></v-text-field>
                     </v-flex>
 
                     <v-flex xs12 md4>
-                      <v-text-field v-model="priceNew" label="Цена" required></v-text-field>
+                      <v-text-field :rules="priceRules" v-model="priceNew" label="Цена" required></v-text-field>
                     </v-flex>
                     <v-flex xs12 md4>
-                      <v-text-field v-model="priceOld" label="Старая цена(можно оставить пустым)"></v-text-field>
+                      <v-text-field v-model="priceOld" label="Старая цена"></v-text-field>
+                      <p class="caption subtitle">Оставить пустым если нет скидки на товар</p>
                     </v-flex>
 
                     <v-flex xs12 md4>
@@ -45,6 +46,7 @@
                         multiple
                         @change="loadImg"
                       />
+                      <v-alert v-show="showError" type="error">Загрузите картинки</v-alert>
                     </v-flex>
                   </v-layout>
                 </v-container>
@@ -63,7 +65,7 @@
             <v-card-actions>
               <v-spacer></v-spacer>
               <v-btn color="error" @click="dialog = !dialog">ОТменить</v-btn>
-              <v-btn color="success" @click="addTovar">Добавит</v-btn>
+              <v-btn color="success" @click="addTovar">Добавить</v-btn>
             </v-card-actions>
           </v-flex>
         </v-layout>
@@ -82,10 +84,15 @@ import showPreviuImage from "../functions/showPreviuImage";
 export default {
   data() {
     return {
+      showError: false,
       loading: false,
       dialog: false,
       valid: false,
       tovarGroup: this.$route.params.group,
+
+      titleRules: [v => !!v || "Введите Название товара"],
+
+      priceRules: [v => !!v || "Введите цену товара"],
 
       title: "",
       priceNew: "",
@@ -96,11 +103,25 @@ export default {
     };
   },
 
+  watch: {
+    dialog() {
+      this.showError = false;
+      this.title = "";
+      this.priceNew = "";
+      this.priceOld = "";
+      this.content = "";
+      this.filesMas = [];
+      this.imageSrc = [];
+      this.$emit("reload");
+    }
+  },
+
   methods: {
     clockLoadImg() {
       this.$refs.inputPhoto.click();
     },
     loadImg(e) {
+      this.showError = false;
       const files = e.target.files;
 
       try {
@@ -114,7 +135,7 @@ export default {
     },
 
     async addTovar() {
-      if (this.$refs.form.validate() && this.filesMas != null) {
+      if (this.$refs.form.validate() && this.filesMas.length > 0) {
         this.loading = true;
         let tovar = {
           title: this.title,
@@ -169,20 +190,13 @@ export default {
                     .child(fbval.key)
                     .update({ roads: imgSrc });
                   this.loading = false;
-                  if (this.loading == false) {
-                    this.title = "";
-                    this.priceNew = "";
-                    this.priceOld = "";
-                    this.content = ``;
-                    this.filesMas = null;
-                    this.imageSrc = [];
-                    this.$emit("reload");
-                    this.dialog = false;
-                  }
+                  this.dialog = false;
                 });
             }
           );
         }
+      } else if (this.filesMas.length <= 0) {
+        this.showError = true;
       }
     }
   }
@@ -206,6 +220,10 @@ img {
   height: 10rem;
   overflow-y: auto;
   resize: vertical;
+}
+.subtitle {
+  margin-top: -10px;
+  color: rgb(187, 20, 20);
 }
 </style>
 

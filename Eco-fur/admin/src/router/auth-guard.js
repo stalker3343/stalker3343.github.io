@@ -1,7 +1,7 @@
-import store from '../store/index'
+import * as fb from 'firebase'
 
 export default function (to, from, next) {
-  if (store.getters.user != null) {
+  if (fb.auth().currentUser) {
     next()
   } else {
     next('./login?loginError=true')
