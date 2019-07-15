@@ -29,6 +29,10 @@ export default new Router({
       component: GroupItem,
       props: true,
       beforeEnter: authGuard
+    },
+    {
+      path: '*',
+      redirect: '/login'
     }
   ]
 });
