@@ -12,9 +12,17 @@
   &__img
     animation: showAkcia 1s
     max-width: 800px
+    @media (max-width: 700px)
+      padding: 0px 20px
   &__close
     top: 73px
     right: 255px
+    @media (max-width: 700px)
+      top: 187px
+      right: 41px
+    @media (max-width: 400px)
+      top: 253px
+      right: 16px
 
 @keyframes showAkcia 
   0%
