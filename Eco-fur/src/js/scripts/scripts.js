@@ -86,36 +86,36 @@ window.addEventListener("DOMContentLoaded", function () {
     // ... more custom settings?
   });
 
-  const options = {
-    threshold: 0.1
-  }
-  let AlreadyInsert = false;
-  let mapCont = document.querySelector('.map-cont')
+  // const options = {
+  //   threshold: 0.1
+  // }
+  // let AlreadyInsert = false;
+  // let mapCont = document.querySelector('.map-cont')
 
 
-  const callback = function (entries, observer) {
+  // const callback = function (entries, observer) {
 
-    entries.forEach(el => {
-      if (el.isIntersecting) {
-        if (!AlreadyInsert) {
-          let elem = document.createElement('script')
-          elem.setAttribute("src", "https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Addadc5d30f7af11fee01efcdb3af229c494f5ae2cf768a7e1f4131b9d8bb1366&amp;width=100%25&amp;height=500&amp;lang=ru_UA&amp;scroll=true")
-          elem.setAttribute("type", "text/javascript")
-          elem.setAttribute("charset", "utf-8")
-          mapCont.appendChild(elem)
+  //   entries.forEach(el => {
+  //     if (el.isIntersecting) {
+  //       if (!AlreadyInsert) {
+  //         let elem = document.createElement('script')
+  //         elem.setAttribute("src", "https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Addadc5d30f7af11fee01efcdb3af229c494f5ae2cf768a7e1f4131b9d8bb1366&amp;width=100%25&amp;height=500&amp;lang=ru_UA&amp;scroll=true")
+  //         elem.setAttribute("type", "text/javascript")
+  //         elem.setAttribute("charset", "utf-8")
+  //         mapCont.appendChild(elem)
 
-          AlreadyInsert = true;
-        }
+  //         AlreadyInsert = true;
+  //       }
 
-      }
-    });
+  //     }
+  //   });
 
 
-  };
-  const observer = new IntersectionObserver(callback, options);
+  // };
+  // const observer = new IntersectionObserver(callback, options);
 
-  const target = document.querySelector('.gallery');
-  observer.observe(target);
+  // const target = document.querySelector('.order');
+  // observer.observe(target);
 
 
 });
