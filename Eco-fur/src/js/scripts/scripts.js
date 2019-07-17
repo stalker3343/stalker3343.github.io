@@ -91,9 +91,12 @@ window.addEventListener("DOMContentLoaded", function () {
   input.addEventListener("focus", mask, false);
   input.addEventListener("blur", mask, false);
 
-
-  (function () {
-    // Initialize
-    var bLazy = new Blazy();
-  })();
+  var lazyLoadInstance = new LazyLoad({
+    elements_selector: ".lazy"
+    // ... more custom settings?
+  });
+  // (function () {
+  //   // Initialize
+  //   var bLazy = new Blazy();
+  // })();
 });

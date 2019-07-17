@@ -1,5 +1,4 @@
 .akciaModal
-  
   position: fixed
   width: 100vw
   height: 100vh
@@ -9,20 +8,23 @@
   top: 0
   background: rgba(0,0,0, .5)
   display: none
+  &__wraper
+    position: relative
   &__img
     animation: showAkcia 1s
     max-width: 800px
     @media (max-width: 700px)
       padding: 0px 20px
   &__close
-    top: 73px
-    right: 255px
-    @media (max-width: 700px)
-      top: 187px
-      right: 41px
-    @media (max-width: 400px)
-      top: 253px
-      right: 16px
+    position: absolute
+    top: -7px
+    right: -28px
+    @media (max-width: 860px)
+      top: -40px
+      right: 28px
+    // @media (max-width: 400px)
+    //   top: 253px
+    //   right: 16px
 
 @keyframes showAkcia 
   0%
