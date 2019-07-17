@@ -290,6 +290,64 @@ template {
 
 /*# sourceMappingURL=bootstrap-reboot.css.map */
 
+@charset "UTF-8";
+/*!
+ * Accordion v2.7.2
+ * Simple accordion created in pure Javascript.
+ * https://github.com/michu2k/Accordion
+ *
+ * Copyright 2017-2019 Michał Strumpf
+ * Published under MIT License
+ */
+.ac {
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.ac > .ac-q {
+  font: bold 15px Arial,sans-serif;
+  color: #111;
+  padding: 10px 30px 10px 10px;
+  margin: 0;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  position: relative; }
+
+.ac > .ac-q::after {
+  content: '+';
+  text-align: center;
+  width: 15px;
+  right: 10px;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  position: absolute; }
+
+.ac > .ac-a {
+  overflow: hidden;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-timing-function: ease;
+  transition-timing-function: ease; }
+
+.ac > .ac-a p {
+  font: 14px/1.5 Arial,sans-serif;
+  color: #777;
+  margin: 0;
+  padding: 10px; }
+
+.ac.js-enabled > .ac-a {
+  visibility: hidden; }
+
+.ac.is-active > .ac-a {
+  visibility: visible; }
+
+.ac.is-active > .ac-q::after {
+  content: '\2013'; }
+
 @-ms-viewport {
   width: device-width; }
 
@@ -1603,44 +1661,34 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   .important__msgrow {
     margin-top: 25px;
     margin-bottom: 110px; }
-  .important .accordion-container {
-    position: relative;
-    width: 100%;
-    height: auto; }
   .important .accordion-container > h2 {
     text-align: center;
     color: #fff;
     padding-bottom: 5px;
     margin-bottom: 30px;
     border-bottom: 1px solid #ddd; }
-  .important .set {
+  .important .ac {
     cursor: pointer;
-    position: relative;
-    width: 100%;
-    height: auto;
+    margin: 0px;
+    border: none;
     background-color: #f5f5f5; }
-  .important .set > a {
-    display: block;
+  .important .ac-q {
     padding: 10px 15px;
     text-decoration: none;
     color: black !important;
     font-family: 'FuturaPT', Arial, sans-serif;
     font-size: 22px;
     font-weight: 600;
-    border-bottom: 1px solid #ddd;
-    -webkit-transition: all 0.2s linear;
-    -moz-transition: all 0.2s linear;
-    transition: all 0.2s linear; }
-  .important .set > a i {
-    position: relative;
-    float: right;
-    margin-top: 4px;
-    color: #666; }
-  .important .set > a.active {
-    background-color: #3399cc;
-    color: #fff; }
-  .important .set > a.active i {
-    color: #fff; }
+    border-bottom: 1px solid #ddd; }
+  .important .ac-a {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd; }
+    .important .ac-a p {
+      font-family: 'FuturaPT', Arial, sans-serif;
+      font-size: 17px;
+      padding: 18px 18px;
+      margin: 0;
+      color: #333; }
   .important .content {
     position: relative;
     width: 100%;
@@ -1829,42 +1877,23 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
       padding-bottom: 5px;
       margin-bottom: 30px;
       border-bottom: 1px solid #ddd; }
-  .order__acard .set {
+  .order__acard .ac {
     cursor: pointer;
-    position: relative;
-    width: 100%;
-    height: auto;
+    margin: 0px;
+    border: none;
     background-color: #f5f5f5; }
-    .order__acard .set > a {
-      display: block;
-      padding: 10px 15px;
-      text-decoration: none;
-      color: black !important;
-      font-family: 'FuturaPT', Arial, sans-serif;
-      font-size: 22px;
-      font-weight: 600;
-      border-bottom: 1px solid #ddd;
-      -webkit-transition: all 0.2s linear;
-      -moz-transition: all 0.2s linear;
-      transition: all 0.2s linear; }
-      .order__acard .set > a i {
-        position: relative;
-        float: right;
-        margin-top: 4px;
-        color: #666; }
-      .order__acard .set > a.active {
-        background-color: #3399cc;
-        color: #fff; }
-        .order__acard .set > a.active i {
-          color: #fff; }
-  .order__acard .content {
-    position: relative;
-    width: 100%;
-    height: auto;
+  .order__acard .ac-q {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: black !important;
+    font-family: 'FuturaPT', Arial, sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    border-bottom: 1px solid #ddd; }
+  .order__acard .ac-a {
     background-color: #fff;
-    border-bottom: 1px solid #ddd;
-    display: none; }
-    .order__acard .content p {
+    border-bottom: 1px solid #ddd; }
+    .order__acard .ac-a p {
       font-family: 'FuturaPT', Arial, sans-serif;
       font-size: 17px;
       padding: 18px 18px;
@@ -2255,42 +2284,23 @@ body {
       padding-bottom: 5px;
       margin-bottom: 30px;
       border-bottom: 1px solid #ddd; }
-  .order__acard .set {
+  .order__acard .ac {
     cursor: pointer;
-    position: relative;
-    width: 100%;
-    height: auto;
+    margin: 0px;
+    border: none;
     background-color: #f5f5f5; }
-    .order__acard .set > a {
-      display: block;
-      padding: 10px 15px;
-      text-decoration: none;
-      color: black !important;
-      font-family: 'FuturaPT', Arial, sans-serif;
-      font-size: 22px;
-      font-weight: 600;
-      border-bottom: 1px solid #ddd;
-      -webkit-transition: all 0.2s linear;
-      -moz-transition: all 0.2s linear;
-      transition: all 0.2s linear; }
-      .order__acard .set > a i {
-        position: relative;
-        float: right;
-        margin-top: 4px;
-        color: #666; }
-      .order__acard .set > a.active {
-        background-color: #3399cc;
-        color: #fff; }
-        .order__acard .set > a.active i {
-          color: #fff; }
-  .order__acard .content {
-    position: relative;
-    width: 100%;
-    height: auto;
+  .order__acard .ac-q {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: black !important;
+    font-family: 'FuturaPT', Arial, sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    border-bottom: 1px solid #ddd; }
+  .order__acard .ac-a {
     background-color: #fff;
-    border-bottom: 1px solid #ddd;
-    display: none; }
-    .order__acard .content p {
+    border-bottom: 1px solid #ddd; }
+    .order__acard .ac-a p {
       font-family: 'FuturaPT', Arial, sans-serif;
       font-size: 17px;
       padding: 18px 18px;
@@ -2363,44 +2373,34 @@ body {
   .important__msgrow {
     margin-top: 25px;
     margin-bottom: 110px; }
-  .important .accordion-container {
-    position: relative;
-    width: 100%;
-    height: auto; }
   .important .accordion-container > h2 {
     text-align: center;
     color: #fff;
     padding-bottom: 5px;
     margin-bottom: 30px;
     border-bottom: 1px solid #ddd; }
-  .important .set {
+  .important .ac {
     cursor: pointer;
-    position: relative;
-    width: 100%;
-    height: auto;
+    margin: 0px;
+    border: none;
     background-color: #f5f5f5; }
-  .important .set > a {
-    display: block;
+  .important .ac-q {
     padding: 10px 15px;
     text-decoration: none;
     color: black !important;
     font-family: 'FuturaPT', Arial, sans-serif;
     font-size: 22px;
     font-weight: 600;
-    border-bottom: 1px solid #ddd;
-    -webkit-transition: all 0.2s linear;
-    -moz-transition: all 0.2s linear;
-    transition: all 0.2s linear; }
-  .important .set > a i {
-    position: relative;
-    float: right;
-    margin-top: 4px;
-    color: #666; }
-  .important .set > a.active {
-    background-color: #3399cc;
-    color: #fff; }
-  .important .set > a.active i {
-    color: #fff; }
+    border-bottom: 1px solid #ddd; }
+  .important .ac-a {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd; }
+    .important .ac-a p {
+      font-family: 'FuturaPT', Arial, sans-serif;
+      font-size: 17px;
+      padding: 18px 18px;
+      margin: 0;
+      color: #333; }
   .important .content {
     position: relative;
     width: 100%;
