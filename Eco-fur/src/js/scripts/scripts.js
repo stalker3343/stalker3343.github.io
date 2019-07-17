@@ -1,39 +1,9 @@
-// $(document).ready(function () {
-//   $(".set > a").on("click", function () {
-//     if ($(this).hasClass('active')) {
-//       $(this).removeClass("active");
-//       $(this).siblings('.content').slideUp(200);
-//       $(".set > a i").removeClass("fa-minus").addClass("fa-plus");
-//     } else {
-//       $(".set > a i").removeClass("fa-minus").addClass("fa-plus");
-//       $(this).find("i").removeClass("fa-plus").addClass("fa-minus");
-//       $(".set > a").removeClass("active");
-//       $(this).addClass("active");
-//       $('.content').slideUp(200);
-//       $(this).siblings('.content').slideDown(200);
-//     }
-//   });
-// });
 window.addEventListener("DOMContentLoaded", function () {
 
 
   var accordion = new Accordion('.accordion-container');
   var accordion2 = new Accordion('.accordion-container2');
 
-  // $(".set > a").on("click", function () {
-  //   if ($(this).hasClass('active')) {
-  //     $(this).removeClass("active");
-  //     $(this).siblings('.content').slideUp(200);
-  //     $(".set > a i").removeClass("fa-minus").addClass("fa-plus");
-  //   } else {
-  //     $(".set > a i").removeClass("fa-minus").addClass("fa-plus");
-  //     $(this).find("i").removeClass("fa-plus").addClass("fa-minus");
-  //     $(".set > a").removeClass("active");
-  //     $(this).addClass("active");
-  //     $('.content').slideUp(200);
-  //     $(this).siblings('.content').slideDown(200);
-  //   }
-  // });
 
   function closeMenu() {
     navWrap.classList.remove('nav-wrap__open');
@@ -111,9 +81,41 @@ window.addEventListener("DOMContentLoaded", function () {
   input.addEventListener("focus", mask, false);
   input.addEventListener("blur", mask, false);
 
-  var lazyLoadInstance = new LazyLoad({
+  const lazyLoadInstance = new LazyLoad({
     elements_selector: ".lazy"
     // ... more custom settings?
   });
+
+  const options = {
+    threshold: 0.1
+  }
+  let AlreadyInsert = false;
+  let mapCont = document.querySelector('.map-cont')
+
+
+  const callback = function (entries, observer) {
+
+    entries.forEach(el => {
+      if (el.isIntersecting) {
+        if (!AlreadyInsert) {
+          let elem = document.createElement('script')
+          elem.setAttribute("src", "https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Addadc5d30f7af11fee01efcdb3af229c494f5ae2cf768a7e1f4131b9d8bb1366&amp;width=100%25&amp;height=500&amp;lang=ru_UA&amp;scroll=true")
+          elem.setAttribute("type", "text/javascript")
+          elem.setAttribute("charset", "utf-8")
+          mapCont.appendChild(elem)
+
+          AlreadyInsert = true;
+        }
+
+      }
+    });
+
+
+  };
+  const observer = new IntersectionObserver(callback, options);
+
+  const target = document.querySelector('.gallery');
+  observer.observe(target);
+
 
 });
