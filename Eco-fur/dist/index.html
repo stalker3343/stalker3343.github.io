@@ -116,10 +116,17 @@
 
             </h1>
             <picture>
-              <source srcset="img/headerWomen.webp" type="image/webp">
-              <source srcset="img/headerWomen.png" type="image/jpeg">
-              <img class="banner__img" src="img/headerWomen.png" alt="">
+              <source srcset="img/bannerImg/headerWomen@0,25x.webp 1x,
+                img/bannerImg/headerWomen@0,5x.webp 2x" media="(max-width: 980px)" type="image/webp">
+              <source srcset="img/bannerImg/headerWomen@0,25x.png 1x,
+                img/bannerImg/headerWomen@0,5x.png 2x" media="(max-width: 980px)">
+              <source srcset="img/bannerImg/headerWomen@1.webp 1x,
+                              img/bannerImg/headerWomen@2.webp 2x" type="image/webp">
+              <img class="banner__img" src="img/bannerImg/headerWomen@1.png" srcset="img/bannerImg/headerWomen@2.png 2x"
+                alt="Женщина в шубе">
             </picture>
+
+
           </div>
         </div>
 
@@ -127,18 +134,20 @@
     </section>
 
     <link href="vue/css/app.7eb2fe15.css" rel=preload as=style>
-    <link href="vue/css/chunk-vendors.dfc43b50.css" rel=stylesheet>
+    <link href="vue/css/chunk-vendors.dfc43b50.css" rel=preload as=style>
     <link href="vue/js/app.3b80510a.js" rel=preload as=script>
     <link href="vue/js/chunk-vendors.40d2f887.js" rel=preload as=script>
-
+    <link href="vue/css/chunk-vendors.dfc43b50.css" rel=stylesheet>
     <link href="vue/css/app.7eb2fe15.css" rel=stylesheet>
+
+
+
 
     <noscript><strong>We're sorry but vuecli doesn't work properly without JavaScript enabled. Please enable it to
         continue.</strong></noscript>
     <div id="app"></div>
 
-    <script src="vue/js/chunk-vendors.40d2f887.js">
-    </script>
+    <script src="vue/js/chunk-vendors.40d2f887.js"> </script>
     <script src="vue/js/app.3b80510a.js"> </script>
 
 
@@ -436,12 +445,12 @@
 
       <h2 class="h2 map__title">Контакты и график работы шоу-рума
         ECO-FFUR</h2>
-      <!-- <div class="map-cont">
+      <div class="map-cont">
 
-      </div> -->
-      <script type="text/javascript" charset="utf-8" defer
+      </div>
+      <!-- <script type="text/javascript" charset="utf-8" defer
         src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Addadc5d30f7af11fee01efcdb3af229c494f5ae2cf768a7e1f4131b9d8bb1366&amp;width=100%25&amp;height=500&amp;lang=ru_UA&amp;scroll=true?speed=200000">
-      </script>
+      </script> -->
       <div class="map__block">
         <h2 class="map__heading">Шоу-рум в Вологде</h2> <br>
         <b> ул. Ленинградская, д. 71, оф. 323 <br> <b>
@@ -530,12 +539,12 @@
           <picture>
             <source srcset="img/1280px-Sberbank.webp" type="image/webp">
             <source srcset="img/1280px-Sberbank.jpg" type="image/jpeg">
-            <img class="bank__img" src="img/1280px-Sberbank.jpg" alt="">
+            <img class="bank__img lazy" data-src="img/1280px-Sberbank.jpg" alt="">
           </picture>
           <picture>
             <source srcset="img/tinkof.webp" type="image/webp">
             <source srcset="img/tinkof.jpg" type="image/jpeg">
-            <img class="bank__img" src="img/tinkof.jpg" alt="">
+            <img class="bank__img lazy" data-src="img/tinkof.jpg" alt="">
           </picture>
         </div>
       </div>
@@ -548,7 +557,7 @@
       <picture>
         <source srcset="img/aktsia_1.webp" type="image/webp">
         <source srcset="img/aktsia_1.jpg" type="image/jpeg">
-        <img class="akciaModal__img" src="img/aktsia_1.jpg" alt="">
+        <img class="akciaModal__img lazy" data-src="img/aktsia_1.jpg" alt="">
       </picture>
       <div class="nav__close akciaModal__close">
         &times
