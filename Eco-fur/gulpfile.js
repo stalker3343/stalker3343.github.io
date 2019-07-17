@@ -67,14 +67,14 @@ function buildCSS(callback) {
         )
       )
 
-      .pipe(autoprefixer({
-        browsers: ['last 4 versions'],
-        cascade: false
-      }))
+      // .pipe(autoprefixer({
+      //   browsers: ['last 4 versions'],
+      //   cascade: false
+      // }))
 
       .pipe(concat('bundle.css'))
-      .pipe(gcmq())
-      .pipe(cleanCSS())
+      // .pipe(gcmq())
+      // .pipe(cleanCSS())
       .pipe(sourcemaps.write("."))
       //.pipe(webpCss()) //замещение webp в css(не работате)
       .pipe(gulp.dest(path.public.css))
@@ -92,30 +92,30 @@ function buildImgs() {
     gulp
     .src(path.src.img)
     //Продакшн
-    .pipe(imagemin([
-      imagemin.gifsicle({
-        interlaced: true
-      }),
-      imagemin.jpegtran({
-        progressive: true
-      }),
-      imageminJpegRecompress({
-        loops: 5,
-        min: 65,
-        max: 70,
-        quality: 'medium'
-      }),
-      imagemin.svgo(),
-      imagemin.optipng({
-        optimizationLevel: 3
-      }),
-      pngquant({
-        quality: '65-70',
-        speed: 5
-      })
-    ], {
-      verbose: true
-    }))
+    // .pipe(imagemin([
+    //   imagemin.gifsicle({
+    //     interlaced: true
+    //   }),
+    //   imagemin.jpegtran({
+    //     progressive: true
+    //   }),
+    //   imageminJpegRecompress({
+    //     loops: 5,
+    //     min: 65,
+    //     max: 70,
+    //     quality: 'medium'
+    //   }),
+    //   imagemin.svgo(),
+    //   imagemin.optipng({
+    //     optimizationLevel: 3
+    //   }),
+    //   pngquant({
+    //     quality: '65-70',
+    //     speed: 5
+    //   })
+    // ], {
+    //   verbose: true
+    // }))
 
     //Обычная разработка
     .pipe(gulp.dest(path.public.img))
@@ -138,7 +138,7 @@ function buildJS() {
     .src([path.src.js, "src/js/scripts/scripts.js"])
     .pipe(concat("bundle.js"))
     // Продакшн
-    .pipe(terser())
+    //   .pipe(terser())
     .pipe(gulp.dest(path.public.js))
     .pipe(
       bs.reload({

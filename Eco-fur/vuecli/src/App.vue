@@ -39,8 +39,9 @@
 <script>
 import Product from "./components/product.vue";
 import popUp from "./components/popUp.vue";
-import { db } from "./db";
-// import VueTrix from "vue-trix";
+
+import fb from "firebase/app";
+
 export default {
   name: "app",
   data() {
@@ -57,10 +58,25 @@ export default {
     popUp
     // VueTrix
   },
-  firebase: {
-    tovari: db.ref().child("tovari"),
-    tovarGroup: db.ref().child("tovarGroup")
+
+  created() {
+    fb.database()
+      .ref()
+      .child("tovari")
+      .once("value")
+      .then(snapshot => {
+        this.tovari = snapshot.val();
+      });
+
+    fb.database()
+      .ref()
+      .child("tovarGroup")
+      .once("value")
+      .then(snapshot => {
+        this.tovarGroup = snapshot.val();
+      });
   },
+
   methods: {
     showpopUP(tovar) {
       let body = document.querySelector("body");
