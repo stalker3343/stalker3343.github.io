@@ -1,5 +1,6 @@
 .zakazModal
   position: fixed
+  overflow-y: auto
   z-index: 10000
   width: 100vw
   height: 100vh
@@ -10,11 +11,17 @@
   background: rgba(0,0,0, .5)
   display: none
   &__wraper
-    width: 560px
+    height: auto
+    max-width: 560px
     background: white 
     position: relative
     padding: 40px 45px
     transform: translateY(30%) scale(.9)
+    @media (max-width: 600px)
+      margin: 0px 10px
+      padding: 20px 15px
+      margin-top: 100px
+
   &__header
     margin: 0px
   &__subtitle

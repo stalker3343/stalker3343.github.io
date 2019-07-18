@@ -46,11 +46,13 @@ window.addEventListener("DOMContentLoaded", function () {
 
   openZakazBtn.addEventListener('click', function () {
     zakazModal.style.display = "flex";
+    document.body.style.overflow = "hidden";
     zakazModalWraper.classList.add('zakazModal__show')
   })
 
   function closeZakazModal() {
     zakazModal.style.display = "none"
+    document.body.style.overflow = "auto";
     zakazModalWraper.classList.remove('zakazModal__show')
   }
   zakazModalClose.addEventListener('click', closeZakazModal)
