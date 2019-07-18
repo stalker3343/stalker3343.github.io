@@ -49,7 +49,7 @@ const config = {
 };
 
 function buildCSS(callback) {
-  setTimeout(function () {
+  setTimeout(function() {
     gulp
       .src([
         "src/sass/libs/reboot/bootstrap-reboot.css",
@@ -67,16 +67,18 @@ function buildCSS(callback) {
         )
       )
 
-      .pipe(autoprefixer({
-        browsers: ['last 4 versions'],
-        cascade: false
-      }))
+      .pipe(
+        autoprefixer({
+          browsers: ["last 4 versions"],
+          cascade: false
+        })
+      )
 
-      .pipe(concat('bundle.css'))
+      .pipe(concat("bundle.css"))
       .pipe(gcmq())
       .pipe(cleanCSS())
-      //.pipe(sourcemaps.write("."))
-      // .pipe(webpCss()) //замещение webp в css(не работате)
+      .pipe(sourcemaps.write("."))
+      //.pipe(webpCss()) //замещение webp в css(не работате)
       .pipe(gulp.dest(path.public.css))
       .pipe(
         bs.reload({
@@ -90,43 +92,48 @@ function buildCSS(callback) {
 function buildImgs() {
   return (
     gulp
-    .src(path.src.img)
-    //Продакшн
-    .pipe(imagemin([
-      imagemin.gifsicle({
-        interlaced: true
-      }),
-      imagemin.jpegtran({
-        progressive: true
-      }),
-      imageminJpegRecompress({
-        loops: 5,
-        min: 65,
-        max: 70,
-        quality: 'medium'
-      }),
-      imagemin.svgo(),
-      imagemin.optipng({
-        optimizationLevel: 3
-      }),
-      pngquant({
-        quality: '65-70',
-        speed: 5
-      })
-    ], {
-      verbose: true
-    }))
+      .src(path.src.img)
+      //Продакшн
+      .pipe(
+        imagemin(
+          [
+            imagemin.gifsicle({
+              interlaced: true
+            }),
+            imagemin.jpegtran({
+              progressive: true
+            }),
+            imageminJpegRecompress({
+              loops: 5,
+              min: 65,
+              max: 70,
+              quality: "medium"
+            }),
+            imagemin.svgo(),
+            imagemin.optipng({
+              optimizationLevel: 3
+            }),
+            pngquant({
+              quality: "65-70",
+              speed: 5
+            })
+          ],
+          {
+            verbose: true
+          }
+        )
+      )
 
-    //Обычная разработка
-    .pipe(gulp.dest(path.public.img))
-    .pipe(webp())
+      //Обычная разработка
+      .pipe(gulp.dest(path.public.img))
+      .pipe(webp())
 
-    .pipe(gulp.dest(path.public.img))
-    .pipe(
-      bs.reload({
-        stream: true
-      })
-    )
+      .pipe(gulp.dest(path.public.img))
+      .pipe(
+        bs.reload({
+          stream: true
+        })
+      )
   );
 }
 gulp.task("minImg", buildImgs);
@@ -135,16 +142,16 @@ function buildJS() {
   //return gulp.src(['src/js/jquery/jquery.min.js', path.src.js, 'src/js/scripts/scripts.js'])
   return (
     gulp
-    .src([path.src.js, "src/js/scripts/scripts.js"])
-    .pipe(concat("bundle.js"))
-    // Продакшн
-    //   .pipe(terser())
-    .pipe(gulp.dest(path.public.js))
-    .pipe(
-      bs.reload({
-        stream: true
-      })
-    )
+      .src([path.src.js, "src/js/scripts/scripts.js"])
+      .pipe(concat("bundle.js"))
+      // Продакшн
+      .pipe(terser())
+      .pipe(gulp.dest(path.public.js))
+      .pipe(
+        bs.reload({
+          stream: true
+        })
+      )
   );
 }
 gulp.task("buildJS", buildJS);
@@ -187,7 +194,8 @@ function crit(cb) {
     base: "dist/",
     src: "index.html",
     css: ["dist/css/bundle.css"],
-    dimensions: [{
+    dimensions: [
+      {
         width: 320,
         height: 480
       },
