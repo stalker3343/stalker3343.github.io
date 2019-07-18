@@ -488,9 +488,9 @@
           </div>
           <div class="contacts__formblock">
             <form class="contacts__form" action="">
-              <input placeholder="Введите телефон" class="contacts__input" type="tel">
+              <input placeholder="Введите телефон" class="contacts__input tell" type="tel">
 
-              <input placeholder="Введите имя" class="contacts__input" type="text">
+              <input placeholder="Введите имя" class="contacts__input " type="text">
               <textarea placeholder="Введите вопрос или пожелание" class="contacts__area"></textarea>
               <input class="button contacts__btn" type="submit" value="Отправить">
             </form>
@@ -563,7 +563,34 @@
         &times
       </div>
     </div>
+  </div>
 
+
+  <div class="zakazModal ">
+    <div class="zakazModal__wraper ">
+      <div class="h2 zakazModal__header">Оформление заказа</div>
+      <div class=" zakazModal__subtitle">Оставь заявку через сайт и получи персональную скидку <b>1000</b> рублей на
+        покупку
+        шубы и <b>500</b> рублей на покупку жилетки.
+        После получения заказа наш менеджер свяжется с вами.
+      </div>
+
+      <form class="contacts__form" action="">
+        <input placeholder="Имя" class="contacts__input zakazModal__input" type="text">
+
+        <input placeholder="Ваш телефон" class=" tell contacts__input zakazModal__input" type="tel">
+        <input placeholder="Укажите ваш размер/мерки и понравившуюся модель шубы"
+          class="contacts__input zakazModal__input " type="text">
+
+        <input class="button zakazModal__btn" type="submit" value="Оформит заказ и получить скидку">
+      </form>
+      <p class="zakazModal__sogl">Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь c
+        политикой
+        конфиденциальности.</p>
+      <div class="nav__close zakazModal__close">
+        &times
+      </div>
+    </div>
   </div>
 
   <script src="js/bundle.js"></script>

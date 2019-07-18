@@ -1,0 +1,60 @@
+.zakazModal
+  position: fixed
+  z-index: 10000
+  width: 100vw
+  height: 100vh
+  display: flex
+  justify-content: center
+  align-items: center
+  top: 0
+  background: rgba(0,0,0, .5)
+  display: none
+  &__wraper
+    width: 560px
+    background: white 
+    position: relative
+    padding: 40px 45px
+    transform: translateY(30%) scale(.9)
+  &__header
+    margin: 0px
+  &__subtitle
+    margin: 20px 0px
+    text-align: center
+    font-size: 16px
+    font-weight: 400
+    line-height: 1.55
+  &__input
+    border: 2px solid #000000
+    border-radius: 30px
+
+  &__btn
+    width: 100%
+    padding: 12px 0px
+    border: 2px solid #000000
+    font-size: 16px
+    box-shadow: none
+  &__sogl
+    font-style: 14px
+    margin: 10px 0px
+    text-align: center
+    font-weight: 400
+
+  &__close
+    position: absolute
+    top: -7px
+    right: -28px
+    @media (max-width: 860px)
+      top: -40px
+      right: 28px
+  &__show
+    animation: showZakazModal 0.5s ease-in-out 
+    transform: translateY(0) scale(1)
+
+@keyframes showZakazModal
+  0%
+    opacity: .5
+    transform: translateY(30%) scale(.9)
+  100%
+    opacity: 1
+    transform: translateY(0) scale(1)
+
