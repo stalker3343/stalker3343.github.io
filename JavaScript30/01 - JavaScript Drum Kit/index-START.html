@@ -55,6 +55,26 @@
     <audio data-key="75" src="sounds/tom.wav"></audio>
     <audio data-key="76" src="sounds/tink.wav"></audio>
 
-    <script></script>
+    <script>
+      function playSound(e) {
+        let audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+        if (!audio) return; //Использовать return всместо  if, else
+        let playButton = document.querySelector(`div[data-key="${e.keyCode}"]`);
+        playButton.classList.add("playing");
+        audio.currentTime = 0; //rewind to the start
+        audio.play();
+      }
+
+      function removeTransition(e) {
+        if (e.propertyName !== "transform") return; //Использовать return всместо  if, else
+        this.classList.remove("playing");
+      }
+
+      let buttons = document.querySelectorAll(".key");
+      buttons.forEach(function(el) {
+        el.addEventListener("transitionend", removeTransition); //1. событие transitionend 2. Выносить все функции ивентов отдельно
+      });
+      document.addEventListener("keydown", playSound); //Выносить все функции ивентов отдельно
+    </script>
   </body>
 </html>
