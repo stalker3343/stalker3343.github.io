@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Type Ahead 👀</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <form class="search-form">
@@ -14,9 +16,58 @@
       <li>or a state</li>
     </ul>
   </form>
-<script>
-const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+  <script>
+    const endpoint =
+      'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
 
-</script>
+    let cities = [];
+
+    fetch(endpoint)
+      .then(date => date.json())
+      .then(data => cities = data)
+
+    function findMatches(metchStr, cities) {
+      return cities.filter(city => {
+        const reg = new RegExp(metchStr, "gi")
+        return city.city.match(reg) || city.state.match(reg)
+      })
+    }
+
+    function displayMatchCitis() {
+      let matchCityis = findMatches(this.value, cities)
+      let html = matchCityis.map(position => {
+        const reg = new RegExp(this.value, "gi")
+        let highlightCity = position.city.replace(reg, `<span class="hl">${this.value}</span>`)
+        let highlightState = position.state.replace(reg, `<span class="hl">${this.value}</span>`)
+        return ` <li >
+                <span class = "name"> ${highlightCity}, ${highlightState} </span>
+                <span class = "population">${numberWithCommas(position.population)} </span></li>`
+      }).join('')
+      cityList.innerHTML = html
+    }
+
+    function numberWithCommas(x) {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    }
+
+    const input = document.querySelector('.search')
+    const cityList = document.querySelector('.suggestions')
+
+    input.addEventListener('keyup', displayMatchCitis)
+    input.addEventListener('onchange', displayMatchCitis)
+
+    /*
+     1. fetch
+     2. метод metch строки который ищет по регулярке
+     3. флаги g и i в регулярках
+     4. применение metch в filter
+     
+     5. метод replace строк по регулярке
+     
+     6. деление чисел запятой
+     
+     */
+  </script>
 </body>
+
 </html>
