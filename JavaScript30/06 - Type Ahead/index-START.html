@@ -41,7 +41,8 @@
         let highlightState = position.state.replace(reg, `<span class="hl">${this.value}</span>`)
         return ` <li >
                 <span class = "name"> ${highlightCity}, ${highlightState} </span>
-                <span class = "population">${numberWithCommas(position.population)} </span></li>`
+                <span class = "population">${numberWithCommas(position.population)} </span>
+                </li>`
       }).join('')
       cityList.innerHTML = html
     }
