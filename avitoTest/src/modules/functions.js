@@ -12,6 +12,8 @@ function getMaxPrice(mass) {
 
 function getMinPrice(mass) {
   const nirmalizeMass = mass.filter(el => el.price);
+  console.log('Меня вызвали');
+
   return nirmalizeMass.reduce((min, p) => {
     return p.price < min ? p.price : min;
   }, nirmalizeMass[0].price);

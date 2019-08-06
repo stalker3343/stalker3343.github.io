@@ -66,13 +66,13 @@
 <script>
 import { getMaxPrice, getMinPrice } from "../modules/functions";
 export default {
-  props: ["products"],
   data() {
     return {
       categ: "",
       beginPrice: 0,
       endPrice: 0,
-      showFav: false
+      showFav: false,
+      products: this.$store.state.products
     };
   },
   mounted() {
@@ -90,6 +90,7 @@ export default {
       const categFileredMass = this.products.filter(el => {
         return !this.categ || el.category == this.categ;
       });
+
       this.beginPrice = getMinPrice(categFileredMass);
       this.endPrice = getMaxPrice(categFileredMass);
       this.changePrice();
@@ -102,6 +103,19 @@ export default {
 
     changeFav() {
       this.$emit("changeFav", !this.showFav);
+      if (!this.showFav) {
+        this.beginPrice = getMinPrice(this.$store.state.favorites);
+        this.endPrice = getMaxPrice(this.$store.state.favorites);
+        this.changePrice();
+      } else {
+        const categFileredMass = this.products.filter(el => {
+          return !this.categ || el.category == this.categ;
+        });
+
+        this.beginPrice = getMinPrice(categFileredMass);
+        this.endPrice = getMaxPrice(categFileredMass);
+        this.changePrice();
+      }
     }
   }
 };

@@ -4,19 +4,14 @@
 
     <div
       style="width: 95vw; height: 80vh;"
-      v-if="!loadData"
+      v-if="loading"
       class="d-flex justify-content-center align-items-center"
     >
       <b-spinner style="width: 3rem; height: 3rem;" label="Large Spinner"></b-spinner>
     </div>
 
     <main v-else>
-      <Filters
-        @changeKateg="changeCateg"
-        @changePrice="changePrice"
-        @changeFav="changeFav"
-        :products="products"
-      ></Filters>
+      <Filters @changeKateg="changeCateg" @changePrice="changePrice" @changeFav="changeFav"></Filters>
 
       <Sorts @changeDirectionSort="changeDirectionSort" @changeTypeSort="changeTypeSort"></Sorts>
 
@@ -70,36 +65,20 @@ export default {
   },
   data() {
     return {
-      products: [],
-      productsOrig: [],
-      sellers: [],
+      productsShowed: [],
       categ: "",
-      loadData: false,
       beginPrice: 0,
       endPrice: 0,
-      showFav: false,
       typeSort: "price",
       directionSort: "down",
-
       perPage: 10,
       pagination: {}
     };
   },
-  mounted() {
-    fetch("https://avito.dump.academy/products")
-      .then(data => data.json())
-      .then(({ data }) => {
-        this.products = data;
-        this.productsOrig = data;
-      })
-      .then(() => {
-        return fetch("https://avito.dump.academy/sellers");
-      })
-      .then(data => data.json())
-      .then(({ data }) => {
-        this.sellers = data;
-        this.loadData = true;
-      });
+  created() {
+    this.$store.dispatch("loadProducts").then(() => {
+      this.productsShowed = this.$store.state.products;
+    });
   },
   methods: {
     changePrice({ begprice, endPrice }) {
@@ -115,23 +94,19 @@ export default {
     changeTypeSort(value) {
       this.typeSort = value;
     },
+    changeFav(value) {
+      if (value) {
+        this.productsShowed = this.favorites;
+      } else {
+        this.productsShowed = this.$store.state.products;
+      }
+    },
     findSalers(id) {
       return this.sellers.find(el => {
         return el.id == id;
       });
     },
-    changeFav(value) {
-      if (value) {
-        const massFav = [];
-        JSON.parse(localStorage.fav).forEach(indexFav => {
-          const favItem = this.productsOrig.find(el => el.id == indexFav);
-          massFav.push(favItem);
-        });
-        this.products = massFav;
-      } else {
-        this.products = this.productsOrig;
-      }
-    },
+
     setPage(p) {
       this.pagination = this.paginator(this.productFiltered.length, p);
     },
@@ -160,9 +135,18 @@ export default {
   },
 
   computed: {
+    loading() {
+      return this.$store.state.Common.loading;
+    },
+    sellers() {
+      return this.$store.state.sellers;
+    },
+    favorites() {
+      return this.$store.state.favorites;
+    },
     productFiltered() {
       return (
-        this.products
+        this.productsShowed
           // фильтр по категории
           .filter(el => {
             return !this.categ || el.category == this.categ;
@@ -179,6 +163,8 @@ export default {
           .sort((lastOne, nextOne) => {
             //по рейтингу
             if (this.typeSort == "rating") {
+              console.log(lastOne.relationships.seller);
+
               const ratePrev = this.findSalers(lastOne.relationships.seller)
                 .rating;
               const reteNext = this.findSalers(nextOne.relationships.seller)
