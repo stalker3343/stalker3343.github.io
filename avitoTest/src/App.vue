@@ -78,9 +78,12 @@ export default {
     };
   },
   created() {
-    this.$store.dispatch("loadProducts").then(() => {
-      this.productsShowed = this.$store.state.products;
-    });
+    console.log(this.$store.dispatch("loadProducts"));
+
+    // this.$store.dispatch("loadProducts").then(() => {
+    //   console.log(this.$store.state.products);
+    //   this.productsShowed = this.$store.state.products;
+    // });
   },
   methods: {
     changePrice({ begprice, endPrice }) {

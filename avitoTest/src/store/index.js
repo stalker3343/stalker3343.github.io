@@ -46,24 +46,34 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    loadProducts({ commit }) {
-      return new Promise((res, reg) => {
-        commit('setLoading', true);
-        fetch('https://avito.dump.academy/products')
-          .then(data => data.json())
-          .then(({ data }) => {
-            commit('setProducts', data);
-            return fetch('https://avito.dump.academy/sellers');
-          })
-          .then(data => data.json())
-          .then(({ data }) => {
-            commit('setSellers', data);
-            commit('setFavourites');
-            commit('setLoading', false);
-            res();
-          });
-      });
+    async loadProducts({ commit }) {
+      commit('setLoading', true);
+      const productsRaw = await fetch('https://avito.dump.academy/products');
+      const products = await productsRaw.json();
+
+      const sellersRaw = await fetch('https://avito.dump.academy/sellers');
+      const sellers = await sellersRaw.json();
+
+      commit('setLoading', false);
     }
+    // loadProducts({ commit }) {
+    //   return new Promise((res, reg) => {
+    //     commit('setLoading', true);
+    //     fetch('https://avito.dump.academy/products')
+    //       .then(data => data.json())
+    //       .then(({ data }) => {
+    //         commit('setProducts', data);
+    //         return fetch('https://avito.dump.academy/sellers');
+    //       })
+    //       .then(data => data.json())
+    //       .then(({ data }) => {
+    //         commit('setSellers', data);
+    //         commit('setFavourites');
+    //         commit('setLoading', false);
+    //         res();
+    //       });
+    //   });
+    // }
   },
 
   getters: {}
