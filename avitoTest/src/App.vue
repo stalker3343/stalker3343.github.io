@@ -30,6 +30,7 @@
             :salers="findSalers(product.relationships.seller)"
           ></Product>
         </div>
+
         <div class="container">
           <div class="btn-toolbar d-flex justify-content-center mb-5">
             <div class="btn-group">
@@ -55,6 +56,7 @@ import Sorts from "./components/Sorts";
 
 import slice from "lodash.slice";
 import range from "lodash.range";
+import { productFiltered } from "./modules/functions";
 
 export default {
   components: {
@@ -128,6 +130,7 @@ export default {
       };
     }
   },
+
   watch: {
     productFiltered: function() {
       this.setPage(1);
@@ -145,46 +148,14 @@ export default {
       return this.$store.state.favorites;
     },
     productFiltered() {
-      return (
-        this.productsShowed
-          // фильтр по категории
-          .filter(el => {
-            return !this.categ || el.category == this.categ;
-          })
-          // фильтр по ценам
-          .filter(product => {
-            if (!product.price) return true;
-            return (
-              Number(product.price) >= this.beginPrice &&
-              Number(product.price) <= this.endPrice
-            );
-          })
-          //сотрировка
-          .sort((lastOne, nextOne) => {
-            //по рейтингу
-            if (this.typeSort == "rating") {
-              console.log(lastOne.relationships.seller);
-
-              const ratePrev = this.findSalers(lastOne.relationships.seller)
-                .rating;
-              const reteNext = this.findSalers(nextOne.relationships.seller)
-                .rating;
-              if (this.directionSort == "up") {
-                return ratePrev > reteNext ? 1 : -1;
-              } else {
-                return ratePrev < reteNext ? 1 : -1;
-              }
-              //по цене
-            } else if (this.typeSort == "price") {
-              const pricePrev = lastOne.price;
-              const priceNext = nextOne.price;
-              if (this.directionSort == "up") {
-                return pricePrev > priceNext ? 1 : -1;
-              } else {
-                return pricePrev < priceNext ? 1 : -1;
-              }
-            }
-          })
+      return productFiltered(
+        this.productsShowed,
+        this.categ,
+        this.beginPrice,
+        this.endPrice,
+        this.typeSort,
+        this.findSalers,
+        this.directionSort
       );
     },
     collection() {

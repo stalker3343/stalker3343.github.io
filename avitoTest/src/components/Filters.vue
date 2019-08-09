@@ -96,9 +96,10 @@ export default {
       this.changePrice();
     },
     changePrice() {
-      const begprice = this.beginPrice;
-      const endPrice = this.endPrice;
-      this.$emit("changePrice", { begprice, endPrice });
+      this.$emit("changePrice", {
+        begprice: this.beginPrice,
+        endPrice: this.endPrice
+      });
     },
 
     changeFav() {
