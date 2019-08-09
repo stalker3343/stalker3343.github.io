@@ -50,30 +50,13 @@ export default new Vuex.Store({
       commit('setLoading', true);
       const productsRaw = await fetch('https://avito.dump.academy/products');
       const products = await productsRaw.json();
-
+      commit('setProducts', products.data);
       const sellersRaw = await fetch('https://avito.dump.academy/sellers');
       const sellers = await sellersRaw.json();
-
+      commit('setSellers', sellers.data);
+      commit('setFavourites');
       commit('setLoading', false);
     }
-    // loadProducts({ commit }) {
-    //   return new Promise((res, reg) => {
-    //     commit('setLoading', true);
-    //     fetch('https://avito.dump.academy/products')
-    //       .then(data => data.json())
-    //       .then(({ data }) => {
-    //         commit('setProducts', data);
-    //         return fetch('https://avito.dump.academy/sellers');
-    //       })
-    //       .then(data => data.json())
-    //       .then(({ data }) => {
-    //         commit('setSellers', data);
-    //         commit('setFavourites');
-    //         commit('setLoading', false);
-    //         res();
-    //       });
-    //   });
-    // }
   },
 
   getters: {}
