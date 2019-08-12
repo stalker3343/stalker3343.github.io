@@ -9,9 +9,9 @@
           <div class="filter__header">Категории:</div>
           <div class="filter__controls">
             <b-form-select
+              v-model="categ"
               class="filter__select"
               name="categoris"
-              v-model="categ"
               @change="changeKateg"
             >
               <option value>Все категории</option>
@@ -31,20 +31,20 @@
             <div class="filter-price__block">
               <span>c</span>
               <b-form-input
-                @input="changePrice"
                 v-model.trim.number="beginPrice"
                 type="number"
                 class="filter-price__input ml-2"
-              ></b-form-input>
+                @input="changePrice"
+              />
             </div>
             <div class="filter-price__block">
               <span>по</span>
               <b-form-input
-                @input="changePrice"
                 v-model.trim.number="endPrice"
                 type="number"
                 class="filter-price__input ml-2"
-              ></b-form-input>
+                @input="changePrice"
+              />
             </div>
           </div>
         </b-col>
@@ -52,10 +52,14 @@
         <!-- ИЗБРАННЫЕ -->
 
         <b-col lg="5" class="filter mb-3 mb-md-0">
-          <div class="filter__header">Избранные:</div>
+          <div class="filter__header">Корзина:</div>
           <div class="filter__controls">
-            <div>Показать только избранные:</div>
-            <b-form-checkbox class="filter__chekbox ml-2" v-model="showFav" @change="changeFav"></b-form-checkbox>
+            <div>Показать только корзину:</div>
+            <b-form-checkbox
+              v-model="showCartItems"
+              class="filter__chekbox ml-2"
+              @change="changeCartItems"
+            />
           </div>
         </b-col>
       </b-row>
@@ -65,13 +69,14 @@
 
 <script>
 import { getMaxPrice, getMinPrice } from "../modules/functions";
+
 export default {
   data() {
     return {
       categ: "",
       beginPrice: 0,
       endPrice: 0,
-      showFav: false,
+      showCartItems: false,
       products: this.$store.state.products
     };
   },
@@ -79,17 +84,17 @@ export default {
     this.beginPrice = getMinPrice(this.products);
     this.endPrice = getMaxPrice(this.products);
     const begprice = this.beginPrice;
-    const endPrice = this.endPrice;
+    const { endPrice } = this;
     this.$emit("changePrice", { begprice, endPrice });
   },
   methods: {
     changeKateg() {
       this.$emit("changeKateg", this.categ);
-      //хард ресет цен в инпутах
-      //передаём массив отфильтрованный ТОЛЬКО по категориии
-      const categFileredMass = this.products.filter(el => {
-        return !this.categ || el.category == this.categ;
-      });
+      // хард ресет цен в инпутах
+      // передаём массив отфильтрованный ТОЛЬКО по категориии
+      const categFileredMass = this.products.filter(
+        el => !this.categ || el.category == this.categ
+      );
 
       this.beginPrice = getMinPrice(categFileredMass);
       this.endPrice = getMaxPrice(categFileredMass);
@@ -102,16 +107,16 @@ export default {
       });
     },
 
-    changeFav() {
-      this.$emit("changeFav", !this.showFav);
-      if (!this.showFav) {
-        this.beginPrice = getMinPrice(this.$store.state.favorites);
-        this.endPrice = getMaxPrice(this.$store.state.favorites);
+    changeCartItems() {
+      this.$emit("changeCartItems", !this.showCartItems);
+      if (!this.showCartItems) {
+        this.beginPrice = getMinPrice(this.$store.state.cartItems);
+        this.endPrice = getMaxPrice(this.$store.state.cartItems);
         this.changePrice();
       } else {
-        const categFileredMass = this.products.filter(el => {
-          return !this.categ || el.category == this.categ;
-        });
+        const categFileredMass = this.products.filter(
+          el => !this.categ || el.category == this.categ
+        );
 
         this.beginPrice = getMinPrice(categFileredMass);
         this.endPrice = getMaxPrice(categFileredMass);
@@ -121,4 +126,3 @@ export default {
   }
 };
 </script>
-

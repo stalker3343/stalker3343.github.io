@@ -1,165 +1,41 @@
 <template>
   <div id="app">
-    <Header></Header>
-
+    <Header />
     <div
-      style="width: 95vw; height: 80vh;"
       v-if="loading"
+      style="width: 95vw; height: 80vh;"
       class="d-flex justify-content-center align-items-center"
     >
-      <b-spinner style="width: 3rem; height: 3rem;" label="Large Spinner"></b-spinner>
+      <b-spinner style="width: 3rem; height: 3rem;" label="Large Spinner" />
     </div>
 
-    <main v-else>
-      <Filters @changeKateg="changeCateg" @changePrice="changePrice" @changeFav="changeFav"></Filters>
+    <router-view v-else></router-view>
 
-      <Sorts @changeDirectionSort="changeDirectionSort" @changeTypeSort="changeTypeSort"></Sorts>
-
-      <section class="pt-4 pb-4">
-        <b-container class="container">
-          <h1>Товаров: {{productFiltered.length}}</h1>
-        </b-container>
-      </section>
-
-      <section class="products">
-        <div class="container products__wrapper">
-          <Product
-            v-for="product in collection"
-            :key="product.id"
-            :product="product"
-            :salers="findSalers(product.relationships.seller)"
-          ></Product>
-        </div>
-
-        <div class="container">
-          <div class="btn-toolbar d-flex justify-content-center mb-5">
-            <div class="btn-group">
-              <button
-                class="btn btn-primary"
-                v-for="p in pagination.pages"
-                :key="p"
-                @click.prevent="setPage(p)"
-              >{{p}}</button>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+    <footer>
+      <div class="container d-flex justify-content-center">
+        Icons made by
+        <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from
+        <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by
+        <a
+          href="http://creativecommons.org/licenses/by/3.0/"
+          title="Creative Commons BY 3.0"
+          target="_blank"
+        >CC 3.0 BY</a>
+      </div>
+    </footer>
   </div>
 </template>
 
 <script>
-import Product from "./components/Product";
 import Header from "./components/Header";
-import Filters from "./components/Filters";
-import Sorts from "./components/Sorts";
-
-import slice from "lodash.slice";
-import range from "lodash.range";
-import { productFiltered } from "./modules/functions";
 
 export default {
   components: {
-    Product,
-    Header,
-    Filters,
-    Sorts
+    Header
   },
-  data() {
-    return {
-      productsShowed: [],
-      categ: "",
-      beginPrice: 0,
-      endPrice: 0,
-      typeSort: "price",
-      directionSort: "down",
-      perPage: 10,
-      pagination: {}
-    };
-  },
-  created() {
-    this.$store.dispatch("loadProducts").then(() => {
-      this.productsShowed = this.$store.state.products;
-    });
-  },
-  methods: {
-    changePrice({ begprice, endPrice }) {
-      this.beginPrice = begprice;
-      this.endPrice = endPrice;
-    },
-    changeCateg(categName) {
-      this.categ = categName;
-    },
-    changeDirectionSort(value) {
-      this.directionSort = value;
-    },
-    changeTypeSort(value) {
-      this.typeSort = value;
-    },
-    changeFav(value) {
-      if (value) {
-        this.productsShowed = this.favorites;
-      } else {
-        this.productsShowed = this.$store.state.products;
-      }
-    },
-    findSalers(id) {
-      return this.sellers.find(el => {
-        return el.id == id;
-      });
-    },
-
-    setPage(p) {
-      this.pagination = this.paginator(this.productFiltered.length, p);
-    },
-    paginate(data) {
-      return slice(
-        this.productFiltered,
-        this.pagination.startIndex,
-        this.pagination.endIndex + 1
-      );
-    },
-    paginator(totalItems, currentPage) {
-      const startIndex = (currentPage - 1) * this.perPage,
-        endIndex = Math.min(startIndex + this.perPage - 1, totalItems - 1);
-      return {
-        currentPage: currentPage,
-        startIndex: startIndex,
-        endIndex: endIndex,
-        pages: range(1, Math.ceil(totalItems / this.perPage) + 1)
-      };
-    }
-  },
-
-  watch: {
-    productFiltered: function() {
-      this.setPage(1);
-    }
-  },
-
   computed: {
     loading() {
       return this.$store.state.Common.loading;
-    },
-    sellers() {
-      return this.$store.state.sellers;
-    },
-    favorites() {
-      return this.$store.state.favorites;
-    },
-    productFiltered() {
-      return productFiltered(
-        this.productsShowed,
-        this.categ,
-        this.beginPrice,
-        this.endPrice,
-        this.typeSort,
-        this.findSalers,
-        this.directionSort
-      );
-    },
-    collection() {
-      return this.paginate(this.productFiltered);
     }
   }
 };
@@ -169,16 +45,6 @@ export default {
 <style lang="scss">
 img {
   width: 100%;
-}
-.header {
-  background: rgb(228, 228, 228);
-  &__logo {
-    font-weight: 700;
-    font-size: 50px;
-  }
-  &__favourite {
-    width: 30px;
-  }
 }
 
 .options-block {

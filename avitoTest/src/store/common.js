@@ -1,11 +1,11 @@
 export default {
   state: {
-    loading: false
+    loading: false,
   },
   mutations: {
     setLoading(state, value) {
       state.loading = value;
-    }
+    },
   },
-  getters: {}
+  getters: {},
 };

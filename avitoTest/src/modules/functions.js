@@ -1,10 +1,12 @@
+/* eslint-disable array-callback-return */
+/* eslint-disable consistent-return */
 function getMaxPrice(mass) {
   const nirmalizeMass = mass.filter(el => el.price);
   let max = 0;
 
   nirmalizeMass.forEach(el => {
-    if (el['price'] > max) {
-      max = el['price'];
+    if (el.price > max) {
+      max = el.price;
     }
   });
   return max;
@@ -12,46 +14,45 @@ function getMaxPrice(mass) {
 
 function getMinPrice(mass) {
   const nirmalizeMass = mass.filter(el => el.price);
-  console.log('Меня вызвали');
-
-  return nirmalizeMass.reduce((min, p) => {
-    return p.price < min ? p.price : min;
-  }, nirmalizeMass[0].price);
+  if (nirmalizeMass.length > 0) {
+    return nirmalizeMass.reduce(
+      (min, p) => (p.price < min ? p.price : min),
+      nirmalizeMass[0].price
+    );
+  }
+  return 0;
 }
 
 function productFiltered(mass, categ, beginPrice, endPrice, typeSort, findSalers, directionSort) {
   return (
     mass
       // фильтр по категории
-      .filter(el => {
-        return !categ || el.category == categ;
-      })
+      .filter(el => !categ || el.category === categ)
       // фильтр по ценам
       .filter(product => {
         if (!product.price) return true;
         return Number(product.price) >= beginPrice && Number(product.price) <= endPrice;
       })
-      //сотрировка
+      // сотрировка
       .sort((lastOne, nextOne) => {
-        //по рейтингу
-        if (typeSort == 'rating') {
-          console.log(lastOne.relationships.seller);
+        // по рейтингу
+        if (typeSort === 'rating') {
           const ratePrev = findSalers(lastOne.relationships.seller).rating;
           const reteNext = findSalers(nextOne.relationships.seller).rating;
-          if (directionSort == 'up') {
+          if (directionSort === 'up') {
             return ratePrev > reteNext ? 1 : -1;
-          } else {
-            return ratePrev < reteNext ? 1 : -1;
           }
-          //по цене
-        } else if (typeSort == 'price') {
+          return ratePrev < reteNext ? 1 : -1;
+
+          // по цене
+        }
+        if (typeSort === 'price') {
           const pricePrev = lastOne.price;
           const priceNext = nextOne.price;
-          if (directionSort == 'up') {
+          if (directionSort === 'up') {
             return pricePrev > priceNext ? 1 : -1;
-          } else {
-            return pricePrev < priceNext ? 1 : -1;
           }
+          return pricePrev < priceNext ? 1 : -1;
         }
       })
   );
