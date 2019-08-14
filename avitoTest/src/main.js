@@ -9,6 +9,7 @@ import {
   ButtonPlugin
 } from 'bootstrap-vue';
 import fb from 'firebase/app';
+import VeeValidate from 'vee-validate';
 import router from './router';
 import App from './App.vue';
 import store from './store';
@@ -27,6 +28,10 @@ const firebaseConfig = {
 // Initialize Firebase
 fb.initializeApp(firebaseConfig);
 
+const config = {
+  events: 'blur|input'
+};
+
 Vue.use(LayoutPlugin);
 Vue.use(FormInputPlugin);
 Vue.use(FormSelectPlugin);
@@ -34,6 +39,7 @@ Vue.use(FormCheckboxPlugin);
 Vue.use(CardPlugin);
 Vue.use(SpinnerPlugin);
 Vue.use(ButtonPlugin);
+Vue.use(VeeValidate, config);
 
 Vue.config.productionTip = false;
 

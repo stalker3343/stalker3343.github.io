@@ -6,7 +6,7 @@
 
         <ul class="navbar-nav">
           <li class="nav-item">
-            <router-link active-class="active" class="nav-link" to="/">
+            <router-link exact active-class="active" class="nav-link" to="/">
               <div class="header__link">
                 <img class="mr-2 header__icon" src="../assets/img/home.svg" alt />
                 Главная
@@ -14,7 +14,7 @@
             </router-link>
           </li>
           <li class="nav-item =">
-            <router-link active-class="active" class="nav-link" to="/admin">
+            <router-link exact active-class="active" class="nav-link" to="/admin">
               <div class="header__link">
                 <img class="mr-2 header__icon" src="../assets/img/man-user.svg" alt />
                 Админка
@@ -22,7 +22,7 @@
             </router-link>
           </li>
           <li class="nav-item">
-            <router-link active-class="active" class="nav-link" to="/cart">
+            <router-link exact active-class="active" class="nav-link" to="/cart">
               <div class="header__link">
                 <img class="mr-2 header__icon" src="../assets/img/shopping-cart.svg" alt />
                 Корзина({{$store.state.cartItems.length}})
