@@ -8,7 +8,7 @@
           <li class="nav-item">
             <router-link exact active-class="active" class="nav-link" to="/">
               <div class="header__link">
-                <img class="mr-2 header__icon" src="./../assets/img/home.svg" alt />
+                <img class="mr-2 header__icon" src="../assets/img/home.svg" alt />
                 Главная
               </div>
             </router-link>
@@ -16,7 +16,7 @@
           <li class="nav-item =">
             <router-link exact active-class="active" class="nav-link" to="/admin">
               <div class="header__link">
-                <img class="mr-2 header__icon" src="./../assets/img/man-user.svg" alt />
+                <img class="mr-2 header__icon" src="../assets/img/man-user.svg" alt />
                 Админка
               </div>
             </router-link>
