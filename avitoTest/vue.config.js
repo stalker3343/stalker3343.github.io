@@ -4,5 +4,9 @@ module.exports = {
       args[0].minify.removeAttributeQuotes = false;
       return args;
     });
-  }
+  },
+  baseUrl: ''
 };
+// module.exports = {
+//   baseUrl: ''
+// };

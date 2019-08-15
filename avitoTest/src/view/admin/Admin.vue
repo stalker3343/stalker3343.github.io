@@ -30,7 +30,7 @@
 
 <style lang="scss">
 .admin-page {
-  margin: 40px 0px;
+  margin: 40px auto;
   &__menu {
     padding-left: 0px;
     display: flex;

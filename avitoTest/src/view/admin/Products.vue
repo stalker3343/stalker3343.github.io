@@ -16,14 +16,14 @@
         <td>{{findSalers(product.relationships.seller).name}}</td>
         <td>
           <router-link :to="`/admin/edit/${product.id}`">
-            <img class="AdminProductList__icon" src="../../assets/img/edit.svg" alt />
+            <img class="AdminProductList__icon" src="./../../assets/img/edit.svg" alt />
           </router-link>
         </td>
         <td>
           <img
             @click="removeProduct(product.id, index)"
             class="AdminProductList__icon"
-            src="../../assets/img/rubbish-bin.svg"
+            src="./../../assets/img/rubbish-bin.svg"
             alt
           />
         </td>

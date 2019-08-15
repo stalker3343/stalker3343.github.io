@@ -25,6 +25,10 @@ export default new Router({
     {
       path: '/product/:id',
       component: Product
+    },
+    {
+      path: '*',
+      component: Home
     }
   ]
 });
