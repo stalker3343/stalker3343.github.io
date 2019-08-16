@@ -15,7 +15,9 @@ export default {
     ProductForm
   },
   created() {
-    this.model = this.$store.state.products.find(el => el.id === this.id);
+    this.model = JSON.parse(
+      JSON.stringify(this.$store.getters.getProductById(this.id))
+    );
   },
   methods: {
     editProduct(model) {

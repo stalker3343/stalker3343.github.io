@@ -12,7 +12,7 @@
         v-for="cartItem in cartItems"
         :key="cartItem.id"
         :product="cartItem"
-        :salers="findSalers(cartItem.relationships.seller)"
+        :salers="$store.getters.getSellerById(cartItem.relationships.seller).name"
       ></ProductPreview>
     </div>
   </div>
@@ -27,20 +27,13 @@ export default {
   data() {
     return {};
   },
-  methods: {
-    findSalers(id) {
-      return this.sellers.find(el => el.id == id);
-    }
-  },
+
   computed: {
     loading() {
       return this.$store.state.Common.loading;
     },
     cartItems() {
       return this.$store.state.cartItems;
-    },
-    sellers() {
-      return this.$store.state.sellers;
     }
   }
 };

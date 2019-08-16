@@ -103,9 +103,6 @@ export default {
   },
   created() {},
   methods: {
-    findSalers(id) {
-      return this.sellers.find(el => el.id == id);
-    },
     onSave() {
       this.$validator.validateAll().then(data => {
         if (!data) return console.log("почини");

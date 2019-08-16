@@ -27,10 +27,12 @@
           v-for="product in collection"
           :key="product.id"
           :product="product"
-          :salers="findSalers(product.relationships.seller)"
+          :salers="$store.getters.getSellerById(product.relationships.seller)"
         />
       </div>
+    </section>
 
+    <section>
       <div class="container">
         <div class="btn-toolbar d-flex justify-content-center mb-5">
           <div class="btn-group">
@@ -82,9 +84,7 @@ export default {
     loading() {
       return this.$store.state.Common.loading;
     },
-    sellers() {
-      return this.$store.state.sellers;
-    },
+
     cartItems() {
       return this.$store.state.cartItems;
     },
@@ -95,7 +95,7 @@ export default {
         this.beginPrice,
         this.endPrice,
         this.typeSort,
-        this.findSalers,
+        this.$store,
         this.directionSort
       );
     },
@@ -132,9 +132,6 @@ export default {
       } else {
         this.productsShowed = this.$store.state.products;
       }
-    },
-    findSalers(id) {
-      return this.sellers.find(el => el.id == id);
     },
 
     setPage(p) {

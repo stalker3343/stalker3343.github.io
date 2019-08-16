@@ -13,7 +13,7 @@
       <tr v-for="(product, index) in products" :key="product.id">
         <td>{{product.title}}</td>
         <td>{{product.price}}</td>
-        <td>{{findSalers(product.relationships.seller).name}}</td>
+        <td>{{$store.getters.getSellerById(product.relationships.seller).name}}</td>
         <div class="AdminProductList__icons-wrapper">
           <td>
             <router-link :to="`/admin/edit/${product.id}`">
@@ -58,14 +58,11 @@
 export default {
   data() {
     return {
-      products: this.$store.state.products,
-      sellers: this.$store.state.sellers
+      products: this.$store.state.products
     };
   },
+
   methods: {
-    findSalers(id) {
-      return this.sellers.find(el => el.id == id);
-    },
     removeProduct(productId, productIndex) {
       this.$store.dispatch("removeProduct", { productId, productIndex });
     }

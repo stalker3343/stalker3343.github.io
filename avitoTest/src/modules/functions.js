@@ -23,7 +23,7 @@ function getMinPrice(mass) {
   return 0;
 }
 
-function productFiltered(mass, categ, beginPrice, endPrice, typeSort, findSalers, directionSort) {
+function productFiltered(mass, categ, beginPrice, endPrice, typeSort, store, directionSort) {
   return (
     mass
       // фильтр по категории
@@ -37,8 +37,8 @@ function productFiltered(mass, categ, beginPrice, endPrice, typeSort, findSalers
       .sort((lastOne, nextOne) => {
         // по рейтингу
         if (typeSort === 'rating') {
-          const ratePrev = findSalers(lastOne.relationships.seller).rating;
-          const reteNext = findSalers(nextOne.relationships.seller).rating;
+          const ratePrev = store.getters.getSellerById(lastOne.relationships.seller).rating;
+          const reteNext = store.getters.getSellerById(nextOne.relationships.seller).rating;
           if (directionSort === 'up') {
             return ratePrev > reteNext ? 1 : -1;
           }

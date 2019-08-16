@@ -38,11 +38,7 @@
 
           <hr />
           <div class="btn-group cart">
-            <b-button
-              @click="togleCard"
-              href="#"
-              :variant="isInCard ? 'danger' : 'primary' "
-            >{{btnText}}</b-button>
+            <b-button @click="togleCard" :variant="isInCard ? 'danger' : 'primary' ">{{btnText}}</b-button>
           </div>
         </div>
       </div>
@@ -97,11 +93,11 @@ export default {
   },
   computed: {
     product() {
-      return this.$store.state.products.find(el => el.id === this.id);
+      return this.$store.getters.getProductById(this.id);
     },
     salers() {
-      return this.$store.state.sellers.find(
-        el => el.id == this.product.relationships.seller
+      return this.$store.getters.getSellerById(
+        this.product.relationships.seller
       );
     }
   },

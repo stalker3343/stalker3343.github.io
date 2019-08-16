@@ -16,11 +16,8 @@
 
         <div class="product__price mt-3 mb-3">
           <div v-show="product.price">{{ product.price | capitalize }}</div>
-          <b-button
-            @click="togleCard"
-            href="#"
-            :variant="isInCard ? 'danger' : 'primary' "
-          >{{btnText}}</b-button>
+
+          <b-button @click="togleCard" :variant="isInCard ? 'danger' : 'primary' ">{{btnText}}</b-button>
         </div>
 
         <div class="product__salers salers mt-1">
