@@ -51,7 +51,7 @@ const config = {
 function buildCSS(callback) {
   setTimeout(function() {
     gulp
-      .src(['src/sass/libs/reboot/bootstrap-reboot.css', path.src.libs, path.src.styles])
+      .src([path.src.libs, path.src.styles])
       .pipe(sourcemaps.init())
       .pipe(
         sass().on(

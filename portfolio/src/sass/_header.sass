@@ -1,0 +1,119 @@
+
+#particles-js
+  height: 100vh
+  background-color: #1c1d25
+  position: relative
+  z-index: 1
+.header
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  height: 100vh
+  padding: 10px 0px
+  &__top-line 
+    position: relative
+    z-index: 2
+    display: flex
+    align-items: center
+  &__menu
+    display: flex
+    margin-left: auto
+  &__title
+    position: absolute
+    top: 35%
+    right: 0
+    left: 0
+    max-width: 878px
+    margin: 0 auto
+    z-index: 2
+    display: flex
+    flex-direction: column
+    align-items: center
+    text-transform: uppercase
+    color: white
+    font-size: 50px
+    font-family: "Furore", serif
+  &__subtitle
+    color: darken(white, 20)
+    text-transform: none
+    font-weight: 400
+    font-size: 25px
+    font-family: "ProximaNova", serif
+    display: block
+  &__links
+    right: 0
+    left: 0
+    display: flex
+    align-items: center
+    z-index: 2
+    position: absolute
+    top: 60%
+    max-width: 216px
+    margin: 0 auto
+
+.social
+  &__item
+    padding-right: 20px
+    &_vk
+      padding-right: 14px
+  &__icon
+
+
+    
+    path
+      fill: #fff
+    
+
+
+
+    
+
+
+    
+
+.logo
+  &__link
+    text-decoration: none  
+    font-family: "Furore", serif
+    font-size: 50px
+    line-height: 46px
+    font-weight: normal
+    color: white
+    &:hover
+      text-decoration: none
+      color: darken(white, 10)
+
+.menu
+  padding-left: none
+  color: white
+  margin-bottom: 0px
+  &__item
+ 
+    padding-right: 40px
+  &__link
+    font-size: 18px
+    font-weight: 600
+    color: darken(white, 20 )
+    text-decoration: none
+    position: relative
+    &::before
+      content: ''
+      bottom: 0
+      right: 0
+      position: absolute
+      width: 0%
+      height: 2px
+      background-color: #f4cb67
+      transition: 0.2s
+    &:hover
+      text-decoration: none
+      color: white
+      &::before
+        width: 100%
+        left: 0
+
+
+
+

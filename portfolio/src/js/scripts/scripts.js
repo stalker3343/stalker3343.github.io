@@ -3,7 +3,7 @@
 particlesJS('particles-js', {
   particles: {
     number: {
-      value: 15,
+      value: 10,
       density: {
         enable: true,
         value_area: 416.725702807898
@@ -109,4 +109,18 @@ particlesJS('particles-js', {
     }
   },
   retina_detect: true
+});
+
+mixitup('.portfolio__works');
+
+const tabs = document.querySelectorAll('.portfolio__tab');
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', function() {
+    tabs.forEach(tab => {
+      tab.classList.remove('portfolio__tab_active');
+    });
+
+    this.classList.add('portfolio__tab_active');
+  });
 });
