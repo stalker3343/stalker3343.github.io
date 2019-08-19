@@ -85,12 +85,22 @@ h2 {
     padding-top: 30px; }
   .header__tel {
     margin-right: 35px; }
+    @media (max-width: 576px) {
+      .header__tel {
+        margin-right: 10px; } }
   .header__work {
     margin-left: 35px; }
+    @media (max-width: 576px) {
+      .header__work {
+        margin-left: 10px; } }
   .header__text {
     position: relative;
     margin-top: 50px;
     z-index: 1; }
+    @media (max-width: 576px) {
+      .header__text {
+        padding-top: 100px;
+        margin-top: 0px; } }
   .header__small {
     font-size: 18px;
     color: rgba(255, 255, 255, 0.6);
