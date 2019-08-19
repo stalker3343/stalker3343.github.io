@@ -11,27 +11,39 @@
 		text-align: center
 		position: relative
 		z-index: 2
+		@media   ( max-width: 768px )
+			padding-top: 66px
+		@media  (max-width: 576px)
+			padding-top: 150px
+			font-size: 38px
 .news
-	&:first-child
-		margin-top: 20px
+	&__wrap
+		padding-top: 30px
+		padding-bottom: 30px
 	margin-bottom: 30px
 	color:#000
 	display: flex
-	
-	height: 211px
+	height: auto
 	border-radius: 10px
 	width: 100%
 	background-color: #fff
-  	box-shadow: 0px 0px 29px 0px rgba(0, 0, 0, 0.13)
+  box-shadow: 0px 0px 29px 0px rgba(0, 0, 0, 0.13)
+	@media   ( max-width: 768px )
+		flex-direction: column
+		height: auto
 	&__img
 		width: 307px
-		height: 100%
+		height: auto
 		border-top-left-radius: 10px
 		border-bottom-left-radius: 10px
 		object-fit: cover
+		flex: none
+		@media   ( max-width: 768px )
+			width: 100%
+			border-radius: initial
 	&__text-wrap
 		padding: 20px 20px
-		width: 830px
+		max-width: 830px
 	&__heading
 		font-size: 19px
 		color: rgb(224, 156, 43)
@@ -66,6 +78,7 @@
 			text-decoration: none
 			color: #e81f51
 		
+
 
 
 

@@ -10,6 +10,13 @@
     text-align: center;
     position: relative;
     z-index: 2; }
+    @media (max-width: 768px) {
+      .header__head {
+        padding-top: 66px; } }
+    @media (max-width: 576px) {
+      .header__head {
+        padding-top: 150px;
+        font-size: 38px; } }
 
 .allbum__head {
   font-size: 30px;

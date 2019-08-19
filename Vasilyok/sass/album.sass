@@ -11,9 +11,17 @@
 		text-align: center
 		position: relative
 		z-index: 2
+		@media   ( max-width: 768px )
+			padding-top: 66px
+		@media  (max-width: 576px)
+			padding-top: 150px
+			font-size: 38px
 
 .img
-    margin: 30px 0px
-    height: 500px
-    width: 100%
-    object-fit: cover
+	margin: 30px 0px
+	height: 500px
+	width: 100%
+	object-fit: cover
+	@media   ( max-width: 768px )
+		width: 100%
+		height: auto
