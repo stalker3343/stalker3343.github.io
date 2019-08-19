@@ -1,62 +1,76 @@
-var gulp         = require('gulp'),
-    browserSync  = require('browser-sync').create(),
-    sass         = require('gulp-sass'),
-    concatCss    = require('gulp-concat-css'),
-    postcss      = require('gulp-postcss'),
-    autoprefixer = require('autoprefixer'),
-    concat       = require('gulp-concat'),
-    uglify       = require('gulp-uglify'),
-    cleanCSS     = require('gulp-clean-css')
-    notify       = require('gulp-notify');
+var gulp = require('gulp');
+var bs = require('browser-sync');
+var sass = require('gulp-sass');
+var notify = require('gulp-notify');
+// var autoprefixer = require('gulp-autoprefixer');
+// var cleanCSS = require('gulp-clean-css');
+// var concat = require('gulp-concat');
+// var debug = require('gulp-debug');
+var sourcemaps = require('gulp-sourcemaps');
+var gwatch = require('gulp-watch');
 
+const config = {
+  server: {
+    baseDir: './'
+  },
+  host: 'localhost',
+  port: 3000
+};
 
-// Запускаем сервер + отслеживаем sass/html файлы
-gulp.task('serve', ['sass'], function() {
+function buildCSS(callback) {
+  setTimeout(function() {
+    return (
+      gulp
+        .src('./sass/*')
+        .pipe(sourcemaps.init())
+        .pipe(
+          sass().on(
+            'error',
+            notify.onError({
+              message: '<%= error.message %>',
+              title: 'CSS compilation error'
+            })
+          )
+        )
 
-    browserSync.init({
-        server: ""
-    });
+        // .pipe(autoprefixer({
+        //   browsers: ['last 4 versions'],
+        //   cascade: false
+        //   }))
 
-    gulp.watch("sass/**/*.sass", ['sass']);
-    gulp.watch("*.html").on('change', browserSync.reload);
-    gulp.watch("js/**/*.js").on('change', browserSync.reload);
-});
+        //   .pipe(concat('bundle.css'))
+        //.pipe(gcmq())
+        // .pipe(cleanCSS())
+        .pipe(sourcemaps.write('.'))
+        //.pipe(webpCss()) //замещение webp в css(не работате)
+        .pipe(gulp.dest('./css'))
+        .pipe(
+          bs.reload({
+            stream: true
+          })
+        )
+    );
+  }, 500);
+  callback();
+}
 
+function webserver() {
+  return bs(config);
+}
 
+function buildHtml() {
+  return gulp.src('./*.html').pipe(
+    bs.reload({
+      stream: true
+    })
+  );
+}
 
+function watch() {
+  gwatch('./sass', buildCSS);
+  gwatch('./*.html', buildHtml);
+}
 
+const build = gulp.series(buildCSS, buildHtml);
 
-// Компилируем sass в CSS, ставим префиксы и сжимаем, вставляем изменения в браузер
-gulp.task('sass',function() {
-    return gulp.src("sass/**/*.sass")
-        .pipe(sass().on('error', notify.onError({
-            message: "<%= error.message %>",
-            title: "CSS compilation error"
-        })))
-
-        .pipe(postcss([ autoprefixer() ]))
-        //.pipe(concatCss("style.css"))
-        .pipe(cleanCSS())
-        .pipe(gulp.dest("css"))
-        .pipe(browserSync.stream());
-});
-
-
-gulp.task('compileJs', function () {
-    return gulp.src('src/js/*.js')
-        .pipe(concat('script.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest('src/js/'));
-});
-
-
-
-
-gulp.task('compileCss', function() {
-    return gulp.src('css/*.css')
-      .pipe(concat('style.css'))
-      .pipe(gulp.dest('css/'));
-});
-
-
-gulp.task('default', ['serve']);
+gulp.task('default', gulp.series(build, gulp.parallel(webserver, watch)));

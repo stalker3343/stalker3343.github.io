@@ -1,6 +1,12 @@
+
+	
 .feature  
 	&__wrap  
 		display: flex 
+		@media  ( max-width: 992px )
+			flex-direction: column
+			align-items: center
+		
 	 
 
 	&__item  
@@ -9,6 +15,9 @@
 		position: relative 
 		height: 184px 
 		z-index: 2 
+		@media  ( max-width: 992px )
+			height: auto
+			padding: 20px 0px
 
 		&:not(:first-child)  
 			margin-top: 50px 
@@ -21,6 +30,8 @@
 			bottom: 0 
 			top: 0 
 			width: 61% 
+			@media  ( max-width: 992px )
+				width: 100% 
 		 
 
 		&:before  
@@ -80,6 +91,8 @@
 				bottom: 0 
 				top: 0 
 				width: 64% 
+				@media  ( max-width: 992px )
+					width: 100% 
 			&:before  
 				content: "" 
 				left: 0 
@@ -88,7 +101,8 @@
 				border-top: 92px solid transparent 
 
 				border-left: none 
-				border-bottom: 92px solid transparent 
+				border-bottom: 92px solid transparent
+				 
 
 	&__photo  
 		img
@@ -104,6 +118,13 @@
 		border-radius: 50% 
 		background-color: red 
 		margin-right: 17px 
+		@media  ( max-width: 992px )
+			margin-bottom: 20px
+			order: 1
+	&__text
+		@media  ( max-width: 992px )
+			order: 2
+
 	 
 	&__heading 
 		margin-bottom: 15px 
@@ -149,7 +170,6 @@
 .about-us  
 	position: relative 
 	z-index: 20 
-	height: 386px 
 	padding: 50px 0px 
 	background-color: #369736 
 
@@ -177,8 +197,10 @@
 		flex-direction: column 
 		background-color: white 
 		color: black 
-		height: 447px 
 		position: relative 
+		@media   ( max-width: 768px )
+			margin-bottom: 20px
+			
 
 		&_left  
 			&:before  
@@ -191,6 +213,8 @@
 				height: 424px 
 				width: 475px 
 				position: absolute 
+				@media   ( max-width: 768px )
+					display: none
 			 
 		 
 		&_right  
@@ -202,13 +226,20 @@
 				z-index: 1 
 				height: 424px 
 				width: 475px 
-				position: absolute 
+				position: absolute
+				@media   ( max-width: 768px )
+					display: none
 			 
 	&__img  
 		z-index: 2 
 		object-fit: cover 
 		width: 100% 
 		height: 232px 
+		flex: none
+		@media   ( max-width: 992px )
+			height: 150px
+		@media   ( max-width: 768px )
+			height: auto
 
 	&__block-text  
 		padding: 0 10px 
@@ -249,31 +280,76 @@
 		margin-top: 20px 
 	 
 .group
-	display: flex
-	height: 500px
-	width: 100%
-	height: 866px
 	position: relative
-	z-index: 2
+	&__container
+		display: flex
+		width: 100%
+		@media  (max-width: 576px)
+			flex-direction: column
+
+
 	&__img
 		margin-left: 50px
+		@media  ( max-width: 992px)
+			margin-left: 0px
+		@media   ( max-width: 768px  )
+			width: 120%
+		@media  (max-width: 576px)
+			width: 100%
+			margin-bottom: 50px
 	&__mass
 		width: 50%
-		background: linear-gradient(45deg, rgb(64,144,190) 0%, rgb(18,112,227) 100%)
-
-  		
+		padding-right: 20px	
+		&::before
+			height: 100%
+			position: absolute
+			top: 0px
+			left: 0px
+			width: 50%
+			content: ""	
+			background: linear-gradient(45deg, rgb(64,144,190) 0%, rgb(18,112,227) 100%)
+		@media  (max-width: 576px)
+			width: 100%
+			padding: 0px
+			&::before
+				height: 100%
+				position: absolute
+				top: 0px
+				left: 0px
+				width: 100%
+				content: ""	
+				background: linear-gradient(45deg, rgb(64,144,190) 0%, rgb(18,112,227) 100%)
 
 	&__spec
-
-		background: linear-gradient( 135deg, rgb(98,65,132) 0%, rgb(86,19,120) 100%)
 		width: 50%
+		padding-left: 20px
+		
+		&::before
+			height: 100%
+			position: absolute
+			top: 0px
+			right: 0px
+			width: 51%
+			content: ""	
+			background: linear-gradient( 135deg, rgb(98,65,132) 0%, rgb(86,19,120) 100%)
+		@media  (max-width: 576px)
+				width: 100%
+				padding: 0px
+				position: relative
+				&::before
+					height: 100%
+					position: absolute
+					top: 0px
+					right: -40px
+					left: -40px
+					width: 130%
+					content: ""	
+					background: linear-gradient( 135deg, rgb(98,65,132) 0%, rgb(86,19,120) 100%)
+
 	&__wrap
-		width: 535px
-		margin-left: auto
-		margin-right: 20px
-		&-right
-			margin-right: auto
-			margin-left: 20px
+		position: relative
+		z-index: 1
+
 	&__heading
 		margin: 40px 0px
 		text-align: center
@@ -281,19 +357,33 @@
 		font-family: "Roboto Slab"
 		font-weight: 700
 		text-transform: uppercase
+		@media   ( max-width: 768px  )
+			margin: 20px 0px
+			font-size: 20px
+			
 .class
 
 	display: flex
+	@media  ( max-width: 992px)
+		flex-direction: column
+		min-height: 398px
+		
 	&:not(:first-child)
 		margin: 30px 0px
 	&__img
 		width: 186px
 		height: 149px
 		object-fit: cover
+		@media  ( max-width: 992px)
+			width: 100%
+			height: auto
 	&__text-wrap
 		display: flex
 		flex-direction: column
 		margin-left: 11px
+		@media  ( max-width: 992px)
+			margin-top: 10px
+			margin-left: 0px
 	&__heading
 		font-size: 24px
 		margin-top: -6px
@@ -333,12 +423,19 @@
 	margin-left: -100px
 	padding-left: 120px
 	background: url("../img/GaleryBg1.png") no-repeat center center
-
 	margin-top: -550px
 	padding-bottom: 400px	
 	padding-top: 750px
+	@media (max-width: 990px)
+		padding: 0px
+		margin: 0px
+		background: none
+
+
 	&__main
 		position: relative
+		@media (max-width: 990px)
+			margin-bottom: 20px
 
 		&:hover .gallery__main-title
 			display: flex
@@ -372,11 +469,17 @@
 		display: block 
 		height: 150px 
 		margin-bottom: 20px 
+		@media   ( max-width: 576px )
+			height: auto
+			
 	 
 	&__img  
 		height: 150px 
 		width: 100% 
 		object-fit: cover 
+		@media   ( max-width: 576px )
+			height: auto
+			margin-bottom: 20px
 	 
 	&__next  
 		position: relative 
@@ -402,6 +505,8 @@
 		padding-bottom: 10px
 		white-space: nowrap
 		width: 100%
+		@media   ( max-width: 576px )
+			bottom: 20px
 		
 	
 		top: 0
@@ -417,11 +522,15 @@
 	margin-top: -270px
 	height: 547px
 	position: relative
+	@media (max-width: 990px)
+		margin-top: 0px
+		height: auto
 
 
 
 	
 .contact
+	z-index: 10
 	position: absolute
 	top: 145px
 	right: 12%	
@@ -431,6 +540,16 @@
 	height: 320px
 	border-radius: 30px
 	background-color: rgb(70, 100, 234)
+	@media  ( max-width: 766px )
+		width: 100%
+		max-width: 400px
+		position: relative
+		height: auto
+		margin: 0 auto
+		margin-bottom: 20px
+		top: 0
+		right: 0
+
 	
 	
 

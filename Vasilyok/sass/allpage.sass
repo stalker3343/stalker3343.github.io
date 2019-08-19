@@ -25,6 +25,10 @@ h2
 		height: 21px 
 		width: 21px 
 		margin-right: 5px 
+	&__text
+		color: white
+		&:hover
+			color: white
 	 
  
 
@@ -127,7 +131,7 @@ h2
 		margin-top: 25px 
 		font-size: 22px 
 		color: rgb(255, 255, 255) 
-		width: 545px 
+		max-width: 545px 
 
 		 
 	 
@@ -135,8 +139,10 @@ h2
 
 
 .menu  
-	height: 50px 
+	height: auto 
 	background-color: #303f9f 
+	@media   ( max-width: 768px )
+		padding: 20px 0px
 	&__wrap
 		width: 100%
 		margin-left: 0
@@ -145,6 +151,9 @@ h2
 		display: flex
 		justify-content: space-between
 		align-items: center	
+		@media   ( max-width: 768px )
+			flex-direction: column
+			
 
 	&__item-wrap  
 
@@ -177,9 +186,7 @@ h2
 
 
 .footer
-
 	background-color: #555555
-	height: 448px
 	padding: 60px 0px
 	&__menu-wrap
 		text-decoration: none
@@ -202,6 +209,8 @@ h2
 	&__heading
 		font-size: 18px
 		margin-bottom: 11px
+		@media   ( max-width: 576px )
+			margin-top: 23px
 		&:not(:first-child)
 			margin-top: 23px	
 	&__geolocation
@@ -230,6 +239,8 @@ h2
 		margin-bottom: 23px
 		color: rgb(255, 255, 255)
 		line-height: 1.2
+		@media   ( max-width: 576px )
+			margin-top: 20px
 	&__text
 		align-self: flex-start
 	&__button

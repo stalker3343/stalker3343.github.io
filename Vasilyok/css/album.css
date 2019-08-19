@@ -1,1 +1,20 @@
-.header{height:340px;background-size:cover}.header__head{font-size:48px;font-family:"Roboto Slab";color:#fff;font-weight:700;text-transform:uppercase;text-align:center;position:relative;z-index:2}.img{margin:30px 0;height:500px;width:100%;-o-object-fit:cover;object-fit:cover}
+.header {
+  height: 340px;
+  background-size: cover; }
+  .header__head {
+    font-size: 48px;
+    font-family: "Roboto Slab";
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    z-index: 2; }
+
+.img {
+  margin: 30px 0px;
+  height: 500px;
+  width: 100%;
+  object-fit: cover; }
+
+/*# sourceMappingURL=album.css.map */
