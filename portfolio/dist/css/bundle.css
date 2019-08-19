@@ -616,6 +616,11 @@ ul {
 li {
   list-style-type: none; }
 
+*:focus {
+  outline-width: 1px;
+  outline-style: solid;
+  outline-color: blue; }
+
 #particles-js {
   height: 100vh;
   background-color: #1c1d25;
@@ -763,10 +768,18 @@ li {
   cursor: pointer; }
   .project:hover .project__deskription {
     transform: scale(1); }
+  .project:focus-within .project__deskription {
+    transform: scale(1); }
   .project:hover .project__title {
     visibility: hidden;
     opacity: 0; }
+  .project:focus-within .project__title {
+    visibility: hidden;
+    opacity: 0; }
   .project:hover .project__img {
+    transform: scale(1.1);
+    filter: grayscale(1); }
+  .project:focus-within .project__img {
     transform: scale(1.1);
     filter: grayscale(1); }
   .project__img {

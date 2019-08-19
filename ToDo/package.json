@@ -1,12 +1,15 @@
 {
-  "name": "ToDo",
+  "name": "todo",
   "version": "1.0.0",
   "description": "",
-  "main": "sw.js",
+  "main": "index.js",
   "scripts": {
-    "serve": "http-server -p 1336 -c-1"
+    "serve": "http-server build -p 8085  -c-1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^0.9.0"
+  }
 }

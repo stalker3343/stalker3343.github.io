@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="./images/icons/icon-72x72.png" type="image/x-icon">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="msapplication-starturl" content="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+</head>
+<!-- workbox generateSW workbox-config.js -->
+
+<body>
+  <section class="main">
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="text-center">ToDo</h1>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-12 col-lg-5">
+          <div class="todo">
+            <p>Введите задачу </p>
+            <div class="row  ">
+              <div class="col-12 d-flex">
+
+                <input class="form-control form-control-lg inpTask " type="text" placeholder="Введите задачу">
+                <button type="button" class="btn btn-success btn-lg todo__addtbtn"><i class="fas fa-check"></i></button>
+              </div>
+
+            </div>
+
+            <ul class="list-group todo__item-list">
+              <!-- Шаблон ToDo -->
+              <!-- <li class="list-group-item todo__item">
+                <div class="custom-control custom-checkbox d-flex align-items-center">
+
+                  <input type="checkbox" class="custom-control-input">
+                  <label class="custom-control-label d-flex ">
+                    <div class="d-flex flex-column">
+                      <div class="label_text">Задача 1</div>
+                    </div>
+
+
+                    <div class="label__change hidden">
+                      <input type="text" class="inputChange">
+                      <button class="btn  btn-success btn-sm todo__btn-confirm">Ок</button>
+                    </div>
+                  </label>
+
+
+                  <button type="button" class="btn btn-success  todo__deltbtn"></button>
+                </div>
+              </li> -->
+
+
+            </ul>
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+    </div>
+  </section>
+
+
+
+
+  <script src="js/ivenMob.js"></script>
+  <script src="js/script.js"></script>
+  <!-- <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+
+        navigator.serviceWorker.register('sw.js');
+      });
+    }
+  </script> -->
+  <script>
+    // Check that service workers are supported
+    if ('serviceWorker' in navigator) {
+      // Use the window load event to keep the page load performant
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js');
+      });
+    }
+  </script>
+</body>
+
+</html>

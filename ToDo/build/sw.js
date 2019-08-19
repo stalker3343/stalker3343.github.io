@@ -24,13 +24,14 @@ self.addEventListener('message', (event) => {
  * requests for URLs in the manifest.
  * See https://goo.gl/S9QRab
  */
-self.__precacheManifest = [{
+self.__precacheManifest = [
+  {
     "url": "css/bootstrap.min.css",
     "revision": "9e0e10750bdba57eefa5ddb9212dd216"
   },
   {
     "url": "css/style.css",
-    "revision": "1a17068ee478f485c00fe0a699d096dd"
+    "revision": "9b0381856b74ee42f8cfb0d24f11808a"
   },
   {
     "url": "images/1259823837_02.jpg",
@@ -98,7 +99,7 @@ self.__precacheManifest = [{
   },
   {
     "url": "index.html",
-    "revision": "e9c52a84b8c3bdca4900fd51e5470261"
+    "revision": "53b9af940fac71015f16279f701b408d"
   },
   {
     "url": "js/ivenMob.js",
@@ -106,19 +107,11 @@ self.__precacheManifest = [{
   },
   {
     "url": "js/script.js",
-    "revision": "7b4fd68b45861470dc1c4d16d622e23d"
+    "revision": "7e319211bbb16f5979cec49af152a168"
   },
   {
     "url": "manifest.json",
     "revision": "f3769bb1348a68e6a72e0efde47a383f"
-  },
-  {
-    "url": "package.json",
-    "revision": "fabbec1a100e6f674ef946e00c549aee"
-  },
-  {
-    "url": "Выводы.txt",
-    "revision": "0a8b7bc85a692f6e427c5339f72b4369"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});

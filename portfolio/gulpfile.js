@@ -121,7 +121,7 @@ gulp.task('minImg', buildImgs);
 function buildJS() {
   return (
     gulp
-      .src(['src/js/jquery/jquery.min.js', path.src.js, 'src/js/scripts/scripts.js'])
+      .src([path.src.js, 'src/js/scripts/scripts.js'])
       .pipe(concat('bundle.js'))
       //Продакшн
       // .pipe(terser())
