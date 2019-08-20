@@ -673,7 +673,7 @@ li {
     z-index: 2;
     position: absolute;
     top: 60%;
-    max-width: 216px;
+    max-width: 276px;
     margin: 0 auto; }
 
 .social__item {
@@ -835,6 +835,37 @@ li {
     margin-right: 10px; }
     .description__icon img {
       height: 100%; }
+  .description__tooltip {
+    position: relative;
+    cursor: pointer; }
+    .description__tooltip::after {
+      border: solid;
+      border-color: #000 transparent;
+      border-width: 10px 10px 0 10px;
+      bottom: 34px;
+      content: "";
+      left: 50%;
+      position: absolute;
+      opacity: 0;
+      transform: translateX(-50%); }
+    .description__tooltip::before {
+      display: block;
+      position: absolute;
+      bottom: 40px;
+      transform: translateX(-50%);
+      left: 50%;
+      padding: 10px;
+      background-color: rgba(0, 0, 0, 0.85);
+      content: attr(data-title);
+      text-align: center;
+      font-size: 16px;
+      color: white;
+      border-radius: 5px;
+      opacity: 0; }
+    .description__tooltip:hover:before {
+      opacity: 1; }
+    .description__tooltip:hover::after {
+      opacity: 1; }
   .description__sourse-link {
     margin-top: 5px;
     text-decoration: underline;

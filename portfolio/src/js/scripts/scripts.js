@@ -124,3 +124,10 @@ tabs.forEach(tab => {
     this.classList.add('portfolio__tab_active');
   });
 });
+
+let scroll = new SmoothScroll('a[href*="#"]', {
+  header: '[data-scroll-header]',
+  speed: 1000,
+  emitEvents: true
+});
+document.addEventListener('scrollStart', closeMenu, false);
