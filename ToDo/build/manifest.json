@@ -4,9 +4,10 @@
   "theme_color": "#0fc811",
   "background_color": "#ffffff",
   "display": "standalone",
-  "Scope": "/ToDo/",
-  "start_url": "/ToDo",
-  "icons": [{
+  "Scope": "/ToDo/build/",
+  "start_url": "/ToDo/build",
+  "icons": [
+    {
       "src": "images/icons/icon-72x72.png",
       "sizes": "72x72",
       "type": "image/png"
