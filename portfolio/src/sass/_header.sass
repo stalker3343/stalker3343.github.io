@@ -4,6 +4,8 @@
   background-color: #1c1d25
   position: relative
   z-index: 1
+  @media   ( max-width: 700px )
+    height: 700px
 .header
   position: absolute
   top: 0
@@ -12,9 +14,12 @@
   bottom: 0
   height: 100vh
   padding: 10px 0px
+  @media   ( max-width: 700px )
+    height: 700px
   &__logo
     @media   ( max-width: 700px )
       display: none
+
   &__top-line 
     position: relative
     z-index: 2
@@ -40,6 +45,8 @@
     font-family: "Furore", serif
     @media   ( max-width: 700px )
       font-size: 40px
+      text-align: left
+      align-items: flex-start
       
   &__subtitle
     color: darken(white, 20)
@@ -47,9 +54,9 @@
     font-weight: 400
     font-size: 25px
     font-family: "ProximaNova", serif
-    display: bloc  
+    display: block  
     @media   ( max-width: 700px )
-      font-size: 20px
+      font-size: 18px
   &__links
     right: 0
     left: 0

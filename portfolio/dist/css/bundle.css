@@ -626,6 +626,9 @@ li {
   background-color: #1c1d25;
   position: relative;
   z-index: 1; }
+  @media (max-width: 700px) {
+    #particles-js {
+      height: 700px; } }
 
 .header {
   position: absolute;
@@ -635,6 +638,9 @@ li {
   bottom: 0;
   height: 100vh;
   padding: 10px 0px; }
+  @media (max-width: 700px) {
+    .header {
+      height: 700px; } }
   @media (max-width: 700px) {
     .header__logo {
       display: none; } }
@@ -663,17 +669,19 @@ li {
     font-family: "Furore", serif; }
     @media (max-width: 700px) {
       .header__title {
-        font-size: 40px; } }
+        font-size: 40px;
+        text-align: left;
+        align-items: flex-start; } }
   .header__subtitle {
     color: #cccccc;
     text-transform: none;
     font-weight: 400;
     font-size: 25px;
     font-family: "ProximaNova", serif;
-    display: bloc; }
+    display: block; }
     @media (max-width: 700px) {
       .header__subtitle {
-        font-size: 20px; } }
+        font-size: 18px; } }
   .header__links {
     right: 0;
     left: 0;
