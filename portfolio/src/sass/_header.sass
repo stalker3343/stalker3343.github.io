@@ -12,6 +12,9 @@
   bottom: 0
   height: 100vh
   padding: 10px 0px
+  &__logo
+    @media   ( max-width: 700px )
+      display: none
   &__top-line 
     position: relative
     z-index: 2
@@ -35,13 +38,18 @@
     color: white
     font-size: 50px
     font-family: "Furore", serif
+    @media   ( max-width: 700px )
+      font-size: 40px
+      
   &__subtitle
     color: darken(white, 20)
     text-transform: none
     font-weight: 400
     font-size: 25px
     font-family: "ProximaNova", serif
-    display: block
+    display: bloc  
+    @media   ( max-width: 700px )
+      font-size: 20px
   &__links
     right: 0
     left: 0
@@ -52,6 +60,8 @@
     top: 60%
     max-width: 276px
     margin: 0 auto
+    @media   ( max-width: 700px )
+      width: 100%
 
 .social
   &__item
