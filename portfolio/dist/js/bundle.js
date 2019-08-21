@@ -159,4 +159,4 @@ let scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
   emitEvents: true
 });
-document.addEventListener('scrollStart', closeMenu, false);
+// document.addEventListener('scrollStart', closeMenu, false);
