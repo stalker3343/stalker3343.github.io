@@ -608,7 +608,18 @@ img.mfp-img {
   font-size: 30px;
   line-height: 36px;
   font-weight: normal;
-  color: black; }
+  color: black;
+  position: relative; }
+  .h2::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    width: 50px;
+    background: black; }
 
 ul {
   padding-left: 0px; }
@@ -921,7 +932,8 @@ li {
   padding: 30px 0px; }
   .skills__title {
     text-align: center;
-    margin: 20px 0px; }
+    margin-bottom: 40px;
+    position: relative; }
   .skills__wrap {
     display: flex;
     justify-content: space-around;
