@@ -1,55 +1,23 @@
 <template>
-  <div>
-    <div class="app-main-layout">
-      <nav class="navbar orange lighten-1">
-        <div class="nav-wrapper">
-          <div class="navbar-left">
-            <a @click.prevent="sidebar = !sidebar">
-              <i class="material-icons black-text">dehaze</i>
-            </a>
-            <span class="black-text">{{ date | date('datetime')}}</span>
+  <div class="app-main-layout">
+    <div v-if="loading">
+      <div class="preloader-wrapper active">
+        <div class="spinner-layer spinner-red-only">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
           </div>
-
-          <ul class="right hide-on-small-and-down">
-            <li>
-              <a ref="dropDown" class="dropdown-trigger black-text" href="#" data-target="dropdown">
-                USER NAME
-                <i class="material-icons right">arrow_drop_down</i>
-              </a>
-
-              <ul id="dropdown" class="dropdown-content">
-                <router-link to="/profile" tag="li">
-                  <a class="black-text">
-                    <i class="material-icons">account_circle</i>Профиль
-                  </a>
-                </router-link>
-
-                <li class="divider" tabindex="-1"></li>
-
-                <li>
-                  <a @click.prevent="logout" class="black-text">
-                    <i class="material-icons">assignment_return</i>Выйти
-                  </a>
-                </li>
-              </ul>
-            </li>
-          </ul>
+          <div class="gap-patch">
+            <div class="circle"></div>
+          </div>
+          <div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
         </div>
-      </nav>
-
-      <ul class="sidenav app-sidenav" :class="{'open': sidebar }">
-        <router-link
-          active-class="active"
-          v-for="link in routes"
-          :key="link.name"
-          :to="link.path"
-          exact
-          tag="li"
-        >
-          <a class="waves-effect waves-orange pointer">{{link.name}}</a>
-        </router-link>
-      </ul>
-
+      </div>
+    </div>
+    <template v-else>
+      <Navbar @click="sidebar = !sidebar"></Navbar>
+      <Sidebar :sidebar="sidebar"></Sidebar>
       <main class="app-content" :class="{ 'full' : !sidebar }">
         <div class="app-page">
           <router-view></router-view>
@@ -57,59 +25,36 @@
       </main>
 
       <div class="fixed-action-btn">
-        <a class="btn-floating btn-large blue" href="#">
+        <router-link class="btn-floating btn-large blue" to="/record">
           <i class="large material-icons">add</i>
-        </a>
+        </router-link>
       </div>
-    </div>
+    </template>
   </div>
 </template>
 
 <script>
+import Navbar from "../components/app/Navbar";
+import Sidebar from "../components/app/Sidebar";
+
 export default {
-  data: () => ({
-    interval: null,
-    date: new Date(),
-    routes: [
-      {
-        name: "Счет",
-        path: "./"
-      },
-      {
-        name: "История",
-        path: "/history"
-      },
-      {
-        name: "Планирование",
-        path: "/planning"
-      },
-      {
-        name: "Новая запись",
-        path: "/record"
-      },
-      {
-        name: "Категории",
-        path: "/categories"
-      }
-    ],
-    sidebar: true,
-    dropDownInstance: null
-  }),
-  methods: {
-    logout() {
-      this.$router.push({ path: "./login", query: { logout: true } });
-    }
+  components: {
+    Navbar,
+    Sidebar
   },
 
-  mounted() {
-    this.dropDownInstance = M.Dropdown.init(this.$refs.dropDown);
-    this.interval = setInterval(() => (this.date = new Date()), 1000);
-  },
-  beforeDestroy() {
-    if (this.dropDownInstance && this.dropDownInstance.destroy()) {
-      this.dropDownInstance.destroy();
+  data: () => ({
+    sidebar: true,
+    loading: true
+  }),
+  async mounted() {
+    try {
+      this.loading = true;
+      await this.$store.dispatch("loadUser");
+      this.loading = false;
+    } catch (e) {
+      console.log(e);
     }
-    clearTimeout(this.interval);
   }
 };
 </script>

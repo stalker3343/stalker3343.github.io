@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "core-js": "^3.1.2",
+    "firebase": "^7.2.1",
     "register-service-worker": "^1.6.2",
     "vee-validate": "^3.0.11",
     "vue": "^2.6.10",

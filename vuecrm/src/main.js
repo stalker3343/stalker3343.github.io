@@ -3,58 +3,79 @@ import App from "./App.vue";
 import store from "./store";
 import router from "./router";
 
+import firebase from "firebase/app";
+
+import "firebase/auth";
+import "firebase/database";
+
+// Your web app's Firebase configuration
+var firebaseConfig = {
+  apiKey: "AIzaSyBkeYggIjbtPAbsPhJTBjsS1j4wk2PwZ5A",
+  authDomain: "vuecrm-551d1.firebaseapp.com",
+  databaseURL: "https://vuecrm-551d1.firebaseio.com",
+  projectId: "vuecrm-551d1",
+  storageBucket: "vuecrm-551d1.appspot.com",
+  messagingSenderId: "496915348373",
+  appId: "1:496915348373:web:7d878d3c3f1572634c949c"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
 import { ValidationProvider, ValidationObserver, extend } from "vee-validate";
 Vue.component("ValidationProvider", ValidationProvider);
 Vue.component("ValidationObserver", ValidationObserver);
-import en from "vee-validate/dist/locale/ru";
+import ru from "vee-validate/dist/locale/ru";
 import { required, email, max, min, min_value, numeric, regex } from "vee-validate/dist/rules";
 
 extend("required", {
   ...required,
-  message: en.messages["required"] // add its message
+  message: ru.messages["required"] // add its message
 });
 
 extend("email", {
   ...email,
-  message: en.messages["email"] // add its message
+  message: ru.messages["email"] // add its message
 });
 
 extend("max", {
   ...max,
-  message: en.messages["max"] // add its message
+  message: ru.messages["max"] // add its message
 });
 
 extend("min_value", {
   ...min_value,
-  message: en.messages["min_value"] // add its message
+  message: ru.messages["min_value"] // add its message
 });
 extend("numeric", {
   ...numeric,
-  message: en.messages["numeric"] // add its message
+  message: ru.messages["numeric"] // add its message
 });
 extend("min", {
   ...min,
-  message: en.messages["min"] // add its message
+  message: ru.messages["min"] // add its message
 });
 extend("regex", {
   ...regex,
-  message: en.messages["regex"] // add its message
+  message: ru.messages["regex"] // add its message
 });
 
 import dateTimeFilter from "./filters/dateTime.filter";
+import messagePlugin from "./plugins/message.plugin";
 import "./registerServiceWorker";
 
 Vue.config.productionTip = false;
 
 Vue.filter("date", dateTimeFilter);
+Vue.use(messagePlugin);
 
-extend("secret", {
-  validate: value => value === "example",
-  message: "This is not the magic word"
+let app;
+
+firebase.auth().onAuthStateChanged(() => {
+  if (!app) {
+    app = new Vue({
+      store,
+      router,
+      render: h => h(App)
+    }).$mount("#app");
+  }
 });
-
-new Vue({
-  store,
-  router,
-  render: h => h(App)
-}).$mount("#app");

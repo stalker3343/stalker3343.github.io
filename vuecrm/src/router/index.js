@@ -3,56 +3,62 @@ import VueRouter from "vue-router";
 
 Vue.use(VueRouter);
 
-import Home from "../pages/Home.vue";
-import Categories from "../pages/Categories.vue";
-import DetailRecord from "../pages/DetailRecord.vue";
-import History from "../pages/History.vue";
-import Login from "../pages/Login.vue";
-import Planning from "../pages/Planning.vue";
-import Profile from "../pages/Profile.vue";
-import Record from "../pages/Record.vue";
-import Register from "../pages/Register.vue";
-
 export default new VueRouter({
   mode: "history",
   routes: [
     {
+      name: "Home",
       path: "/",
-      component: Home
+      component: () => import("../pages/Home.vue"),
+      meta: { layout: "mainLayout" }
     },
     {
+      name: "Register",
       path: "/register",
-      component: Register,
+      component: () => import("../pages/Register.vue"),
       meta: { layout: "emptyLayout" }
     },
     {
+      name: "Login",
       path: "/login",
-      component: Login,
+      component: () => import("../pages/Login.vue"),
       meta: { layout: "emptyLayout" }
     },
     {
+      name: "Categories",
       path: "/categories",
-      component: Categories
+      component: () => import("../pages/Categories.vue"),
+      meta: { layout: "mainLayout" }
     },
     {
+      name: "DetailRecord",
       path: "/detail-record",
-      component: DetailRecord
+      component: () => import("../pages/DetailRecord.vue"),
+      meta: { layout: "mainLayout" }
     },
     {
+      name: "History",
       path: "/history",
-      component: History
+      component: () => import("../pages/History.vue"),
+      meta: { layout: "mainLayout" }
     },
     {
+      name: "Planning",
       path: "/planning",
-      component: Planning
+      component: () => import("../pages/Planning.vue"),
+      meta: { layout: "mainLayout" }
     },
     {
+      name: "Profile",
       path: "/profile",
-      component: Profile
+      component: () => import("../pages/Profile.vue"),
+      meta: { layout: "mainLayout" }
     },
     {
+      name: "Record",
       path: "/record",
-      component: Record
+      component: () => import("../pages/Record.vue"),
+      meta: { layout: "mainLayout" }
     }
   ]
 });

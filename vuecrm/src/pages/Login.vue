@@ -14,7 +14,7 @@
 
         <ValidationProvider name="password" rules="required|min:4" v-slot="{ errors }">
           <div class="input-field">
-            <input v-model="email" id="password" type="password" :class="{invalid: errors[0] }" />
+            <input v-model="password" id="password" type="password" :class="{invalid: errors[0] }" />
             <label for="password">Пароль</label>
             <small class="helper-text invalid">{{errors[0]}}</small>
           </div>
@@ -22,7 +22,11 @@
       </div>
       <div class="card-action">
         <div>
-          <button class="btn waves-effect waves-light auth-submit" type="submit">
+          <button
+            :disabled="loading"
+            class="btn waves-effect waves-light auth-submit"
+            type="submit"
+          >
             Войти
             <i class="material-icons right">send</i>
           </button>
@@ -38,18 +42,35 @@
 </template>
 
 <script>
+import messages from "../plugins/codeMessage";
+
 export default {
   data: () => ({
     login: "",
-    email: ""
+    password: "",
+    loading: false
   }),
   methods: {
     async sendForm() {
       const isValid = await this.$refs.observer.validate();
       if (!isValid) return;
 
-      console.log("Всё норм");
+      try {
+        this.loading = true;
+        await this.$store.dispatch("login", {
+          email: this.login,
+          password: this.password
+        });
+        this.$router.push("./");
+      } catch (e) {
+      } finally {
+        this.loading = false;
+      }
     }
+  },
+  mounted() {
+    const code = this.$route.query.message;
+    if (messages[code]) this.$message(messages[code]);
   }
 };
 </script>
