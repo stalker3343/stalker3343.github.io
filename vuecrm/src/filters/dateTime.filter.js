@@ -1,5 +1,6 @@
 export default function dateTimeFilter(value, format = "date") {
   const options = {};
+
   if (format.includes("time")) {
     options.hour = "2-digit";
     options.minute = "2-digit";
@@ -12,5 +13,5 @@ export default function dateTimeFilter(value, format = "date") {
     options.year = "numeric";
   }
 
-  return new Intl.DateTimeFormat("ru-RU", options).format(value);
+  return new Intl.DateTimeFormat("ru-RU", options).format(new Date(value));
 }

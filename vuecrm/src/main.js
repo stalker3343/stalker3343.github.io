@@ -60,12 +60,16 @@ extend("regex", {
 });
 
 import dateTimeFilter from "./filters/dateTime.filter";
+import currency from "./filters/currency.filter";
 import messagePlugin from "./plugins/message.plugin";
+import Loader from "./components/app/Loader.vue";
+Vue.component("Loader", Loader);
 import "./registerServiceWorker";
 
 Vue.config.productionTip = false;
 
 Vue.filter("date", dateTimeFilter);
+Vue.filter("currency", currency);
 Vue.use(messagePlugin);
 
 let app;
