@@ -8,12 +8,7 @@ export default {
   actions: {
     async loadUser({ commit }) {
       const uId = firebase.auth().currentUser.uid;
-      console.log(
-        (await firebase
-          .database()
-          .ref(`/users/${uId}/info`)
-          .once("value")).val()
-      );
+
       const { bill, name } = (await firebase
         .database()
         .ref(`/users/${uId}/info`)
@@ -25,6 +20,9 @@ export default {
         uId
       };
       commit("setUser", user);
+    },
+    getUId({ state }) {
+      return state.user.uId;
     }
   },
   mutations: {
