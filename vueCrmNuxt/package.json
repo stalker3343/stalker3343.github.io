@@ -1,0 +1,27 @@
+{
+  "name": "vueCrmNuxt",
+  "version": "1.0.0",
+  "description": "My superior Nuxt.js project",
+  "author": "Artem",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
+    "build": "nuxt build",
+    "start": "cross-env NODE_ENV=production node server/index.js",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/pwa": "^3.0.0-0",
+    "bootstrap": "^4.1.3",
+    "bootstrap-vue": "^2.0.0",
+    "cross-env": "^5.2.0",
+    "express": "^4.16.4",
+    "firebase": "^7.2.3",
+    "nuxt": "^2.0.0",
+    "vee-validate": "^3.0.11"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}
