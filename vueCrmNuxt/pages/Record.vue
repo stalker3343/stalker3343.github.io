@@ -84,7 +84,8 @@ export default {
           categId: this.categ,
           summ: this.summ,
           description: this.description,
-          type: this.type
+          type: this.type,
+          dateCreated: new Date().toJSON()
         });
 
         const delta = this.type === "income" ? this.summ : -this.summ;
@@ -135,6 +136,7 @@ export default {
     }
     this.categ = this.categories[0] ? this.categories[0].value : null;
     this.loading = false;
-  }
+  },
+  middleware: ["auth"]
 };
 </script>

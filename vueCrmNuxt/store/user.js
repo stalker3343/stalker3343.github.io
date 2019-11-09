@@ -5,31 +5,39 @@ export const state = () => ({
 });
 
 export const actions = {
-  loadUser({ commit }) {
-    return new Promise(function(resolve, reject) {
-      db.auth().onAuthStateChanged(async function() {
-        const uId = db.auth().currentUser.uid;
+  async loadUser({ commit, getters }) {
+    const uid = getters["user"].uid;
 
-        const rawData = await db
-          .database()
-          .ref(`/users/${uId}/info`)
-          .once("value");
-        const { bill, name } = rawData.val();
-        // const { bill, name } = await db
-        //   .database()
-        //   .ref(`/users/${uId}/info`)
-        //   .once("value")
-        //   .val();
+    // if (!uId) {
+    //   commit("setUser", null);
+    //   return resolve();
+    // }
+    // console.log(uId);
+    console.log(
+      await db
+        .database()
+        .ref(`/users/${uid}/info`)
+        .once("value")
+    );
+    const rowData = await db
+      .database()
+      .ref(`/users/${uid}/info`)
+      .once("value");
 
-        const user = {
-          name,
-          bill,
-          uId
-        };
-        commit("setUser", user);
-        resolve();
-      });
-    });
+    const { bill, name } = rowData.val();
+
+    // const { bill, name } = await db
+    //   .database()
+    //   .ref(`/users/${uId}/info`)
+    //   .once("value")
+    //   .val();
+
+    const user = {
+      name,
+      bill,
+      uid
+    };
+    commit("setUser", user);
 
     // let uId;
     // db.auth().onAuthStateChanged(async () => {
@@ -39,7 +47,7 @@ export const actions = {
     // });
   },
   getUId({ state }) {
-    return state.user.uId;
+    return state.user.uid;
   },
   async updateUser({ commit, dispatch, getters }, user) {
     try {

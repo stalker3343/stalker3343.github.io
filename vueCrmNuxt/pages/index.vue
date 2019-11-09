@@ -26,6 +26,7 @@ import Currencies from "@/components/HomeСurrencies";
 
 // import axios from "axios";
 export default {
+  middleware: ["auth"],
   components: {
     BIll,
     Currencies
@@ -91,6 +92,7 @@ export default {
         this.currencies = data;
       } catch (e) {
         this.$message(e, "error");
+        throw e;
       } finally {
         this.loading = false;
       }

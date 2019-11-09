@@ -107,8 +107,6 @@ export default {
     // ])
 
     user() {
-      console.log(this.$store);
-
       return this.$store.getters["user/user"];
     }
   },

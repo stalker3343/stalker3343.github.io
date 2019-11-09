@@ -1,7 +1,7 @@
 <template>
   <div>
-    <p v-if="!categories.length">У вас нет категорий</p>
-    <Loader v-else-if="loading"></Loader>
+    <Loader v-if="loading"></Loader>
+    <p v-else-if="!categories.length">У вас нет категорий</p>
     <template v-else>
       <div class="page-title">
         <h3>Планирование</h3>
@@ -62,6 +62,7 @@ export default {
     });
 
     this.loading = false;
-  }
+  },
+  middleware: ["auth"]
 };
 </script>

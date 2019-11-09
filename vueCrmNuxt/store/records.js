@@ -31,7 +31,7 @@ export const actions = {
 
       if (records) commit("setRecords", records);
     } catch (e) {
-      commit("setError", e);
+      commit("setError", e, { root: true });
       throw e;
     }
   },

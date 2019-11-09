@@ -91,6 +91,7 @@ export default {
         });
         this.$router.push("./");
       } catch (e) {
+        throw e;
       } finally {
         this.loading = false;
       }

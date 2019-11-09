@@ -19,6 +19,7 @@
 import Add from "@/components/CategoriesAdd";
 import Edit from "@/components/CategoriesEdit";
 export default {
+  middleware: ["auth"],
   components: {
     Add,
     Edit

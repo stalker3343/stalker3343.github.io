@@ -9,7 +9,22 @@
     </div>
 
     <section>
-      <table>
+      <b-table class="bill__table" :items="records" :fields="fields">
+        <!-- A virtual column -->
+        <!-- <template v-slot:cell(index)="data">{{ data.index + 1 }}</template> -->
+
+        <!-- A custom formatted column -->
+
+        <!-- <template
+        v-slot:cell(nameage)="data"
+      >{{ data.item.name.first }} is {{ data.item.age }} years old</template>
+
+ 
+      <template v-slot:cell()="data">
+        <i>{{ data.value }}</i>
+        </template>-->
+      </b-table>
+      <!-- <table>
         <thead>
           <tr>
             <th>#</th>
@@ -37,7 +52,58 @@
             </td>
           </tr>
         </tbody>
-      </table>
+      </table>-->
     </section>
   </div>
 </template>
+
+
+<script>
+import { mapGetters, mapActions } from "vuex";
+
+export default {
+  data: () => ({
+    loading: true,
+
+    fields: [
+      { key: "summ", label: "Сумма" },
+      { key: "dateCreated", label: "Дата" },
+      { key: "categName", label: "Категория" },
+      { key: "type", label: "Тип" }
+    ]
+  }),
+
+  computed: {
+    ...mapGetters({
+      categories: "categories/categories",
+      records: "records/loadRecord"
+    })
+  },
+  methods: {
+    ...mapActions({
+      loadRecords: "records/loadRecord",
+      loadReloadCategcords: "categories/loadCateg"
+    })
+  },
+  async mounted() {
+    this.loading = true;
+    if (!this.categories.length) {
+      await this.loadCateg();
+    }
+    if (!this.records.length) {
+      await this.loadRecords();
+    }
+
+    const records = this.records;
+
+    this.records = records.map(record => {
+      const categ = this.categories.find(categ => categ.categId === record.id);
+
+      return { ...record, categName: categ.name };
+    });
+
+    this.loading = false;
+  },
+  middleware: ["auth"]
+};
+</script>

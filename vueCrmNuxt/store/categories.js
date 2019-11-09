@@ -14,7 +14,7 @@ export const actions = {
         .push(categ);
       commit("addCateg", { ...categ, id: categDB.key });
     } catch (e) {
-      commit("setError", e);
+      commit("setError", e, { root: true });
     }
   },
   async loadCateg({ commit, dispatch }) {
@@ -28,7 +28,7 @@ export const actions = {
       const categs = Object.keys(categsObj).map(item => ({ ...categsObj[item], id: item }));
       if (categs) commit("setCategs", categs);
     } catch (e) {
-      commit("setError", e);
+      commit("setError", e, { root: true });
       throw e;
     }
   },

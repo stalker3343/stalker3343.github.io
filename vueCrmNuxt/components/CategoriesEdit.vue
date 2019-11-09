@@ -3,8 +3,8 @@
     <div class="page-subtitle">
       <h4>Редактировать</h4>
     </div>
-    <p v-if="!categories.length">У вас нет категорий</p>
-    <Loader v-else-if="loading"></Loader>
+    <Loader v-if="loading"></Loader>
+    <p v-else-if="!categories.length">У вас нет категорий</p>
     <ValidationObserver v-else ref="observer">
       <b-form @submit.prevent="submitHendler">
         <b-form-group label="Выберете категорию:">

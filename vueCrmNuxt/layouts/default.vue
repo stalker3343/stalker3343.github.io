@@ -1,9 +1,6 @@
 <template>
   <div class="app-main-layout">
-    <div v-if="loading">
-      <Loader></Loader>
-    </div>
-    <template v-else>
+    <template>
       <Navbar @click="sidebar = !sidebar"></Navbar>
       <Sidebar :sidebar="sidebar"></Sidebar>
       <main class="app-content" :class="{ 'full' : !sidebar }">
@@ -12,8 +9,8 @@
         </div>
       </main>
 
-      <div class="fixed-action-btn">
-        <nuxt-link class="btn-floating btn-large blue" to="/record">
+      <div v-b-tooltip.hover title="Создать новую запись" class="fixed-action-btn">
+        <nuxt-link class="fixed-action-btn__icon" to="/record">
           <i class="large material-icons">add</i>
         </nuxt-link>
       </div>
@@ -32,17 +29,18 @@ export default {
   },
 
   data: () => ({
-    sidebar: true,
-    loading: true
+    sidebar: true
   }),
   async mounted() {
-    try {
-      this.loading = true;
-      await this.$store.dispatch("user/loadUser");
-      this.loading = false;
-    } catch (e) {
-      console.log(e);
-    }
+    console.log("создаем приложуху");
+
+    // try {
+    //   this.loading = true;
+    //   await this.$store.dispatch("user/loadUser");
+    //   this.loading = false;
+    // } catch (e) {
+    //   console.log(e);
+    // }
   },
   computed: {
     error() {
@@ -67,6 +65,24 @@ export default {
 </script>
 
 <style >
+.fixed-action-btn {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  padding: 15px;
+  padding-bottom: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #28a745;
+  border-radius: 50%;
+}
+.fixed-action-btn__icon {
+  color: white;
+}
+.fixed-action-btn__icon:hover {
+  color: white;
+}
 .empty-layout {
   display: -webkit-flex;
   display: -ms-flexbox;
