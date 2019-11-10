@@ -32,6 +32,22 @@ export const actions = {
       throw e;
     }
   },
+  async getCategoryById({ commit, dispatch }, id) {
+    try {
+      const UId = await dispatch("user/getUId", null, { root: true });
+      const categ =
+        (await db
+          .database()
+          .ref(`users/${UId}/categories/`)
+          .child(id)
+          .once("value")).val() || {};
+
+      if (categ) return categ;
+    } catch (e) {
+      commit("setError", e, { root: true });
+      throw e;
+    }
+  },
 
   async editCateg({ commit, dispatch }, { name, id, limit }) {
     try {

@@ -36,6 +36,24 @@ export const actions = {
     }
   },
 
+  async getRecordById({ commit, dispatch }, id) {
+    try {
+      const UId = await dispatch("user/getUId", null, { root: true });
+
+      const record =
+        (await db
+          .database()
+          .ref(`users/${UId}/records/`)
+          .child(id)
+          .once("value")).val() || {};
+
+      return record;
+    } catch (e) {
+      commit("setError", e, { root: true });
+      throw e;
+    }
+  },
+
   async editRecord({ commit, dispatch }, { name, id, limit }) {
     try {
       const uid = await dispatch("user/getUId", null, { root: true });

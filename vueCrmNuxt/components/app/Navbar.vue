@@ -96,8 +96,7 @@ import { mapGetters } from "vuex";
 export default {
   data: () => ({
     interval: null,
-    date: new Date(),
-    dropDownInstance: null
+    date: new Date()
   }),
   computed: {
     //  ...mapGetters([
@@ -117,15 +116,9 @@ export default {
     }
   },
   mounted() {
-    this.dropDownInstance = M.Dropdown.init(this.$refs.dropDown, {
-      constrainWidth: false
-    });
     this.interval = setInterval(() => (this.date = new Date()), 1000);
   },
   beforeDestroy() {
-    if (this.dropDownInstance && this.dropDownInstance.destroy()) {
-      this.dropDownInstance.destroy();
-    }
     clearTimeout(this.interval);
   }
 };
