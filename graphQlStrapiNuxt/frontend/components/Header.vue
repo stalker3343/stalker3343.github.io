@@ -4,10 +4,14 @@
       <div class="uk-navbar-left">
         <ul class="uk-navbar-nav">
           <li class="uk-active">
-            <router-link tag="a" class="navbar-brand" to="/" exact>Deliveroo clone</router-link>
+            <router-link tag="a" class="navbar-brand" to="/" exact
+              >Deliveroo clone</router-link
+            >
           </li>
           <li>
-            <router-link tag="a" class="navbar-brand" to="/restaurants" exact>Restaurants</router-link>
+            <router-link tag="a" class="navbar-brand" to="/restaurants" exact
+              >Restaurants</router-link
+            >
           </li>
         </ul>
       </div>
@@ -28,7 +32,7 @@
             </a>
           </li>
           <li>
-            <a href="#" @click="logout">Logout</a>
+            <a href="#" @click="logoutUser">Logout</a>
           </li>
         </ul>
 
@@ -57,10 +61,15 @@ export default {
     }
   },
   methods: {
+    logoutUser() {
+      this.logout();
+      this.$router.push("/users/signin");
+    },
+
     // Define your needed mutations, here: auth/logout
     ...mapMutations({
       logout: "auth/logout"
     })
   }
 };
-</script>  
+</script>

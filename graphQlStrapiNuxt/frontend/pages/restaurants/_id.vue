@@ -7,7 +7,11 @@
     <client-only>
       <div uk-grid>
         <div class="uk-width-1-3@m">
-          <div v-for="dish in restaurant.dishes" :key="dish.id" class="uk-margin">
+          <div
+            v-for="dish in restaurant.dishes"
+            :key="dish.id"
+            class="uk-margin"
+          >
             <div class="uk-card uk-card-default">
               <div class="uk-card-media-top">
                 <img :src="'http://localhost:1337' + dish.image.url" alt />
@@ -20,13 +24,21 @@
                 <p>{{ dish.description }}</p>
               </div>
               <div class="uk-card-footer">
-                <button class="uk-button uk-button-primary">Add to cart</button>
+                <button
+                  class="uk-button uk-button-primary"
+                  @click="addToCart(dish)"
+                >
+                  Add to cart
+                </button>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="uk-width-expand@m"></div>
+        <div class="uk-width-expand@m">
+          <!-- // Call a Cart component -->
+          <Cart />
+        </div>
       </div>
     </client-only>
   </div>
@@ -34,6 +46,9 @@
 
 <script>
 import restaurantQuery from "../../apollo/queries/restaurant/restaurant.gql";
+
+import { mapMutations } from "vuex";
+import Cart from "~/components/Cart.vue";
 
 export default {
   data() {
@@ -49,6 +64,15 @@ export default {
         return { id: this.$route.params.id };
       }
     }
+  },
+  components: {
+    Cart
+  },
+  methods: {
+    ...mapMutations({
+      addToCart: "cart/add",
+      removeFromCart: "cart/remove"
+    })
   }
 };
 </script>

@@ -19,7 +19,9 @@
               <legend class="uk-legend">Sign in</legend>
 
               <div class="uk-margin">
-                <label class="uk-form-label" for="form-stacked-text">Email</label>
+                <label class="uk-form-label" for="form-stacked-text"
+                  >Email</label
+                >
                 <input
                   class="uk-input"
                   v-model="email"
@@ -29,7 +31,9 @@
               </div>
 
               <div class="uk-margin">
-                <label class="uk-form-label" for="form-stacked-text">Password</label>
+                <label class="uk-form-label" for="form-stacked-text"
+                  >Password</label
+                >
                 <input class="uk-input" v-model="password" type="password" />
               </div>
 
@@ -38,13 +42,17 @@
                   class="uk-button uk-button-primary uk-width-1-1"
                   :disabled="loading"
                   type="submit"
-                >Submit</button>
+                >
+                  Submit
+                </button>
               </div>
 
               <div class="uk-margin">
                 <p>
                   No account yet?
-                  <router-link :to="{ name: 'users-register'}">Register</router-link>
+                  <router-link :to="{ name: 'users-register' }"
+                    >Register</router-link
+                  >
                 </p>
               </div>
             </fieldset>
@@ -76,9 +84,6 @@ export default {
         this.setUser(response.user);
         this.$router.go(-1);
       } catch (err) {
-        this.loading = false;
-        console.log(err);
-        
         alert(err.message || "An error occurred.");
       }
     },
@@ -87,4 +92,4 @@ export default {
     })
   }
 };
-</script>  
+</script>
