@@ -1,0 +1,25 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "Cooking a Deliveroo clone",
+  "author": "Artem",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/apollo": "^4.0.0-rc17",
+    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/pwa": "^3.0.0-0",
+    "cookieparser": "^0.1.0",
+    "graphql": "^14.5.8",
+    "js-cookie": "^2.2.1",
+    "nuxt": "^2.0.0",
+    "strapi-sdk-javascript": "^0.3.3",
+    "uikit": "^3.2.3"
+  },
+  "devDependencies": {}
+}

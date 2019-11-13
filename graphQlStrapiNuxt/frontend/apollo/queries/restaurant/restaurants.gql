@@ -1,0 +1,10 @@
+query Restaurants {
+  restaurants {
+    id # Or _id if you are using MongoDB
+    name
+    description
+    Image {
+      url
+    }
+  }
+}
