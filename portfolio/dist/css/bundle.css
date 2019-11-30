@@ -827,7 +827,7 @@ li {
     z-index: 1;
     line-height: 35px;
     font-size: 25px;
-    font-weight: 600;
+    font-weight: 500;
     background: #c82333;
     border-radius: 25px;
     padding: 10px 25px; }
@@ -870,11 +870,10 @@ li {
     display: flex;
     justify-content: center;
     align-items: center; }
-  .description__icon {
+  .description__icon img {
+    height: 100%;
     height: 30px;
     margin-right: 10px; }
-    .description__icon img {
-      height: 100%; }
   .description__tooltip {
     position: relative;
     cursor: pointer; }
