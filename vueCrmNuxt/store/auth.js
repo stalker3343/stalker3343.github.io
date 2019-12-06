@@ -6,7 +6,9 @@ export const mutations = {};
 export const actions = {
   async login({ dispatch, commit }, account) {
     try {
-      await db.auth().signInWithEmailAndPassword(account.email, account.password);
+      await db
+        .auth()
+        .signInWithEmailAndPassword(account.email, account.password);
       const token = await db.auth().currentUser.getIdToken();
       const { email, uid } = db.auth().currentUser;
       Cookie.set("access_token", token);
@@ -21,7 +23,9 @@ export const actions = {
   },
   async regiterUser({ commit, dispatch }, { email, password, name, money }) {
     try {
-      const { user } = await db.auth().createUserWithEmailAndPassword(email, password);
+      const { user } = await db
+        .auth()
+        .createUserWithEmailAndPassword(email, password);
 
       await db
         .database()
@@ -30,7 +34,16 @@ export const actions = {
           bill: money,
           name
         });
-      dispatch("user/loadUser", null, { root: true });
+      commit(
+        "user/setUser",
+        {
+          uid: user.uid
+        },
+        { root: true }
+      );
+      await dispatch("user/loadUser", null, { root: true });
+
+      //dispatch("user/loadUser", null, { root: true });
     } catch (e) {
       const error = e.code || e;
       commit("setError", error, { root: true });

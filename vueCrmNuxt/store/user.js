@@ -13,12 +13,7 @@ export const actions = {
     //   return resolve();
     // }
     // console.log(uId);
-    console.log(
-      await db
-        .database()
-        .ref(`/users/${uid}/info`)
-        .once("value")
-    );
+
     const rowData = await db
       .database()
       .ref(`/users/${uid}/info`)
@@ -70,6 +65,8 @@ export const mutations = {
     state.user = null;
   },
   setUser(state, user) {
+    console.log("set user", user);
+
     state.user = user;
   }
 };
