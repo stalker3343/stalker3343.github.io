@@ -4,7 +4,7 @@
       <b-card title="Домашняя бухгалтерия">
         <b-card-body class="p-0 mt-4">
           <ValidationProvider name="email" rules="required|email" v-slot="{ errors, valid }">
-            <b-form-group label="Email:">
+            <b-form-group label="Email(email@some.com):">
               <b-form-input
                 type="email"
                 v-model="login"
@@ -22,7 +22,7 @@
           </ValidationProvider>
 
           <ValidationProvider name="password" rules="required|min:4" v-slot="{ errors, valid }">
-            <b-form-group label="Пароль:">
+            <b-form-group label="Пароль(123456):">
               <b-form-input
                 type="password"
                 v-model="password"

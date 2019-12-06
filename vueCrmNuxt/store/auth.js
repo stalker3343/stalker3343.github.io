@@ -34,6 +34,9 @@ export const actions = {
           bill: money,
           name
         });
+      const token = await db.auth().currentUser.getIdToken();
+      Cookie.set("access_token", token);
+
       commit(
         "user/setUser",
         {
