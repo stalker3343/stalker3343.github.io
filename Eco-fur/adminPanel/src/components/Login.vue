@@ -13,7 +13,7 @@
                 required
                 prepend-icon="email"
                 name="login"
-                label="Почта"
+                label="Почта (email@gmail.com)"
                 type="email"
                 v-model="email"
               ></v-text-field>
@@ -24,7 +24,7 @@
                 id="password"
                 prepend-icon="lock"
                 name="password"
-                label="Пароль"
+                label="Пароль(password)"
                 type="password"
               ></v-text-field>
             </v-form>

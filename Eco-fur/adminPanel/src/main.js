@@ -16,36 +16,48 @@ import "quill/dist/quill.snow.css";
 import "quill/dist/quill.bubble.css";
 
 Vue.use(VueQuillEditor, {
-
   modules: {
     toolbar: [
       ["bold", "italic", "underline", "strike"],
       // ["blockquote", "code-block"],
-      [{
-        header: 1
-      }, {
-        header: 2
-      }],
-      [{
-        list: "ordered"
-      }, {
-        list: "bullet"
-      }],
+      [
+        {
+          header: 1
+        },
+        {
+          header: 2
+        }
+      ],
+      [
+        {
+          list: "ordered"
+        },
+        {
+          list: "bullet"
+        }
+      ],
       // [{ script: "sub" }, { script: "super" }],
       // [{ indent: "-1" }, { indent: "+1" }],
       // [{ direction: "rtl" }],
-      [{
-        size: ["small", false, "large", "huge"]
-      }],
-      [{
-        header: [1, 2, 3, 4, 5, 6, false]
-      }],
+      [
+        {
+          size: ["small", false, "large", "huge"]
+        }
+      ],
+      [
+        {
+          header: [1, 2, 3, 4, 5, 6, false]
+        }
+      ],
       // [{ font: [] }],
-      [{
-        color: []
-      }, {
-        background: []
-      }]
+      [
+        {
+          color: []
+        },
+        {
+          background: []
+        }
+      ]
       // [{ align: [] }],
       // ["clean"],
       // ["link", "image", "video"]
@@ -71,17 +83,18 @@ var firebaseConfig = {
   appId: "1:1032386855643:web:2830c5d4de06b9ff"
 };
 fb.initializeApp(firebaseConfig);
-fb.auth().onAuthStateChanged((user) => {
-  new Vue({
-
-
-    beforeCreate() {
-      if (user) {
-        this.$store.dispatch('autologinUser', user)
-      }
-    },
-    router,
-    store,
-    render: h => h(App)
-  }).$mount("#app");
-})
+let app;
+fb.auth().onAuthStateChanged(user => {
+  if (!app) {
+    app = new Vue({
+      beforeCreate() {
+        if (user) {
+          this.$store.dispatch("autologinUser", user);
+        }
+      },
+      router,
+      store,
+      render: h => h(App)
+    }).$mount("#app");
+  }
+});
