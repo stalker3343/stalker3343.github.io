@@ -1,0 +1,77 @@
+@import "vars";
+@import "fonts";
+
+@import "libs";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0px;
+}
+
+p {
+  margin: 0px;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+img {
+  width: 100%;
+}
+
+.visible {
+  visibility: visible !important;
+}
+
+
+
+
+
+
+.ibg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+
+}
+
+.ibg img {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+
+}
+
+
+@import "header";
+@import 'generation';
+@import 'companys';
+@import 'photos';
+@import 'tweet';
+@import 'form';
+@import "footer"
+// .parent // Lazy Load Placeholder Generator: https://webdesign-master.ru/services/lazy/
+// 	background-image: url(data:image/gif;base64,R0lGODlhCgAIAIABAN3d3f///yH5BAEAAAEALAAAAAAKAAgAAAINjAOnyJv2oJOrVXrzKQA7)
