@@ -10,6 +10,7 @@
   <meta name="viewport" content="width=device-width" />
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/tiny-slider.css">
+  <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0/dist/smooth-scroll.polyfills.min.js"></script>
   <link rel="icon" href="img/favicon.png" />
   <meta property="og:image" content="img/@1x/preview.jpg" />
 
@@ -26,16 +27,16 @@
         <div class="menu__body">
           <ul class="menu__list">
             <li class="menu__item">
-              <a href="#" class="menu__link">About us</a>
+              <a data-scroll href="#about" class="menu__link">About us</a>
             </li>
             <li class="menu__item">
-              <a href="#" class="menu__link">Work</a>
+              <a data-scroll href="#work" class="menu__link">Work</a>
             </li>
             <li class="menu__item">
-              <a href="#" class="menu__link">Shop</a>
+              <a data-scroll href="#shop" class="menu__link">Shop</a>
             </li>
             <li class="menu__item">
-              <a href="#" class="menu__link">Contact</a>
+              <a data-scroll href="#contact" class="menu__link">Contact</a>
             </li>
           </ul>
         </div>
@@ -48,7 +49,7 @@
   </header>
 
   <main>
-    <section class="generation">
+    <section class="generation" id="about">
       <div class="container">
         <div class="block">
           <div class="block__icon">
@@ -70,7 +71,7 @@
     </section>
 
 
-    <section class="companes">
+    <section class="companes" id="work">
       <div class="companes__row">
         <div class="companes__col companes__col_bg">
           <a href="#" class="companes__item item">
@@ -253,7 +254,7 @@
       </div>
     </section>
 
-    <section class="photo">
+    <section class="photo" id="shop">
       <div class="photo__row">
         <div class="photo__col photo__col_lg">
 
@@ -368,7 +369,7 @@
       </div>
     </section>
 
-    <section class="form">
+    <section class="form" id="contact">
       <div class="container">
         <div class="form__wrap">
           <div class="form__img">

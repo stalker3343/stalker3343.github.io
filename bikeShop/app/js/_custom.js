@@ -40,5 +40,13 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
+  let scroll = new SmoothScroll('a[href*="#"]', {
+    // header: '[data-scroll-header]',
+    speed: 400,
+    emitEvents: true
+  });
+  // document.addEventListener('scrollStart', closeMenu, false);
+
+
 
 });
