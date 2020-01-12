@@ -7,6 +7,9 @@
     margin: 20px auto
     border-radius: 28px
     border: 1px dotted #e1e1e1
+    display: flex
+    justify-content: space-between
+
   &__tab
     border: none
     background: none
@@ -17,6 +20,8 @@
     color: #777
     cursor: pointer
     transition: all .3s
+    @media   ( max-width: 460px )
+      padding: 10px 22px
     &_active
       background-color: #1957f3
       color: #fff
