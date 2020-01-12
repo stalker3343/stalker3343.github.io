@@ -48,8 +48,8 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener('scrollStart', closeMenu, false);
 
   function closeMenu() {
-    menuBody.classList.toggle("menu__body_active");
-    menuBtn.classList.toggle("menu__btn_active");
+    menuBody.classList.remove("menu__body_active");
+    menuBtn.classList.remove("menu__btn_active");
   }
 
 
