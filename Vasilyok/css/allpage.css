@@ -207,6 +207,10 @@ h2 {
     align-items: center;
     display: flex;
     justify-content: space-between; }
+    @media (max-width: 576px) {
+      .form__input-wrap {
+        flex-direction: column;
+        align-items: flex-start; } }
   .form__heading {
     font-size: 18px;
     margin-bottom: 23px;
@@ -217,6 +221,9 @@ h2 {
         margin-top: 20px; } }
   .form__text {
     align-self: flex-start; }
+  @media (max-width: 576px) {
+    .form__lable {
+      margin-bottom: 5px; } }
   .form__button {
     width: 142px;
     height: 41px;
