@@ -45,8 +45,12 @@ document.addEventListener("DOMContentLoaded", function () {
     speed: 400,
     emitEvents: true
   });
-  // document.addEventListener('scrollStart', closeMenu, false);
+  document.addEventListener('scrollStart', closeMenu, false);
 
+  function closeMenu() {
+    menuBody.classList.toggle("menu__body_active");
+    menuBtn.classList.toggle("menu__btn_active");
+  }
 
 
 });
