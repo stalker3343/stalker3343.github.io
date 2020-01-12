@@ -683,6 +683,10 @@ li {
         font-size: 40px;
         text-align: left;
         align-items: flex-start; } }
+    @media (max-width: 460px) {
+      .header__title {
+        font-size: 30px;
+        line-height: 1.4; } }
   .header__subtitle {
     color: #cccccc;
     text-transform: none;
@@ -693,6 +697,9 @@ li {
     @media (max-width: 700px) {
       .header__subtitle {
         font-size: 18px; } }
+    @media (max-width: 460px) {
+      .header__subtitle {
+        font-size: 16px; } }
   .header__links {
     right: 0;
     left: 0;
@@ -706,13 +713,16 @@ li {
     @media (max-width: 700px) {
       .header__links {
         width: 100%; } }
+    @media (max-width: 460px) {
+      .header__links {
+        top: 70%; } }
 
 .social__item {
   padding-right: 20px; }
   .social__item_vk {
     padding-right: 14px; }
 
-.social__icon path {
+.social__icon {
   fill: #fff; }
 
 .logo__link {

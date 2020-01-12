@@ -1,6 +1,64 @@
-@import "_mixins/font-face"
-+font-face('FuturaPT', "../fonts/FuturaPT/FuturaPT-Book", 400)
-+font-face('FuturaPT', "../fonts/FuturaPT/FuturaPT-Medium", 500)
-+font-face('FuturaPT', "../fonts/FuturaPT/FuturaPT-Demi", 600)
-+font-face('FuturaPT', "../fonts/FuturaPT/FuturaPT-Heavy", 900)
+// @import "_mixins/font-face"
+//     +font-face('FuturaPT', "../fonts/FuturaPT/FuturaPT-Book", 400)
+//     +font-face('FuturaPT', "../fonts/FuturaPT/FuturaPT-Medium", 500)
+//     +font-face('FuturaPT', "../fonts/FuturaPT/FuturaPT-Demi", 600)
+//     +font-face('FuturaPT', "../fonts/FuturaPT/FuturaPT-Heavy", 900)
+
+// @mixin font-face($font-family, $file-path, $weight: normal, $style: normal, $asset-pipeline: false )
+// 	@font-face
+// 		font-family: $font-family
+// 		font-weight: $weight
+// 		font-style: $style
+// 		font-display: swap
+
+// 	@if $asset-pipeline == true
+// 		src: font-url('#{$file-path}.eot')
+// 		src: font-url('#{$file-path}.eot?#iefix') format('embedded-opentype'), font-url('#{$file-path}.woff') format('woff'), font-url('#{$file-path}.ttf') format('truetype')
+// 	@else
+// 		src: url('#{$file-path}.eot')
+// 		src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'), url('#{$file-path}.woff') format('woff'), url('#{$file-path}.ttf') format('truetype')
+
+
+@font-face 
+    font-family: FuturaPT
+    font-weight: 400
+    font-style: normal
+    font-display: swap
+    src: url('../fonts/FuturaPT/FuturaPT-Book.eot')
+    src: url('../fonts/FuturaPT/FuturaPT-Book.eot?#iefix') format('embedded-opentype'), url('../fonts/FuturaPT/FuturaPT-Book.woff') format('woff'), url('../fonts/FuturaPT/FuturaPT-Book.ttf') format('truetype')
+
+@font-face 
+    font-family: FuturaPT
+    font-weight: 500
+    font-style: normal
+    font-display: swap
+    src: url('../fonts/FuturaPT/FuturaPT-Medium.eot')
+    src: url('../fonts/FuturaPT/FuturaPT-Medium.eot?#iefix') format('embedded-opentype'), url('../fonts/FuturaPT/FuturaPT-Medium.woff') format('woff'), url('../fonts/FuturaPT/FuturaPT-Medium.ttf') format('truetype')
+
+
+
+
+@font-face 
+    font-family: FuturaPT
+    font-weight: 600
+    font-style: normal
+    font-display: swap
+    src: url('../fonts/FuturaPT/FuturaPT-Demi.eot')
+    src: url('../fonts/FuturaPT/FuturaPT-Demi.eot?#iefix') format('embedded-opentype'), url('../fonts/FuturaPT/FuturaPT-Demi.woff') format('woff'), url('../fonts/FuturaPT/FuturaPT-Demi.ttf') format('truetype')
+
+
+
+
+@font-face 
+    font-family: FuturaPT
+    font-weight: 900
+    font-style: normal
+    font-display: swap
+    src: url('../fonts/FuturaPT/FuturaPT-Heavy.eot')
+    src: url('../fonts/FuturaPT/FuturaPT-Heavy.eot?#iefix') format('embedded-opentype'), url('../fonts/FuturaPT/FuturaPT-Heavy.woff') format('woff'), url('../fonts/FuturaPT/FuturaPT-Heavy.ttf') format('truetype')
+
+
+
+
+
 
