@@ -42,17 +42,17 @@ gulp.task('styles', function () {
 			includePaths: [__dirname + '/node_modules']
 		}))
 		.pipe(concat('styles.min.css'))
-		// .pipe(autoprefixer({
-		// 	grid: true,
-		// 	overrideBrowserslist: ['last 10 versions']
-		// }))
-		// .pipe(cleancss({
-		// 	level: {
-		// 		1: {
-		// 			specialComments: 0
-		// 		}
-		// 	}
-		// }))
+		.pipe(autoprefixer({
+			grid: true,
+			overrideBrowserslist: ['last 10 versions']
+		}))
+		.pipe(cleancss({
+			level: {
+				1: {
+					specialComments: 0
+				}
+			}
+		}))
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('app/css'))
 		.pipe(browserSync.stream())
