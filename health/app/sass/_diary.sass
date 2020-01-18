@@ -1,0 +1,100 @@
+.diary	
+
+	background: url('../img/_src/diaryLines2.png') no-repeat 
+	padding-top: calc(150px + 72px) 
+	padding-bottom: 170px
+	background-position-x: -1841px
+	background-position-y: -810px
+	margin-top: -72px
+	overflow: hidden
+
+
+
+	@media screen and ( max-width: $lg-1 )
+		background-position-x: -2118px
+	@media screen and ( max-width: $lg )
+		background-position-x: -2194px
+	
+		
+
+
+	&__container
+		display: flex
+		justify-content: center
+		position: relative
+
+		transform-style: preserve-3d
+		&::after
+			content: ""
+			position: absolute
+			width: 480px
+			height: 480px
+			bottom: -286px
+			right: -194px
+
+			
+			background: url('../img/_src/puls.png') no-repeat center / cover
+
+	// .diary__img
+
+	&__img
+		max-width: 330px
+		margin-right: 50px
+		 
+
+	// .diary__content
+
+	&__content
+		display: flex
+		flex-direction: column
+		justify-content: center
+		max-width: 660px
+		align-items: flex-start
+		
+
+	// .diary__title
+
+	&__title
+		margin-bottom: 23px
+	
+
+	// .diary__subtitle
+
+	&__subtitle	
+		margin-bottom: 15px
+
+		font-size: 16px
+
+		color: rgb(96, 117, 157)
+		line-height: 1.5
+		font-weight: 500
+
+
+
+	// .diary__feature-list
+
+	&__feature-list	
+		margin-bottom: 40px
+		max-width: 498px
+		margin-left: 0
+		padding-left: 0
+
+
+	// .diary__list-item
+
+	&__list-item
+		padding-left: 16px
+		list-style-type: none
+		position: relative
+		&::before
+			position: absolute
+			left: 0
+			top: 7px
+			content: ""
+			width: 5px
+			height: 5px
+			background-color: #16afe0
+		&:not(:last-child)
+			margin-bottom: 15px
+		
+ 

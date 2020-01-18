@@ -1,0 +1,27 @@
+// font-weight helper:
+
+// 100 Extra Light or Ultra Light;
+// 200 Light or Thin; 300 Book or Demi;
+// 400 Regular or Normal;
+// 500 Medium;
+// 600 Semibold or Demibold;
+// 700 Bold;
+// 800 Black or Extra Bold or Heavy;
+// 900 Extra Black or Fat or Ultra Black
+
+@mixin font($f-name, $f-style, $f-weight, $f-url, $f-url2,$f-url3 )
+	@font-face
+		font-family: $f-name
+		font-style: $f-style
+		font-weight: $f-weight
+		src: url($f-url3)
+		src: url($f-url) format('woff2'), url($f-url2) format('woff'), url($f-url3) format('eot')
+
+// @include font('Roboto', normal, 400, '../fonts/roboto-regular-webfont.woff2')
+// @include font('Roboto', italic, 400, '../fonts/roboto-italic-webfont.woff2')
+// @include font('Roboto', normal, 700, '../fonts/roboto-bold-webfont.woff2')
+// @include font('Roboto', italic, 700, '../fonts/roboto-bolditalic-webfont.woff2')
+
+@include font('CeraRoundPro', normal, 700, '../fonts/CeraRoundPro-Bold.woff2','../fonts/CeraRoundPro-Bold.woff2','../fonts/CeraRoundPro-Bold.eot'  )
+@include font('CeraRoundPro', normal, 500, '../fonts/CeraRoundPro-Medium.woff2', '../fonts/CeraRoundPro-Medium.woff', '../fonts/CeraRoundPro-Medium.eot')
+// @include font('CeraRoundPro', normal, 400, '../fonts/CeraRoundPro-Regular.woff2')

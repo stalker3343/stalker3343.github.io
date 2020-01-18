@@ -1,0 +1,193 @@
+
+.btn  
+  font-weight: 500
+  display: block
+  background-color: $accent
+  font-size: 16px
+  color: rgb(253, 255, 252)
+  font-weight: bold
+  line-height: 1.2
+  border-radius: 44px
+  transition: all 0.2s ease-in-out
+  padding: 21px 30px
+  border: none
+  
+  &:hover
+    transform: scale(1.2)
+    // padding: 25px 41px
+    text-decoration: none
+    color: rgb(253, 255, 252)
+    
+
+
+
+  &_transparent
+    background: none
+    border: 1px solid #5489c3
+    &:hover
+      background: #5489c3
+
+
+
+  
+.header   
+  background: url('../img/_src/headerBg.jpg') no-repeat center / cover
+  height: 750px 
+  padding-top: 34px
+  position: relative
+  z-index: 2
+  &__container
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+
+
+
+		// .header__top-line
+
+  &__top-line
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-bottom: 120px
+
+
+  // &__title-container
+  //   display: flex
+  //   flex-direction: column
+  //   align-items: center
+  //   justify-content: center
+  // .header__logo
+
+  &__logo
+    width: 210px 
+  &__menu-container
+    display: flex
+  &__menu
+    margin-right: 70px
+    @media screen and ( max-width: $xl )
+      margin-right: 25px
+
+
+
+  &__slider-wrap
+    width: 760px
+    margin: 0 auto
+    .tns-nav__bullets
+      margin-top: 70px
+      display: flex
+      justify-content: center
+    .tns-nav
+      width: 60px
+      height: 20px
+      margin: 0 auto
+      margin-top: 90px
+  
+      // padding: 7px 15px
+      display: flex
+      align-items: center
+      justify-content: center
+      border: 1px solid #5489c3
+      border-radius: 10px
+      .tns-nav-active
+        border: 1px solid #fff
+      button
+        border: 1px solid #5489c3
+        .tns-nav-active
+          border: 1px solid #fff
+        &:not(:last-child)
+          margin-right: 8px
+ 
+
+  &__request-btn  
+    
+      
+
+  // .header__title
+
+  &__title  
+    font-weight: 500
+    font-size: 36px
+    color: rgb(255, 255, 255)
+    line-height: 1.5
+    text-align: center
+    margin-bottom: 55px
+
+
+      
+
+  // .header__subtitle
+
+  &__subtitle  
+    font-weight: 500
+    font-size: 24px
+    color: rgb(255, 255, 255)
+    line-height: 1.5
+    text-align: center
+    margin-bottom: 54px
+  &__title-container
+    text-align: center
+
+      
+
+  // .header__action-btn
+
+  &__action-btn 
+    display: inline-block
+    margin: 0 auto 
+    margin-bottom: 5px
+  &__ie-wrap
+    display: flex
+    justify-content: center
+
+		 
+ 
+.menu 
+  display: flex 
+  padding-left: 0
+  margin-bottom: 0px
+  align-items: center
+
+		// .menu__item
+
+  &__item
+    list-style-type: none
+    &:not(:last-child)
+      margin-right: 54px
+      @media screen and ( max-width: $xl )
+        margin-right: 34px
+
+		 
+
+		// .menu__link
+
+  &__link
+    font-size: 16px
+    color: rgb(253, 255, 252)
+    font-weight: 700
+    line-height: 1.2
+    transition: all 0.2s ease-in-out
+    position: relative
+    &::after
+      content: ""
+      position: absolute
+      bottom: -10px
+      left: 50%
+      transform: translateX(-50%)
+      width: 4px
+      height: 4px
+      border-radius: 50%
+      display: none
+      background: white
+    &:hover
+      color: rgb(253, 255, 252)
+      text-decoration: none
+      &::after
+        display: block
+      
+
+
+
+
+ 
