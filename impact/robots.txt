@@ -4,10 +4,10 @@ Disallow: /en/*
 Disallow: /cn/*
 Disallow: /*?
 Disallow: /*=
-Disallow: /_nuxt/*
+Disallow: ./_nuxt/*
 Disallow: /plugins/*
 User-agent: Googlebot-Image
-Allow: ./images/*
+Allow: ../images/*
 User-agent: YandexImages
-Allow: ./images/*
+Allow: ../images/*
 Sitemap: https://impact-capital.com/sitemap.xml

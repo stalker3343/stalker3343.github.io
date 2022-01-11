@@ -15,6 +15,15 @@ replace({
 	recursive: true,
 	silent: false,
 })
+replace({
+	regex: '/_nuxt/',
+	replacement: './_nuxt/',
+	paths: ['impact'],
+	recursive: true,
+	silent: false,
+})
+
+
 
 // replace({
 // 	regex: '/assets/',
