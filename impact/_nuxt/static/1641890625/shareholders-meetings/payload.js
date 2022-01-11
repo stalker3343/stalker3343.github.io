@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/shareholders-meetings", (function(a,b){return {data:[{}],fetch:{},mutations:[["common\u002FSET_STATES",{fileTypes:{PDF:"fas fa-file-pdf",DOC:a,DOCX:a,XLS:b,XLSX:b,OTHER:"fas fa-file-alt"}}]]}}("fas fa-file-word","fas fa-file-excel")));

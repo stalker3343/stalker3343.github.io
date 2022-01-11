@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/get-ideas", {data:[{}],fetch:{},mutations:[]});

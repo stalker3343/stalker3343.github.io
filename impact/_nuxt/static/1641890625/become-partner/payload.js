@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/become-partner", {data:[{}],fetch:{},mutations:[]});

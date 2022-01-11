@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/audit", {data:[{}],fetch:{},mutations:[]});

@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[201],{1371:function(n,e,t){"use strict";t.r(e);var l=t(4),component=Object(l.a)({},(function(){var n=this,e=n.$createElement;return(n._self._c||e)("div",{staticClass:"page__openapp"},[n._v("Download application link")])}),[],!1,null,null,null);e.default=component.exports}}]);

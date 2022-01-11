@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/smart", {data:[{}],fetch:{},mutations:[]});

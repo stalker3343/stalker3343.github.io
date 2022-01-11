@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "55M37QA97G.com.impactcapital.production",
+        "paths": [
+          "*",
+          "/"
+        ]
+      }
+    ]
+  }
+}

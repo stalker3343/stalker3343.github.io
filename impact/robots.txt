@@ -1,0 +1,13 @@
+User-agent: *
+Disallow: /*&
+Disallow: /en/*
+Disallow: /cn/*
+Disallow: /*?
+Disallow: /*=
+Disallow: /_nuxt/*
+Disallow: /plugins/*
+User-agent: Googlebot-Image
+Allow: /images/*
+User-agent: YandexImages
+Allow: /images/*
+Sitemap: https://impact-capital.com/sitemap.xml

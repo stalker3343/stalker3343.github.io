@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/contacts/wechat", {data:[{}],fetch:{},mutations:[]});

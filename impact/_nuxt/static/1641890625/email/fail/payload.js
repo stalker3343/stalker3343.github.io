@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/email/fail", {data:[{}],fetch:{},mutations:[]});
